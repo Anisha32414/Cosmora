@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmora - Skin Questionnaire</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Cosmora
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= QUESTIONNAIRE ================= -->
+
+    <main class="questionnaire-container">
+
+        <div class="questionnaire-card">
+
+            <h1>Skin Care Questionnaire</h1>
+
+            <p class="intro">
+                Tell us about your skin and daily habits.
+                Cosmora will use your answers to provide
+                personalized natural skincare wellness guidance.
+            </p>
+
+
+            <form id="skinForm">
+
+
+                <!-- FACE WASHING -->
+
+                <div class="question">
+
+                    <label for="face_washing">
+                        How often do you wash your face?
+                    </label>
+
+                    <select id="face_washing" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Once a day">
+                            Once a day
+                        </option>
+
+                        <option value="Twice a day">
+                            Twice a day
+                        </option>
+
+                        <option value="More than twice a day">
+                            More than twice a day
+                        </option>
+
+                        <option value="Occasionally">
+                            Occasionally
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DIET -->
+
+                <div class="question">
+
+                    <label for="diet">
+                        How would you describe your diet?
+                    </label>
+
+                    <select id="diet" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Mostly balanced">
+                            Mostly balanced
+                        </option>
+
+                        <option value="Mostly processed food">
+                            Mostly processed food
+                        </option>
+
+                        <option value="Mostly vegetarian">
+                            Mostly vegetarian
+                        </option>
+
+                        <option value="Mixed diet">
+                            Mixed diet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SUNSCREEN -->
+
+                <div class="question">
+
+                    <label for="sunscreen">
+                        How often do you use sunscreen?
+                    </label>
+
+                    <select id="sunscreen" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Daily">
+                            Daily
+                        </option>
+
+                        <option value="Sometimes">
+                            Sometimes
+                        </option>
+
+                        <option value="Rarely">
+                            Rarely
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- COSMETICS -->
+
+                <div class="question">
+
+                    <label for="cosmetics">
+                        How frequently do you use cosmetics or makeup?
+                    </label>
+
+                    <select id="cosmetics" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                        <option value="Occasionally">
+                            Occasionally
+                        </option>
+
+                        <option value="Frequently">
+                            Frequently
+                        </option>
+
+                        <option value="Daily">
+                            Daily
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- WATER -->
+
+                <div class="question">
+
+                    <label for="water_intake">
+                        How would you describe your daily water intake?
+                    </label>
+
+                    <select id="water_intake" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SUN EXPOSURE -->
+
+                <div class="question">
+
+                    <label for="sun_exposure">
+                        How much time do you usually spend in the sun?
+                    </label>
+
+                    <select id="sun_exposure" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SLEEP -->
+
+                <div class="question">
+
+                    <label for="sleep">
+                        How much sleep do you usually get?
+                    </label>
+
+                    <select id="sleep" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Less than 6 hours">
+                            Less than 6 hours
+                        </option>
+
+                        <option value="6–7 hours">
+                            6–7 hours
+                        </option>
+
+                        <option value="7–9 hours">
+                            7–9 hours
+                        </option>
+
+                        <option value="More than 9 hours">
+                            More than 9 hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STRESS -->
+
+                <div class="question">
+
+                    <label for="stress">
+                        How would you describe your stress level?
+                    </label>
+
+                    <select id="stress" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SKIN CONCERN -->
+
+                <div class="question">
+
+                    <label for="skin_concerns">
+                        What is your main skin concern?
+                    </label>
+
+                    <textarea
+                        id="skin_concerns"
+                        rows="4"
+                        placeholder="Example: dry skin, oily skin, acne, irritation, uneven skin tone..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="submit-btn">
+
+                    Get My Skin Guidance
+
+                </button>
+
+            </form>
+
+
+            <!-- ================= LOADING ================= -->
+
+            <div
+                id="loading"
+                class="loading"
+                style="display: none;">
+
+                <p>
+                    🌿 Cosmora is analyzing your profile...
+                </p>
+
+                <p>
+                    Retrieving personalized knowledge and generating your guidance.
+                </p>
+
+            </div>
+
+
+            <!-- ================= RESULT ================= -->
+
+            <div
+                id="result"
+                class="result"
+                style="display: none;">
+
+                <h2>Your Personalized Skin Guidance</h2>
+
+                <div id="response"></div>
+
+                <button
+                    onclick="window.location.href='/'"
+                    class="back-btn">
+
+                    Back to Home
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= ERROR ================= -->
+
+            <div
+                id="error"
+                class="error"
+                style="display: none;">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const form = document.getElementById("skinForm");
+
+        const loading = document.getElementById("loading");
+
+        const result = document.getElementById("result");
+
+        const responseBox = document.getElementById("response");
+
+        const errorBox = document.getElementById("error");
+
+        const submitButton = document.getElementById("submitButton");
+
+
+        form.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+
+            // Hide previous messages
+
+            result.style.display = "none";
+
+            errorBox.style.display = "none";
+
+
+            // Show loading
+
+            loading.style.display = "block";
+
+            submitButton.disabled = true;
+
+            submitButton.innerText = "Generating Guidance...";
+
+
+            // Collect questionnaire data
+
+            const userProfile = {
+
+                face_washing:
+                    document.getElementById("face_washing").value,
+
+                diet:
+                    document.getElementById("diet").value,
+
+                sunscreen:
+                    document.getElementById("sunscreen").value,
+
+                cosmetics:
+                    document.getElementById("cosmetics").value,
+
+                water_intake:
+                    document.getElementById("water_intake").value,
+
+                sun_exposure:
+                    document.getElementById("sun_exposure").value,
+
+                sleep:
+                    document.getElementById("sleep").value,
+
+                stress:
+                    document.getElementById("stress").value,
+
+                skin_concerns:
+                    document.getElementById("skin_concerns").value
+
+            };
+
+
+            try {
+
+                const apiResponse = await fetch(
+                    "/skin/questionnaire",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(userProfile)
+
+                    }
+                );
+
+
+                const data = await apiResponse.json();
+
+
+                if (!apiResponse.ok || !data.success) {
+
+                    throw new Error(
+                        data.error ||
+                        "Unable to generate skincare guidance."
+                    );
+
+                }
+
+
+                // Hide loading
+
+                loading.style.display = "none";
+
+
+                // Display result
+
+                responseBox.innerHTML =
+                    formatResponse(data.response);
+
+                result.style.display = "block";
+
+
+                // Scroll to result
+
+                result.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                loading.style.display = "none";
+
+                errorBox.innerText =
+                    "Something went wrong: " + error.message;
+
+                errorBox.style.display = "block";
+
+
+            } finally {
+
+                submitButton.disabled = false;
+
+                submitButton.innerText =
+                    "Get My Skin Guidance";
+
+            }
+
+        });
+
+
+        // Convert basic Markdown into HTML
+
+        function formatResponse(text) {
+
+            if (!text) {
+                return "<p>No response was generated.</p>";
+            }
+
+
+            return text
+
+                .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+
+                .replace(/^### (.*)$/gm, "<h4>$1</h4>")
+
+                .replace(/^## (.*)$/gm, "<h3>$1</h3>")
+
+                .replace(/^# (.*)$/gm, "<h2>$1</h2>")
+
+                .replace(/^\- (.*)$/gm, "<li>$1</li>")
+
+                .replace(/\n\n/g, "<br><br>")
+
+                .replace(/\n/g, "<br>");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

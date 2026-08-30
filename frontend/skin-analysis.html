@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cosmora | Face Analysis</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            Cosmora ✦
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="skin-questionnaire.html">
+                Skin Care
+            </a>
+
+            <a href="hair-questionnaire.html">
+                Hair Care
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         FACE ANALYSIS
+         ===================================================== -->
+
+    <main class="questionnaire-container">
+
+        <section class="questionnaire-card">
+
+            <h1>
+                Face Image Analysis
+            </h1>
+
+            <p class="intro">
+
+                Upload a clear face image and tell us
+                about your main skin concern.
+
+                Cosmora will analyze the image using
+                multiple AI-based skin analysis tools
+                and provide personalized wellness guidance.
+
+            </p>
+
+
+            <!-- =================================================
+                 IMAGE UPLOAD
+                 ================================================= -->
+
+            <div class="question">
+
+                <label for="faceImage">
+                    Upload your face image
+                </label>
+
+                <input
+                    type="file"
+                    id="faceImage"
+                    accept="image/png,image/jpeg,image/jpg,image/webp"
+                >
+
+                <small>
+                    Use a clear, well-lit image of your face.
+                </small>
+
+            </div>
+
+
+            <!-- =================================================
+                 IMAGE PREVIEW
+                 ================================================= -->
+
+            <div
+                id="imagePreviewContainer"
+                style="display:none; text-align:center; margin:25px 0;"
+            >
+
+                <img
+                    id="imagePreview"
+                    src=""
+                    alt="Face preview"
+                    style="
+                        max-width:250px;
+                        max-height:300px;
+                        border-radius:20px;
+                        object-fit:cover;
+                        box-shadow:0 10px 30px rgba(150,100,160,0.18);
+                    "
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 SKIN CONCERN
+                 ================================================= -->
+
+            <div class="question">
+
+                <label for="concern">
+                    What is your main skin concern?
+                </label>
+
+                <textarea
+                    id="concern"
+                    placeholder="Example: My skin feels very dry and I spend a lot of time in the sun."
+                ></textarea>
+
+            </div>
+
+
+            <!-- =================================================
+                 ANALYZE BUTTON
+                 ================================================= -->
+
+            <button
+                id="analyzeBtn"
+                class="submit-btn"
+            >
+                Analyze My Skin ✨
+            </button>
+
+
+            <!-- =================================================
+                 LOADING
+                 ================================================= -->
+
+            <div
+                id="loading"
+                class="loading"
+                style="display:none;"
+            >
+
+                <p>
+                    ✨ Cosmora is analyzing your skin...
+                </p>
+
+                <p>
+                    Comparing AI analysis results and
+                    preparing personalized wellness guidance.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 ERROR
+                 ================================================= -->
+
+            <div
+                id="error"
+                class="error"
+                style="display:none;"
+            ></div>
+
+
+            <!-- =================================================
+                 RESULT
+                 ================================================= -->
+
+            <div
+                id="result"
+                class="result"
+                style="display:none;"
+            >
+
+                <h2>
+                    Your Cosmora Assessment
+                </h2>
+
+                <div id="resultContent"></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DISCLAIMER
+                 ================================================= -->
+
+            <p class="disclaimer">
+
+                Cosmora provides AI-based wellness guidance
+                and does not provide medical diagnoses.
+
+                If you have severe, persistent, worsening,
+                painful, or concerning symptoms, consult
+                a qualified healthcare professional.
+
+            </p>
+
+
+            <a
+                href="index.html"
+                class="back-btn"
+            >
+                ← Back to Home
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        const imageInput =
+            document.getElementById("faceImage");
+
+        const concernInput =
+            document.getElementById("concern");
+
+        const analyzeBtn =
+            document.getElementById("analyzeBtn");
+
+        const loading =
+            document.getElementById("loading");
+
+        const errorBox =
+            document.getElementById("error");
+
+        const resultBox =
+            document.getElementById("result");
+
+        const resultContent =
+            document.getElementById("resultContent");
+
+        const imagePreview =
+            document.getElementById("imagePreview");
+
+        const imagePreviewContainer =
+            document.getElementById(
+                "imagePreviewContainer"
+            );
+
+
+        // =====================================================
+        // IMAGE PREVIEW
+        // =====================================================
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+                if (!file) {
+
+                    imagePreviewContainer.style.display =
+                        "none";
+
+                    return;
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (event) {
+
+                        imagePreview.src =
+                            event.target.result;
+
+                        imagePreviewContainer.style.display =
+                            "block";
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+
+        // =====================================================
+        // ANALYZE IMAGE
+        // =====================================================
+
+        analyzeBtn.addEventListener(
+            "click",
+            async function () {
+
+                errorBox.style.display =
+                    "none";
+
+                resultBox.style.display =
+                    "none";
+
+
+                // ---------------------------------------------
+                // Validate image
+                // ---------------------------------------------
+
+                if (!imageInput.files.length) {
+
+                    showError(
+                        "Please upload a face image first."
+                    );
+
+                    return;
+                }
+
+
+                // ---------------------------------------------
+                // Validate concern
+                // ---------------------------------------------
+
+                const concern =
+                    concernInput.value.trim();
+
+
+                if (!concern) {
+
+                    showError(
+                        "Please describe your main skin concern."
+                    );
+
+                    return;
+                }
+
+
+                // ---------------------------------------------
+                // Create FormData
+                // ---------------------------------------------
+
+                const formData =
+                    new FormData();
+
+
+                formData.append(
+                    "image",
+                    imageInput.files[0]
+                );
+
+
+                formData.append(
+                    "concern",
+                    concern
+                );
+
+
+                // ---------------------------------------------
+                // Show loading
+                // ---------------------------------------------
+
+                loading.style.display =
+                    "block";
+
+                analyzeBtn.disabled =
+                    true;
+
+                analyzeBtn.textContent =
+                    "Analyzing...";
+
+
+                try {
+
+                    // -----------------------------------------
+                    // Send request to Flask
+                    // -----------------------------------------
+
+                    const response =
+                        await fetch(
+                            "/skin-analysis",
+                            {
+                                method: "POST",
+                                body: formData
+                            }
+                        );
+
+
+                    const data = await response.json();
+
+
+                    console.log("FULL BACKEND RESPONSE:", data);
+                    console.log("ASSESSMENT:", data.assessment);
+
+
+
+                    // -----------------------------------------
+                    // Handle error
+                    // -----------------------------------------
+
+                    if (!response.ok || !data.success) {
+
+                        throw new Error(
+                            data.error ||
+                            "Unable to analyze the image."
+                        );
+
+                    }
+
+
+                    // -----------------------------------------
+                    // Display result
+                    // -----------------------------------------
+
+                    displayAssessment(
+                        data.assessment
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Face analysis error:",
+                        error
+                    );
+
+
+                    showError(
+                        error.message ||
+                        "Something went wrong. Please try again."
+                    );
+
+                }
+
+
+                // ---------------------------------------------
+                // Reset button
+                // ---------------------------------------------
+
+                loading.style.display =
+                    "none";
+
+                analyzeBtn.disabled =
+                    false;
+
+                analyzeBtn.textContent =
+                    "Analyze My Skin ✨";
+
+            }
+        );
+
+
+        // =====================================================
+        // DISPLAY ASSESSMENT
+        // =====================================================
+
+        function displayAssessment(assessment) {
+
+            resultContent.innerHTML = "";
+
+            // =====================================================
+            // USER CONCERN
+            // =====================================================
+
+            if (assessment.user_concern) {
+
+                const concern = document.createElement("p");
+
+                concern.innerHTML =
+                    `<strong>Your concern:</strong>
+                    ${escapeHtml(assessment.user_concern)}`;
+
+                resultContent.appendChild(concern);
+            }
+
+
+            // =====================================================
+            // OVERALL SUMMARY
+            // =====================================================
+
+            if (assessment.assessment_note) {
+
+                const note = document.createElement("p");
+
+                note.innerHTML =
+                    `<strong>Assessment:</strong>
+                    ${escapeHtml(assessment.assessment_note)}`;
+
+                resultContent.appendChild(note);
+            }
+
+
+            // =====================================================
+            // TOOL RESULTS
+            // =====================================================
+
+            const toolResults =
+                assessment.tool_results ||
+                assessment.results ||
+                assessment.tools ||
+                [];
+
+
+            // -----------------------------------------------------
+            // Handle object format
+            // -----------------------------------------------------
+
+            if (
+                !Array.isArray(toolResults) &&
+                typeof toolResults === "object"
+            ) {
+
+                Object.entries(toolResults).forEach(
+                    function ([toolName, toolData]) {
+
+                        displayToolResult(
+                            toolName,
+                            toolData
+                        );
+
+                    }
+                );
+
+            }
+
+
+            // -----------------------------------------------------
+            // Handle array format
+            // -----------------------------------------------------
+
+            else if (Array.isArray(toolResults)) {
+
+                toolResults.forEach(
+                    function (toolData) {
+
+                        displayToolResult(
+                            toolData.tool ||
+                            toolData.tool_name ||
+                            "Skin Analysis Tool",
+
+                            toolData
+                        );
+
+                    }
+                );
+
+            }
+
+
+            // =====================================================
+            // OLD AGREEMENTS FORMAT
+            // =====================================================
+
+            if (
+                assessment.agreements &&
+                assessment.agreements.length
+            ) {
+
+                const heading =
+                    document.createElement("h3");
+
+                heading.textContent =
+                    "Common Findings";
+
+                resultContent.appendChild(
+                    heading
+                );
+
+
+                const list =
+                    document.createElement("ul");
+
+
+                assessment.agreements.forEach(
+                    function (item) {
+
+                        const li =
+                            document.createElement("li");
+
+                        li.textContent =
+                            `${item.finding} — reported by ${item.tool_count} tools`;
+
+                        list.appendChild(li);
+
+                    }
+                );
+
+
+                resultContent.appendChild(list);
+            }
+
+
+            // =====================================================
+            // SHOW RESULT
+            // =====================================================
+
+            resultBox.style.display = "block";
+        }
+
+
+
+
+        function displayToolResult(toolName, toolData) {
+
+            // =====================================================
+            // TOOL CARD
+            // =====================================================
+
+            const toolCard =
+                document.createElement("div");
+
+            toolCard.className =
+                "tool-result-card";
+
+
+            // =====================================================
+            // TOOL NAME
+            // =====================================================
+
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                toolName;
+
+            toolCard.appendChild(heading);
+
+
+            // =====================================================
+            // OVERALL SCORE
+            // =====================================================
+
+            if (
+                toolData.overall_skin_score !== undefined &&
+                toolData.overall_skin_score !== null
+            ) {
+
+                const score =
+                    document.createElement("p");
+
+                score.innerHTML =
+                    `<strong>Overall Skin Score:</strong>
+                    ${toolData.overall_skin_score}`;
+
+                toolCard.appendChild(score);
+            }
+
+
+            // =====================================================
+            // SKIN PROFILE
+            // =====================================================
+
+            if (toolData.skin_profile) {
+
+                const profileHeading =
+                    document.createElement("h4");
+
+                profileHeading.textContent =
+                    "Skin Profile";
+
+                toolCard.appendChild(profileHeading);
+
+
+                const profile =
+                    document.createElement("p");
+
+                const skinType =
+                    toolData.skin_profile.skin_type;
+
+                const skinTone =
+                    toolData.skin_profile.skin_tone;
+
+
+                let profileText = "";
+
+
+                if (skinType) {
+
+                    profileText +=
+                        `Skin Type: ${
+                            skinType.classification || "Unknown"
+                        }`;
+
+                }
+
+
+                if (skinTone) {
+
+                    if (profileText) {
+                        profileText += " | ";
+                    }
+
+                    profileText +=
+                        `Skin Tone: ${
+                            skinTone.skin_tone_label ||
+                            skinTone.category ||
+                            "Unknown"
+                        }`;
+
+                }
+
+
+                profile.textContent =
+                    profileText;
+
+                toolCard.appendChild(profile);
+            }
+
+
+            // =====================================================
+            // FINDINGS
+            // =====================================================
+
+            if (
+                toolData.findings &&
+                toolData.findings.length
+            ) {
+
+                const findingHeading =
+                    document.createElement("h4");
+
+                findingHeading.textContent =
+                    "Findings";
+
+                toolCard.appendChild(
+                    findingHeading
+                );
+
+
+                const findingsList =
+                    document.createElement("ul");
+
+
+                toolData.findings.forEach(
+                    function (finding) {
+
+                        const li =
+                            document.createElement("li");
+
+
+                        let text =
+                            `<strong>${
+                                finding.condition_name ||
+                                "Condition"
+                            }</strong>`;
+
+
+                        if (finding.severity) {
+
+                            text +=
+                                ` — Severity: ${
+                                    finding.severity
+                                }`;
+
+                        }
+
+
+                        if (
+                            finding.score !== undefined &&
+                            finding.score !== null
+                        ) {
+
+                            text +=
+                                ` | Score: ${
+                                    finding.score
+                                }`;
+
+                        }
+
+
+                        if (finding.grade) {
+
+                            text +=
+                                ` | Grade: ${
+                                    finding.grade
+                                }`;
+
+                        }
+
+
+                        li.innerHTML =
+                            text;
+
+                        findingsList.appendChild(li);
+
+                    }
+                );
+
+
+                toolCard.appendChild(
+                    findingsList
+                );
+            }
+
+
+            // =====================================================
+            // SUGGESTIONS
+            // =====================================================
+
+            if (
+                toolData.suggestions &&
+                toolData.suggestions.length
+            ) {
+
+                const suggestionHeading =
+                    document.createElement("h4");
+
+                suggestionHeading.textContent =
+                    "Suggestions";
+
+                toolCard.appendChild(
+                    suggestionHeading
+                );
+
+
+                const suggestionList =
+                    document.createElement("ul");
+
+
+                toolData.suggestions.forEach(
+                    function (suggestion) {
+
+                        const li =
+                            document.createElement("li");
+
+
+                        // Rupam suggestion format
+                        if (
+                            typeof suggestion === "object"
+                        ) {
+
+                            li.textContent =
+                                suggestion.text ||
+                                suggestion.suggestion ||
+                                JSON.stringify(
+                                    suggestion
+                                );
+
+                        }
+
+                        else {
+
+                            li.textContent =
+                                suggestion;
+
+                        }
+
+
+                        suggestionList.appendChild(li);
+
+                    }
+                );
+
+
+                toolCard.appendChild(
+                    suggestionList
+                );
+            }
+
+
+            // =====================================================
+            // ADD TOOL CARD TO PAGE
+            // =====================================================
+
+            resultContent.appendChild(
+                toolCard
+            );
+        }
+
+
+        // =====================================================
+        // ERROR FUNCTION
+        // =====================================================
+
+        function showError(message) {
+
+            errorBox.textContent =
+                message;
+
+            errorBox.style.display =
+                "block";
+
+        }
+
+
+        // =====================================================
+        // BASIC HTML ESCAPING
+        // =====================================================
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                text;
+
+            return div.innerHTML;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

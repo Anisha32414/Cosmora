@@ -1,0 +1,31 @@
+Flask
+python-dotenv
+requests
+
+# LangChain
+langchain
+langchain-core
+langchain-community
+langchain-chroma
+
+# ChromaDB
+chromadb
+
+# LLM
+langchain-groq
+
+# Embeddings
+sentence-transformers
+
+# Document processing
+pypdf
+
+# Image processing
+Pillow
+
+# API / data validation
+pydantic
+
+langchain-huggingface
+
+langchain-text-splitters
