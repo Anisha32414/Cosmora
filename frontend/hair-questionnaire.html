@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmora - Hair Questionnaire</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Cosmora
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= QUESTIONNAIRE ================= -->
+
+    <main class="questionnaire-container">
+
+        <div class="questionnaire-card">
+
+            <h1>Hair Care Questionnaire</h1>
+
+            <p class="intro">
+                Tell us about your hair routine, lifestyle, and
+                current hair concerns. Cosmora will create
+                personalized natural haircare wellness guidance.
+            </p>
+
+
+            <form id="hairForm">
+
+
+                <!-- HAIR WASHING -->
+
+                <div class="question">
+
+                    <label for="hair_washing">
+                        How often do you wash your hair?
+                    </label>
+
+                    <select id="hair_washing" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Daily">
+                            Daily
+                        </option>
+
+                        <option value="2-3 times a week">
+                            2–3 times a week
+                        </option>
+
+                        <option value="Once a week">
+                            Once a week
+                        </option>
+
+                        <option value="Less than once a week">
+                            Less than once a week
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SHAMPOO -->
+
+                <div class="question">
+
+                    <label for="shampoo">
+                        How often do you use shampoo?
+                    </label>
+
+                    <select id="shampoo" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Every hair wash">
+                            Every hair wash
+                        </option>
+
+                        <option value="Sometimes">
+                            Sometimes
+                        </option>
+
+                        <option value="Rarely">
+                            Rarely
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CONDITIONER -->
+
+                <div class="question">
+
+                    <label for="conditioner">
+                        How often do you use conditioner?
+                    </label>
+
+                    <select id="conditioner" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Every hair wash">
+                            Every hair wash
+                        </option>
+
+                        <option value="Sometimes">
+                            Sometimes
+                        </option>
+
+                        <option value="Rarely">
+                            Rarely
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- OILING -->
+
+                <div class="question">
+
+                    <label for="oiling">
+                        How often do you oil your hair/scalp?
+                    </label>
+
+                    <select id="oiling" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Several times a week">
+                            Several times a week
+                        </option>
+
+                        <option value="Once a week">
+                            Once a week
+                        </option>
+
+                        <option value="Occasionally">
+                            Occasionally
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- POLLUTION -->
+
+                <div class="question">
+
+                    <label for="pollution">
+                        How much pollution/environmental exposure
+                        does your hair experience?
+                    </label>
+
+                    <select id="pollution" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HAIR TREATMENTS -->
+
+                <div class="question">
+
+                    <label for="hair_treatments">
+                        Do you use chemical hair treatments?
+                    </label>
+
+                    <select id="hair_treatments" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                        <option value="Occasionally">
+                            Occasionally
+                        </option>
+
+                        <option value="Frequently">
+                            Frequently
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HEAT STYLING -->
+
+                <div class="question">
+
+                    <label for="heat_styling">
+                        How often do you use heat-styling tools?
+                    </label>
+
+                    <select id="heat_styling" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Never">
+                            Never
+                        </option>
+
+                        <option value="Occasionally">
+                            Occasionally
+                        </option>
+
+                        <option value="Several times a week">
+                            Several times a week
+                        </option>
+
+                        <option value="Daily">
+                            Daily
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PILLOW COVER -->
+
+                <div class="question">
+
+                    <label for="pillow_cover">
+                        What type of pillow cover do you usually use?
+                    </label>
+
+                    <select id="pillow_cover" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Cotton">
+                            Cotton
+                        </option>
+
+                        <option value="Satin">
+                            Satin
+                        </option>
+
+                        <option value="Silk">
+                            Silk
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DIET -->
+
+                <div class="question">
+
+                    <label for="diet">
+                        How would you describe your diet?
+                    </label>
+
+                    <select id="diet" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Mostly balanced">
+                            Mostly balanced
+                        </option>
+
+                        <option value="Mostly processed food">
+                            Mostly processed food
+                        </option>
+
+                        <option value="Mostly vegetarian">
+                            Mostly vegetarian
+                        </option>
+
+                        <option value="Mixed diet">
+                            Mixed diet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HYDRATION -->
+
+                <div class="question">
+
+                    <label for="hydration">
+                        How would you describe your daily hydration?
+                    </label>
+
+                    <select id="hydration" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SLEEP -->
+
+                <div class="question">
+
+                    <label for="sleep">
+                        How much sleep do you usually get?
+                    </label>
+
+                    <select id="sleep" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Less than 6 hours">
+                            Less than 6 hours
+                        </option>
+
+                        <option value="6-7 hours">
+                            6–7 hours
+                        </option>
+
+                        <option value="7-9 hours">
+                            7–9 hours
+                        </option>
+
+                        <option value="More than 9 hours">
+                            More than 9 hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STRESS -->
+
+                <div class="question">
+
+                    <label for="stress">
+                        How would you describe your stress level?
+                    </label>
+
+                    <select id="stress" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Moderate">
+                            Moderate
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- HAIR PROBLEMS -->
+
+                <div class="question">
+
+                    <label for="hair_problems">
+                        What is your main hair/scalp concern?
+                    </label>
+
+                    <textarea
+                        id="hair_problems"
+                        rows="4"
+                        placeholder="Example: hair fall, dry hair, dandruff, oily scalp, brittle hair..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="submit-btn">
+
+                    Get My Hair Guidance
+
+                </button>
+
+            </form>
+
+
+            <!-- ================= LOADING ================= -->
+
+            <div
+                id="loading"
+                class="loading"
+                style="display: none;">
+
+                <p>
+                    🌸 Cosmora is analyzing your hair profile...
+                </p>
+
+                <p>
+                    Retrieving relevant knowledge and generating
+                    your personalized guidance.
+                </p>
+
+            </div>
+
+
+            <!-- ================= RESULT ================= -->
+
+            <div
+                id="result"
+                class="result"
+                style="display: none;">
+
+                <h2>Your Personalized Hair Guidance</h2>
+
+                <div id="response"></div>
+
+                <button
+                    onclick="window.location.href='/'"
+                    class="back-btn">
+
+                    Back to Home
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= ERROR ================= -->
+
+            <div
+                id="error"
+                class="error"
+                style="display: none;">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const form = document.getElementById("hairForm");
+
+        const loading = document.getElementById("loading");
+
+        const result = document.getElementById("result");
+
+        const responseBox = document.getElementById("response");
+
+        const errorBox = document.getElementById("error");
+
+        const submitButton =
+            document.getElementById("submitButton");
+
+
+        form.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+
+            result.style.display = "none";
+
+            errorBox.style.display = "none";
+
+            loading.style.display = "block";
+
+            submitButton.disabled = true;
+
+            submitButton.innerText =
+                "Generating Guidance...";
+
+
+            // Collect user profile
+
+            const userProfile = {
+
+                hair_washing:
+                    document.getElementById(
+                        "hair_washing"
+                    ).value,
+
+                shampoo:
+                    document.getElementById(
+                        "shampoo"
+                    ).value,
+
+                conditioner:
+                    document.getElementById(
+                        "conditioner"
+                    ).value,
+
+                oiling:
+                    document.getElementById(
+                        "oiling"
+                    ).value,
+
+                pollution:
+                    document.getElementById(
+                        "pollution"
+                    ).value,
+
+                hair_treatments:
+                    document.getElementById(
+                        "hair_treatments"
+                    ).value,
+
+                heat_styling:
+                    document.getElementById(
+                        "heat_styling"
+                    ).value,
+
+                pillow_cover:
+                    document.getElementById(
+                        "pillow_cover"
+                    ).value,
+
+                diet:
+                    document.getElementById(
+                        "diet"
+                    ).value,
+
+                hydration:
+                    document.getElementById(
+                        "hydration"
+                    ).value,
+
+                sleep:
+                    document.getElementById(
+                        "sleep"
+                    ).value,
+
+                stress:
+                    document.getElementById(
+                        "stress"
+                    ).value,
+
+                hair_problems:
+                    document.getElementById(
+                        "hair_problems"
+                    ).value
+
+            };
+
+
+            try {
+
+                const apiResponse = await fetch(
+                    "/hair/questionnaire",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(userProfile)
+
+                    }
+                );
+
+
+                const data =
+                    await apiResponse.json();
+
+
+                if (
+                    !apiResponse.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.error ||
+                        "Unable to generate haircare guidance."
+                    );
+
+                }
+
+
+                loading.style.display = "none";
+
+
+                responseBox.innerHTML =
+                    formatResponse(data.response);
+
+
+                result.style.display = "block";
+
+
+                result.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                loading.style.display = "none";
+
+                errorBox.innerText =
+                    "Something went wrong: " +
+                    error.message;
+
+                errorBox.style.display = "block";
+
+            } finally {
+
+                submitButton.disabled = false;
+
+                submitButton.innerText =
+                    "Get My Hair Guidance";
+
+            }
+
+        });
+
+
+        // Basic Markdown formatting
+
+        function formatResponse(text) {
+
+            if (!text) {
+
+                return "<p>No response was generated.</p>";
+
+            }
+
+
+            return text
+
+                .replace(
+                    /\*\*(.*?)\*\*/g,
+                    "<strong>$1</strong>"
+                )
+
+                .replace(
+                    /^### (.*)$/gm,
+                    "<h4>$1</h4>"
+                )
+
+                .replace(
+                    /^## (.*)$/gm,
+                    "<h3>$1</h3>"
+                )
+
+                .replace(
+                    /^# (.*)$/gm,
+                    "<h2>$1</h2>"
+                )
+
+                .replace(
+                    /^\- (.*)$/gm,
+                    "<li>$1</li>"
+                )
+
+                .replace(
+                    /\n\n/g,
+                    "<br><br>"
+                )
+
+                .replace(
+                    /\n/g,
+                    "<br>"
+                );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
