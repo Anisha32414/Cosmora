@@ -448,15 +448,32 @@ def analyze_face():
 
         return jsonify({
 
-            "success": True,
+        "success": True,
 
-            "type":
-                "skin_face_analysis",
+        "type":
+            "skin_face_analysis",
 
-            "assessment":
-                assessment
+        "user_concern":
+            concern,
 
-        })
+        "overall_skin_score":
+            assessment.get(
+                "overall_skin_score"
+            ),
+
+        "combined_findings":
+            assessment.get(
+                "combined_findings",
+                []
+            ),
+
+        "response":
+            assessment.get(
+                "final_guidance",
+                ""
+            )
+
+    })
 
 
     except Exception as e:
