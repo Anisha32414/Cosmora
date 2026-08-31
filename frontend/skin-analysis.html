@@ -3281,22 +3281,16 @@ function renderRagSection(
                 String(content)
             );
     }
-
-
     box.appendChild(
         titleElement
     );
-
     box.appendChild(
         contentElement
     );
-
     container.appendChild(
         box
     );
 }
-
-
 /* =========================================================
    RENDER RAG LIST SECTION
    ========================================================= */
@@ -3306,34 +3300,24 @@ function renderRagListSection(
     title,
     items
 ) {
-
     const box =
         document.createElement(
             "div"
         );
-
     box.className =
         "rag-section";
-
-
     const titleElement =
         document.createElement(
             "div"
         );
-
     titleElement.className =
         "rag-section-title";
-
     titleElement.textContent =
         title;
-
-
     const list =
         document.createElement(
             "ul"
         );
-
-
     items.forEach(
         function (item) {
 
@@ -3341,8 +3325,6 @@ function renderRagListSection(
                 document.createElement(
                     "li"
                 );
-
-
             if (
                 typeof item ===
                     "object" &&
@@ -3355,69 +3337,51 @@ function renderRagListSection(
                     );
 
             } else {
-
                 li.innerHTML =
                     formatLLMText(
                         String(item)
                     );
             }
-
-
             list.appendChild(
                 li
             );
         }
     );
 
-
     box.appendChild(
         titleElement
     );
-
     box.appendChild(
         list
     );
-
     container.appendChild(
         box
     );
 }
-
-
 /* =========================================================
    RENDER ROUTINE SECTION
    ========================================================= */
-
 function renderRoutineSection(
     container,
     title,
     items
 ) {
-
     const box =
         document.createElement(
             "div"
         );
-
     box.className =
         "routine-box";
-
-
     const strong =
         document.createElement(
             "strong"
         );
-
     strong.textContent =
         title;
-
-
     const list =
         document.createElement(
             "ul"
         );
-
-
     items.forEach(
         function (item) {
 
@@ -3425,8 +3389,6 @@ function renderRoutineSection(
                 String(item)
                     .trim()
                     .toUpperCase();
-
-
             if (
                 upper ===
                     "MORNING" ||
@@ -3444,8 +3406,6 @@ function renderRoutineSection(
 
                 return;
             }
-
-
             const li =
                 document.createElement(
                     "li"
@@ -3477,8 +3437,6 @@ function renderRoutineSection(
             );
         }
     );
-
-
     box.appendChild(
         strong
     );
@@ -3491,12 +3449,9 @@ function renderRoutineSection(
         box
     );
 }
-
-
 /* =========================================================
    FORMAT OBJECT CONTENT
    ========================================================= */
-
 function formatObjectContent(
     object
 ) {
@@ -3508,8 +3463,6 @@ function formatObjectContent(
 
         return "";
     }
-
-
     if (Array.isArray(object)) {
 
         return `
@@ -3525,8 +3478,6 @@ function formatObjectContent(
             </ul>
         `;
     }
-
-
     if (
         typeof object ===
         "object"
@@ -3534,8 +3485,6 @@ function formatObjectContent(
 
         let html =
             "";
-
-
         Object.entries(object)
             .forEach(
                 function ([key, value]) {
@@ -3551,8 +3500,6 @@ function formatObjectContent(
                                 letter =>
                                     letter.toUpperCase()
                             );
-
-
                     html += `
                         <div class="object-content-item">
 
@@ -3568,26 +3515,18 @@ function formatObjectContent(
                     `;
                 }
             );
-
-
         return html;
     }
-
-
     return formatLLMText(
         String(object)
     );
 }
-
-
 /* =========================================================
    PARSE LLM HEADINGS
    ========================================================= */
-
 function parseLLMSections(
     text
 ) {
-
     const lines =
         String(text)
             .replace(
@@ -3595,21 +3534,13 @@ function parseLLMSections(
                 ""
             )
             .split("\n");
-
-
     const sections = [];
-
     let current =
         null;
-
-
     lines.forEach(
         function (line) {
-
             const trimmed =
                 line.trim();
-
-
             if (!trimmed) {
 
                 if (current) {
@@ -3620,8 +3551,6 @@ function parseLLMSections(
 
                 return;
             }
-
-
             const cleaned =
                 trimmed
                     .replace(
@@ -3633,14 +3562,10 @@ function parseLLMSections(
                         "$1"
                     )
                     .trim();
-
-
             const headingMatch =
                 cleaned.match(
                     /^(?:\d+\s*[.):\-]\s*)?([A-Z][A-Z0-9 &+\/\-']{3,})$/
                 );
-
-
             if (headingMatch) {
 
                 if (current) {
@@ -3649,8 +3574,6 @@ function parseLLMSections(
                         current
                     );
                 }
-
-
                 current = {
 
                     title:
@@ -3660,12 +3583,8 @@ function parseLLMSections(
                     content:
                         ""
                 };
-
-
                 return;
             }
-
-
             if (!current) {
 
                 current = {
@@ -3677,27 +3596,19 @@ function parseLLMSections(
                         ""
                 };
             }
-
-
             current.content +=
                 trimmed +
                 "\n";
         }
     );
-
-
     if (current) {
 
         sections.push(
             current
         );
     }
-
-
     return sections;
 }
-
-
 /* =========================================================
    FORMAT LLM CONTENT
    ========================================================= */
@@ -3705,51 +3616,35 @@ function parseLLMSections(
 function formatLLMText(
     text
 ) {
-
     if (!text) {
 
         return "";
     }
-
-
     let escaped =
         escapeHtml(
             String(text)
         );
-
-
     escaped =
         escaped.replace(
             /\*\*(.*?)\*\*/g,
             "<strong>$1</strong>"
         );
-
-
     escaped =
         escaped.replace(
             /(^|[^*])\*([^*\n]+)\*(?!\*)/g,
             "$1<em>$2</em>"
         );
-
-
     const lines =
         escaped.split("\n");
-
-
     let html =
         "";
-
     let inList =
         false;
-
-
     lines.forEach(
         function (line) {
 
             const trimmed =
                 line.trim();
-
-
             if (
                 trimmed.startsWith("- ") ||
                 trimmed.startsWith("* ") ||
@@ -3766,8 +3661,6 @@ function formatLLMText(
                     inList =
                         true;
                 }
-
-
                 let item =
                     trimmed
                         .replace(
@@ -3778,15 +3671,11 @@ function formatLLMText(
                             /^\d+\.\s+/,
                             ""
                         );
-
-
                 html +=
                     "<li>" +
                     item +
                     "</li>";
-
             } else {
-
                 if (inList) {
 
                     html +=
@@ -3795,8 +3684,6 @@ function formatLLMText(
                     inList =
                         false;
                 }
-
-
                 if (trimmed) {
 
                     html +=
@@ -3807,27 +3694,19 @@ function formatLLMText(
             }
         }
     );
-
-
     if (inList) {
 
         html +=
             "</ul>";
     }
-
-
     return html;
 }
-
-
 /* =========================================================
    ERROR
    ========================================================= */
-
 function showError(
     message
 ) {
-
     if (!errorBox) {
 
         console.error(
@@ -3836,20 +3715,15 @@ function showError(
 
         return;
     }
-
-
     errorBox.textContent =
         message;
 
     errorBox.style.display =
         "block";
 }
-
-
 /* =========================================================
    HTML ESCAPING
    ========================================================= */
-
 function escapeHtml(
     text
 ) {
@@ -3864,9 +3738,6 @@ function escapeHtml(
 
     return div.innerHTML;
 }
-
 </script>
-
 </body>
-
 </html>
