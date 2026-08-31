@@ -324,9 +324,9 @@ def analyze_face():
 
     try:
 
-        # ----------------------------------------------------
-        # Check image
-        # ----------------------------------------------------
+        # ====================================================
+        # 1. CHECK IMAGE
+        # ====================================================
 
         if "image" not in request.files:
 
@@ -343,9 +343,9 @@ def analyze_face():
         image = request.files["image"]
 
 
-        # ----------------------------------------------------
-        # Check filename
-        # ----------------------------------------------------
+        # ====================================================
+        # 2. CHECK FILENAME
+        # ====================================================
 
         if image.filename == "":
 
@@ -359,9 +359,9 @@ def analyze_face():
             }), 400
 
 
-        # ----------------------------------------------------
-        # Check extension
-        # ----------------------------------------------------
+        # ====================================================
+        # 3. CHECK IMAGE FORMAT
+        # ====================================================
 
         if not allowed_file(
             image.filename
@@ -380,9 +380,9 @@ def analyze_face():
             }), 400
 
 
-        # ----------------------------------------------------
-        # Get user's skin concern
-        # ----------------------------------------------------
+        # ====================================================
+        # 4. GET USER CONCERN
+        # ====================================================
 
         concern = request.form.get(
             "concern",
@@ -390,9 +390,9 @@ def analyze_face():
         )
 
 
-        # ----------------------------------------------------
-        # Create uploads folder
-        # ----------------------------------------------------
+        # ====================================================
+        # 5. CREATE UPLOAD DIRECTORY
+        # ====================================================
 
         os.makedirs(
             UPLOAD_FOLDER,
@@ -400,9 +400,9 @@ def analyze_face():
         )
 
 
-        # ----------------------------------------------------
-        # Create secure filename
-        # ----------------------------------------------------
+        # ====================================================
+        # 6. CREATE SECURE FILENAME
+        # ====================================================
 
         filename = secure_filename(
             image.filename
@@ -415,9 +415,9 @@ def analyze_face():
         )
 
 
-        # ----------------------------------------------------
-        # Save uploaded image
-        # ----------------------------------------------------
+        # ====================================================
+        # 7. SAVE IMAGE
+        # ====================================================
 
         image.save(
             image_path
@@ -429,9 +429,9 @@ def analyze_face():
         )
 
 
-        # ----------------------------------------------------
-        # Run Skin Analysis Agent
-        # ----------------------------------------------------
+        # ====================================================
+        # 8. RUN SKIN ANALYSIS AGENT
+        # ====================================================
 
         assessment = run_skin_agent(
 
@@ -442,38 +442,131 @@ def analyze_face():
         )
 
 
-        # ----------------------------------------------------
-        # Return result
-        # ----------------------------------------------------
+        # ====================================================
+        # 9. RETURN COMPLETE DASHBOARD DATA
+        # ====================================================
+
+                # ========================================================
+        # RETURN COMPLETE DASHBOARD DATA TO FRONTEND
+        # ========================================================
 
         return jsonify({
 
-        "success": True,
+            "success":
+                assessment.get(
+                    "success",
+                    False
+                ),
 
-        "type":
-            "skin_face_analysis",
+            "type":
+                "skin_face_analysis",
 
-        "user_concern":
-            concern,
+            # ====================================================
+            # USER INFORMATION
+            # ====================================================
 
-        "overall_skin_score":
-            assessment.get(
-                "overall_skin_score"
-            ),
+            "user_concern":
+                assessment.get(
+                    "user_concern",
+                    concern
+                ),
 
-        "combined_findings":
-            assessment.get(
-                "combined_findings",
-                []
-            ),
+            # ====================================================
+            # OVERALL SCORE
+            # ====================================================
 
-        "response":
-            assessment.get(
-                "final_guidance",
-                ""
-            )
+            "overall_skin_score":
+                assessment.get(
+                    "overall_skin_score"
+                ),
 
-    })
+            # ====================================================
+            # INDIVIDUAL AI TOOL RESULTS
+            # ====================================================
+
+            "rupam":
+                assessment.get(
+                    "rupam",
+                    {}
+                ),
+
+            "dermaiq":
+                assessment.get(
+                    "dermaiq",
+                    {}
+                ),
+
+            "tool_results":
+                assessment.get(
+                    "tool_results",
+                    []
+                ),
+
+            # ====================================================
+            # COMBINED ANALYSIS
+            # ====================================================
+
+            "combined_findings":
+                assessment.get(
+                    "combined_findings",
+                    []
+                ),
+
+            "common_concerns":
+                assessment.get(
+                    "common_concerns",
+                    []
+                ),
+
+            "finding_summary":
+                assessment.get(
+                    "finding_summary",
+                    []
+                ),
+
+            # ====================================================
+            # RAG + LLM
+            # ====================================================
+
+            "rag_guidance":
+                assessment.get(
+                    "rag_guidance",
+                    ""
+                ),
+
+            "final_guidance":
+                assessment.get(
+                    "final_guidance",
+                    ""
+                ),
+
+            "final_assessment":
+                assessment.get(
+                    "final_assessment",
+                    ""
+                ),
+
+            # ====================================================
+            # STRUCTURED RAG SECTIONS
+            # ====================================================
+
+            "rag_sections":
+                assessment.get(
+                    "rag_sections",
+                    {}
+                ),
+
+            # ====================================================
+            # COMPLETE DASHBOARD OBJECT
+            # ====================================================
+
+            "dashboard_data":
+                assessment.get(
+                    "dashboard_data",
+                    {}
+                )
+
+        })
 
 
     except Exception as e:
