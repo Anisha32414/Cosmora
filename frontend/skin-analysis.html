@@ -1,927 +1,3871 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Cosmora | Face Analysis</title>
+<title>Cosmora | Skin Analysis</title>
 
-    <link
-        rel="stylesheet"
-        href="/css/style.css"
-    >
+<link
+    rel="stylesheet"
+    href="/css/style.css"
+>
+
+<style>
+
+    /* =========================================================
+       COSMORA SKIN ANALYSIS
+       TOP ROW = IMAGE | CONCERN | SCORE
+       REST = FULL WIDTH VERTICAL
+       ========================================================= */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+
+        font-family:
+            "Segoe UI",
+            Arial,
+            sans-serif;
+
+        color: #513c5d;
+
+        background:
+            radial-gradient(
+                circle at top left,
+                rgba(255, 220, 239, 0.85),
+                transparent 35%
+            ),
+            radial-gradient(
+                circle at top right,
+                rgba(225, 215, 255, 0.8),
+                transparent 35%
+            ),
+            linear-gradient(
+                135deg,
+                #fff8fc,
+                #f8f2ff,
+                #fffafd
+            );
+
+        min-height: 100vh;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .header {
+        min-height: 70px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 0 30px;
+
+        background:
+            rgba(255, 255, 255, 0.72);
+
+        backdrop-filter: blur(16px);
+
+        border-bottom:
+            1px solid
+            rgba(190, 150, 210, 0.15);
+
+        position: relative;
+
+        z-index: 10;
+    }
+
+    .logo {
+        font-size: 25px;
+
+        font-weight: 700;
+
+        background:
+            linear-gradient(
+                90deg,
+                #d878a9,
+                #9b7ed8
+            );
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+    .header nav {
+        display: flex;
+
+        gap: 28px;
+    }
+
+    .header nav a {
+        text-decoration: none;
+
+        color: #765d80;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition: 0.25s ease;
+    }
+
+    .header nav a:hover {
+        color: #c06fa4;
+    }
+
+
+    /* =========================================================
+       INPUT SCREEN
+       ========================================================= */
+
+    .analysis-page {
+
+        min-height:
+            calc(100vh - 70px);
+
+        padding:
+            35px 30px;
+    }
+
+    .analysis-intro {
+        max-width: 900px;
+
+        margin:
+            0 auto 25px;
+
+        text-align: center;
+    }
+
+    .analysis-intro h1 {
+        margin:
+            0 0 8px;
+
+        font-size: 34px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #d16c9f,
+                #8e79cf
+            );
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+    .analysis-intro p {
+        margin:
+            0 auto;
+
+        max-width: 700px;
+
+        color: #806b89;
+
+        line-height: 1.6;
+
+        font-size: 18px;
+    }
+
+    .input-card {
+
+        max-width: 760px;
+
+        margin: 0 auto;
+
+        padding: 30px;
+
+        border-radius: 28px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,0.94),
+                rgba(252,240,250,0.92),
+                rgba(244,239,255,0.94)
+            );
+
+        border:
+            1px solid
+            rgba(210,170,220,0.25);
+
+        box-shadow:
+            0 20px 60px
+            rgba(130, 91, 150, 0.12);
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-weight: 700;
+
+        color: #63476e;
+    }
+
+    #faceImage {
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 14px;
+
+        background: #fff;
+
+        border:
+            1px solid
+            #ead9ef;
+
+        color: #6f5977;
+    }
+
+    .input-group small {
+
+        display: block;
+
+        margin-top: 7px;
+
+        color: #927d98;
+    }
+
+    #concern {
+
+        width: 100%;
+
+        min-height: 100px;
+
+        resize: vertical;
+
+        padding: 14px;
+
+        border-radius: 16px;
+
+        border:
+            1px solid
+            #ead9ef;
+
+        background:
+            rgba(255,255,255,0.9);
+
+        color: #594260;
+
+        font-family: inherit;
+
+        outline: none;
+    }
+
+    #concern:focus {
+
+        border-color: #c899d4;
+
+        box-shadow:
+            0 0 0 4px
+            rgba(201,153,212,0.12);
+    }
+
+    .preview-area {
+
+        text-align: center;
+
+        margin: 18px 0;
+    }
+
+    .preview-area img {
+
+        width: 130px;
+
+        height: 160px;
+
+        object-fit: cover;
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 12px 30px
+            rgba(130,90,150,0.18);
+    }
+
+    .analyze-btn {
+
+        width: 100%;
+
+        border: none;
+
+        padding: 15px;
+
+        border-radius: 18px;
+
+        font-size: 16px;
+
+        font-weight: 700;
+
+        color: white;
+
+        cursor: pointer;
+
+        background:
+            linear-gradient(
+                90deg,
+                #d982ae,
+                #aa8ad8
+            );
+
+        box-shadow:
+            0 12px 28px
+            rgba(170,125,190,0.25);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .analyze-btn:hover {
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 16px 32px
+            rgba(170,125,190,0.32);
+    }
+
+    .analyze-btn:disabled {
+
+        opacity: 0.7;
+
+        cursor: wait;
+    }
+
+
+    /* =========================================================
+       LOADING
+       ========================================================= */
+
+    .loading-box {
+
+        display: none;
+
+        margin: 20px auto;
+
+        max-width: 700px;
+
+        padding: 18px;
+
+        text-align: center;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff0f8,
+                #f3edff
+            );
+
+        color: #755b80;
+    }
+
+    .loading-box .sparkle {
+
+        font-size: 24px;
+
+        animation:
+            pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%, 100% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.12);
+        }
+    }
+
+
+    /* =========================================================
+       ERROR
+       ========================================================= */
+
+    .error-box {
+
+        display: none;
+
+        max-width: 700px;
+
+        margin: 20px auto;
+
+        padding: 15px 18px;
+
+        border-radius: 16px;
+
+        background: #fff0f4;
+
+        color: #a4516e;
+
+        border:
+            1px solid
+            #f1c4d4;
+    }
+
+
+    /* =========================================================
+       DASHBOARD
+       ========================================================= */
+
+    #dashboard {
+        display: none;
+    }
+
+    .dashboard {
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    /* =========================================================
+       TOP ROW
+       IMAGE | CONCERN | FINAL SCORE
+       ========================================================= */
+
+    .dashboard-top-row {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+
+        align-items: stretch;
+    }
+
+
+    /* =========================================================
+       ALL DASHBOARD CARDS
+       ========================================================= */
+
+    .dash-card {
+
+        min-width: 0;
+
+        width: 100%;
+
+        height: fit-content;
+
+        padding: 20px;
+
+        border-radius: 22px;
+
+        border:
+            1px solid
+            rgba(210,170,225,0.22);
+
+        box-shadow:
+            0 10px 30px
+            rgba(120, 82, 145, 0.08);
+
+        overflow: hidden;
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .dash-card h3 {
+
+        margin:
+            0 0 10px;
+
+        font-size: 19px;
+
+        line-height: 1.25;
+
+        color: #63476e;
+    }
+
+    .dash-card h4 {
+
+        margin:
+            10px 0 6px;
+
+        font-size: 16px;
+
+        color: #75577f;
+    }
+
+    .dash-card p {
+
+        margin:
+            5px 0;
+
+        font-size: 16px;
+
+        line-height: 1.55;
+
+        color: #6f5b77;
+    }
+
+    .dash-card ul {
+
+        margin:
+            6px 0 0;
+
+        padding-left: 20px;
+
+        overflow: visible;
+    }
+
+    .dash-card li {
+
+        margin-bottom: 7px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+
+        color: #6b5873;
+    }
+
+
+    /* =========================================================
+       IMAGE CARD
+       ========================================================= */
+
+    .image-card {
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff4fa,
+                #f9efff
+            );
+
+        align-items: center;
+
+        text-align: center;
+
+        padding:
+            20px 18px;
+    }
+
+    .image-card h3 {
+
+        width: 100%;
+
+        text-align: left;
+    }
+
+    .dashboard .preview-area {
+
+        margin:
+            5px 0 0;
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .dashboard .preview-area img {
+
+        width: 130px;
+
+        height: 160px;
+
+        object-fit: cover;
+
+        border-radius: 20px;
+    }
+
+
+    /* =========================================================
+       USER CONCERN
+       ========================================================= */
+
+    .concern-card {
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff,
+                #fff1f8
+            );
+    }
+
+    .concern-text {
+
+        font-style: italic;
+
+        color: #725b7c !important;
+
+        background:
+            rgba(255,255,255,0.58);
+
+        border-radius: 14px;
+
+        padding: 13px;
+
+        line-height: 1.6;
+
+        font-size: 16px !important;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =========================================================
+       FINAL SCORE
+       ========================================================= */
+
+    .score-card {
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffe9f4,
+                #f7e9ff
+            );
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        min-height: 220px;
+    }
+
+    .score-label {
+
+        font-size: 15px;
+
+        color: #866b91;
+
+        margin-bottom: 7px;
+    }
+
+    .score-number {
+
+        font-size: 42px;
+
+        line-height: 1;
+
+        font-weight: 800;
+
+        background:
+            linear-gradient(
+                135deg,
+                #d2639b,
+                #8c73ce
+            );
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+    .score-subtitle {
+
+        margin-top: 7px;
+
+        font-size: 14px;
+
+        color: #927b99;
+    }
+
+
+    /* =========================================================
+       RUPAM
+       ========================================================= */
+
+    .rupam-card {
+
+        width: 100%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff1f8,
+                #fdeafa
+            );
+    }
+
+
+    /* =========================================================
+       DERMIQ
+       ========================================================= */
+
+    .dermiq-card {
+
+        width: 100%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f5efff,
+                #eee9ff
+            );
+    }
+
+
+    /* =========================================================
+       TOOL BADGE
+       ========================================================= */
+
+    .tool-badge {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        width: fit-content;
+
+        padding:
+            5px 10px;
+
+        border-radius: 30px;
+
+        margin-bottom: 8px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        background:
+            rgba(255,255,255,0.7);
+
+        color: #795b82;
+    }
+
+
+    /* =========================================================
+       TOOL CONTENT
+       ========================================================= */
+
+    .tool-content {
+
+        width: 100%;
+
+        overflow: visible;
+
+        padding-right: 0;
+    }
+
+    .tool-score {
+
+        font-size: 19px;
+
+        font-weight: 800;
+
+        color: #a267ae;
+
+        margin-bottom: 8px;
+    }
+
+    .finding-item {
+
+        padding:
+            9px 11px;
+
+        margin-bottom: 7px;
+
+        border-radius: 12px;
+
+        background:
+            rgba(255,255,255,0.6);
+
+        font-size: 15px;
+
+        line-height: 1.45;
+
+        color: #67556e;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =========================================================
+       COMBINED FINDINGS
+       ========================================================= */
+
+    .combined-card {
+
+        width: 100%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f9f0ff,
+                #fff4fa
+            );
+    }
+
+    .finding-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 8px;
+
+        overflow: visible;
+    }
+
+    .combined-finding {
+
+        padding: 12px 14px;
+
+        border-radius: 13px;
+
+        background:
+            rgba(255,255,255,0.66);
+
+        border:
+            1px solid
+            rgba(210,175,220,0.15);
+    }
+
+    .finding-name {
+
+        font-size: 16px;
+
+        line-height: 1.35;
+
+        font-weight: 700;
+
+        color: #674b70;
+    }
+
+    .finding-source {
+
+        margin-top: 5px;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        color: #967fa0;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =========================================================
+       RAG + LLM
+       ========================================================= */
+
+    .rag-card {
+
+        width: 100%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff1f7,
+                #f5eeff
+            );
+    }
+
+    .rag-content {
+
+        width: 100%;
+
+        overflow: visible;
+
+        padding-right: 0;
+    }
+
+    .rag-section {
+
+        margin-bottom: 11px;
+
+        padding:
+            11px 13px;
+
+        border-radius: 14px;
+
+        background:
+            rgba(255,255,255,0.52);
+    }
+
+    .rag-section:last-child {
+
+        margin-bottom: 0;
+    }
+
+    .rag-section-title {
+
+        font-size: 16px;
+
+        font-weight: 800;
+
+        color: #79528a;
+
+        margin-bottom: 6px;
+    }
+
+    .rag-section-content {
+
+        font-size: 15px;
+
+        line-height: 1.55;
+
+        color: #6b5872;
+
+        overflow-wrap: anywhere;
+    }
+
+    .rag-section-content ul {
+
+        margin-top: 6px;
+
+        margin-bottom: 0;
+    }
+
+    .rag-section > ul {
+
+        margin:
+            5px 0 0;
+
+        padding-left: 20px;
+    }
+
+    .rag-section > ul li {
+
+        margin-bottom: 7px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+
+        color: #6b5872;
+    }
+
+
+    /* =========================================================
+       DAILY HABITS
+       ========================================================= */
+
+    .routine-card {
+
+        width: 100%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f2edff,
+                #fff2f9
+            );
+    }
+
+    .routine-content {
+
+        width: 100%;
+
+        overflow: visible;
+
+        padding-right: 0;
+    }
+
+    .routine-box {
+
+        margin-bottom: 9px;
+
+        padding:
+            10px 12px;
+
+        border-radius: 13px;
+
+        background:
+            rgba(255,255,255,0.58);
+    }
+
+    .routine-box:last-child {
+
+        margin-bottom: 0;
+    }
+
+    .routine-box strong {
+
+        display: block;
+
+        font-size: 15px;
+
+        margin-bottom: 5px;
+
+        color: #805b8b;
+    }
+
+    .routine-box span {
+
+        font-size: 14px;
+
+        color: #6e5a75;
+
+        line-height: 1.5;
+    }
+
+    .routine-box ul {
+
+        margin:
+            5px 0 0;
+
+        padding-left: 20px;
+    }
+
+    .routine-box li {
+
+        margin-bottom: 6px;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        color: #6e5a75;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .dashboard-footer {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding:
+            5px 2px;
+    }
+
+    .disclaimer {
+
+        margin: 0;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        color: #927f99;
+
+        max-width: 900px;
+    }
+
+    .back-btn {
+
+        text-decoration: none;
+
+        padding:
+            9px 16px;
+
+        border-radius: 20px;
+
+        background:
+            rgba(255,255,255,0.75);
+
+        color: #765b80;
+
+        border:
+            1px solid
+            #ead9ef;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 850px) {
+
+        .dashboard-top-row {
+
+            grid-template-columns:
+                1fr 1fr;
+        }
+
+        .score-card {
+
+            grid-column:
+                1 / -1;
+        }
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+        .header {
+
+            min-height: auto;
+
+            padding:
+                15px 30px;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .header nav {
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+        .analysis-page {
+
+            padding:
+                25px 30px;
+        }
+
+        .analysis-intro h1 {
+
+            font-size: 28px;
+        }
+
+        .analysis-intro p {
+
+            font-size: 16px;
+        }
+
+        .dashboard-top-row {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .dash-card {
+
+            width: 100%;
+
+            min-height: 0;
+
+            padding: 16px;
+
+            border-radius: 18px;
+        }
+
+        .score-card {
+
+            min-height: 160px;
+        }
+
+        .dashboard {
+
+            gap: 12px;
+        }
+
+        .dashboard-footer {
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+        .back-btn {
+
+            align-self: flex-start;
+        }
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+       ========================================================= */
+
+    @media (max-width: 450px) {
+
+        .analysis-page {
+
+            padding:
+                20px 30px;
+        }
+
+        .dash-card h3 {
+
+            font-size: 18px;
+        }
+
+        .dash-card p,
+        .concern-text {
+
+            font-size:
+                15px !important;
+        }
+
+        .score-number {
+
+            font-size: 38px;
+        }
+
+        .dashboard .preview-area img {
+
+            width: 120px;
+
+            height: 150px;
+        }
+    }
+
+</style>
 
 </head>
 
-
 <body>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
 
-    <header class="header">
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-        <div class="logo">
-            Cosmora ✦
-        </div>
+<header class="header">
 
-        <nav>
+    <div class="logo">
+        Cosmora ✦
+    </div>
 
-            <a href="index.html">
-                Home
-            </a>
+    <nav>
 
-            <a href="skin-questionnaire.html">
-                Skin Care
-            </a>
+        <a href="index.html">
+            Home
+        </a>
 
-            <a href="hair-questionnaire.html">
-                Hair Care
-            </a>
+        <a href="skin-questionnaire.html">
+            Skin Care
+        </a>
 
-        </nav>
+        <a href="hair-questionnaire.html">
+            Hair Care
+        </a>
 
-    </header>
+    </nav>
 
-
-    <!-- =====================================================
-         FACE ANALYSIS
-         ===================================================== -->
-
-    <main class="questionnaire-container">
-
-        <section class="questionnaire-card">
-
-            <h1>
-                Face Image Analysis
-            </h1>
-
-            <p class="intro">
-
-                Upload a clear face image and tell us
-                about your main skin concern.
-
-                Cosmora will analyze the image using
-                multiple AI-based skin analysis tools
-                and provide personalized wellness guidance.
-
-            </p>
+</header>
 
 
-            <!-- =================================================
-                 IMAGE UPLOAD
-                 ================================================= -->
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
 
-            <div class="question">
-
-                <label for="faceImage">
-                    Upload your face image
-                </label>
-
-                <input
-                    type="file"
-                    id="faceImage"
-                    accept="image/png,image/jpeg,image/jpg,image/webp"
-                >
-
-                <small>
-                    Use a clear, well-lit image of your face.
-                </small>
-
-            </div>
+<main class="analysis-page">
 
 
-            <!-- =================================================
-                 IMAGE PREVIEW
-                 ================================================= -->
+<!-- =====================================================
+     INTRO
+     ===================================================== -->
+
+<div
+    id="inputSection"
+    class="analysis-intro"
+>
+
+    <h1>
+        Face Image Analysis ✨
+    </h1>
+
+    <p>
+        Let Cosmora compare multiple AI skin-analysis
+        tools and combine their findings with
+        RAG-powered natural skincare guidance.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     INPUT CARD
+     ===================================================== -->
+
+<section
+    id="inputCard"
+    class="input-card"
+>
+
+    <div class="input-group">
+
+        <label for="faceImage">
+            Upload your face image
+        </label>
+
+        <input
+            type="file"
+            id="faceImage"
+            accept="image/png,image/jpeg,image/jpg,image/webp"
+        >
+
+        <small>
+            Use a clear, well-lit image of your face.
+        </small>
+
+    </div>
+
+
+    <div
+        id="imagePreviewContainer"
+        class="preview-area"
+        style="display:none;"
+    >
+
+        <img
+            id="imagePreview"
+            src=""
+            alt="Face preview"
+        >
+
+    </div>
+
+
+    <div class="input-group">
+
+        <label for="concern">
+            What is your main skin concern?
+        </label>
+
+        <textarea
+            id="concern"
+            placeholder="Example: My skin feels dry and I spend a lot of time in the sun."
+        ></textarea>
+
+    </div>
+
+
+    <button
+        id="analyzeBtn"
+        class="analyze-btn"
+    >
+        Analyze My Skin ✨
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     LOADING
+     ===================================================== -->
+
+<div
+    id="loading"
+    class="loading-box"
+>
+
+    <div class="sparkle">
+        ✨
+    </div>
+
+    <strong>
+        Cosmora is analyzing your skin...
+    </strong>
+
+    <p>
+        Comparing available AI analysis results
+        and preparing personalized natural wellness guidance.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     ERROR
+     ===================================================== -->
+
+<div
+    id="error"
+    class="error-box"
+></div>
+
+
+<!-- =====================================================
+     DASHBOARD
+     ===================================================== -->
+
+<section
+    id="dashboard"
+    class="dashboard"
+>
+
+
+    <!-- =================================================
+         TOP ROW
+         IMAGE | CONCERN | FINAL SCORE
+         ================================================= -->
+
+    <div class="dashboard-top-row">
+
+
+        <!-- USER IMAGE -->
+
+        <div class="dash-card image-card">
+
+            <h3>
+                📸 Your Skin Analysis
+            </h3>
 
             <div
-                id="imagePreviewContainer"
-                style="display:none; text-align:center; margin:25px 0;"
+                id="dashboardImagePreview"
+                class="preview-area"
             >
 
                 <img
-                    id="imagePreview"
+                    id="dashboardImage"
                     src=""
-                    alt="Face preview"
-                    style="
-                        max-width:250px;
-                        max-height:300px;
-                        border-radius:20px;
-                        object-fit:cover;
-                        box-shadow:0 10px 30px rgba(150,100,160,0.18);
-                    "
+                    alt="Uploaded skin analysis image"
                 >
 
             </div>
 
-
-            <!-- =================================================
-                 SKIN CONCERN
-                 ================================================= -->
-
-            <div class="question">
-
-                <label for="concern">
-                    What is your main skin concern?
-                </label>
-
-                <textarea
-                    id="concern"
-                    placeholder="Example: My skin feels very dry and I spend a lot of time in the sun."
-                ></textarea>
-
-            </div>
+        </div>
 
 
-            <!-- =================================================
-                 ANALYZE BUTTON
-                 ================================================= -->
+        <!-- USER CONCERN -->
 
-            <button
-                id="analyzeBtn"
-                class="submit-btn"
+        <div class="dash-card concern-card">
+
+            <h3>
+                💗 Your Concern
+            </h3>
+
+            <p
+                id="userConcern"
+                class="concern-text"
             >
-                Analyze My Skin ✨
-            </button>
-
-
-            <!-- =================================================
-                 LOADING
-                 ================================================= -->
-
-            <div
-                id="loading"
-                class="loading"
-                style="display:none;"
-            >
-
-                <p>
-                    ✨ Cosmora is analyzing your skin...
-                </p>
-
-                <p>
-                    Comparing AI analysis results and
-                    preparing personalized wellness guidance.
-                </p>
-
-            </div>
-
-
-            <!-- =================================================
-                 ERROR
-                 ================================================= -->
-
-            <div
-                id="error"
-                class="error"
-                style="display:none;"
-            ></div>
-
-
-            <!-- =================================================
-                 RESULT
-                 ================================================= -->
-
-            <div
-                id="result"
-                class="result"
-                style="display:none;"
-            >
-
-                <h2>
-                    Your Cosmora Assessment
-                </h2>
-
-                <div id="resultContent"></div>
-
-            </div>
-
-
-            <!-- =================================================
-                 DISCLAIMER
-                 ================================================= -->
-
-            <p class="disclaimer">
-
-                Cosmora provides AI-based wellness guidance
-                and does not provide medical diagnoses.
-
-                If you have severe, persistent, worsening,
-                painful, or concerning symptoms, consult
-                a qualified healthcare professional.
-
+                —
             </p>
 
+        </div>
 
-            <a
-                href="index.html"
-                class="back-btn"
+
+        <!-- FINAL SCORE -->
+
+        <div class="dash-card score-card">
+
+            <div class="score-label">
+                Final Skin Score
+            </div>
+
+            <div
+                id="overallScore"
+                class="score-number"
             >
-                ← Back to Home
-            </a>
+                —
+            </div>
 
-        </section>
+            <div class="score-subtitle">
+                Based on available AI analysis
+            </div>
 
-    </main>
+        </div>
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
-    <script>
-
-        const imageInput =
-            document.getElementById("faceImage");
-
-        const concernInput =
-            document.getElementById("concern");
-
-        const analyzeBtn =
-            document.getElementById("analyzeBtn");
-
-        const loading =
-            document.getElementById("loading");
-
-        const errorBox =
-            document.getElementById("error");
-
-        const resultBox =
-            document.getElementById("result");
-
-        const resultContent =
-            document.getElementById("resultContent");
-
-        const imagePreview =
-            document.getElementById("imagePreview");
-
-        const imagePreviewContainer =
-            document.getElementById(
-                "imagePreviewContainer"
-            );
+    </div>
 
 
-        // =====================================================
-        // IMAGE PREVIEW
-        // =====================================================
+    <!-- =================================================
+         RUPAM
+         ================================================= -->
 
-        imageInput.addEventListener(
-            "change",
-            function () {
+    <div class="dash-card rupam-card">
 
-                const file =
-                    this.files[0];
+        <span class="tool-badge">
+            ✦ AI ANALYSIS TOOL
+        </span>
 
-                if (!file) {
+        <h3>
+            🌸 Rupam.ai
+        </h3>
 
-                    imagePreviewContainer.style.display =
-                        "none";
+        <div
+            id="rupamContent"
+            class="tool-content"
+        >
+            No Rupam result available.
+        </div>
 
-                    return;
-                }
-
-
-                const reader =
-                    new FileReader();
-
-
-                reader.onload =
-                    function (event) {
-
-                        imagePreview.src =
-                            event.target.result;
-
-                        imagePreviewContainer.style.display =
-                            "block";
-
-                    };
+    </div>
 
 
-                reader.readAsDataURL(file);
+    <!-- =================================================
+         DERMIQ
+         ================================================= -->
 
-            }
-        );
+    <div class="dash-card dermiq-card">
 
+        <span class="tool-badge">
+            ✦ AI ANALYSIS TOOL
+        </span>
 
-        // =====================================================
-        // ANALYZE IMAGE
-        // =====================================================
+        <h3>
+            💜 DermIQ
+        </h3>
 
-        analyzeBtn.addEventListener(
-            "click",
-            async function () {
+        <div
+            id="dermiqContent"
+            class="tool-content"
+        >
+            No DermIQ result available.
+        </div>
 
-                errorBox.style.display =
-                    "none";
-
-                resultBox.style.display =
-                    "none";
-
-
-                // ---------------------------------------------
-                // Validate image
-                // ---------------------------------------------
-
-                if (!imageInput.files.length) {
-
-                    showError(
-                        "Please upload a face image first."
-                    );
-
-                    return;
-                }
+    </div>
 
 
-                // ---------------------------------------------
-                // Validate concern
-                // ---------------------------------------------
+    <!-- =================================================
+         COMBINED FINDINGS
+         ================================================= -->
 
-                const concern =
-                    concernInput.value.trim();
+    <div class="dash-card combined-card">
 
+        <h3>
+            🔍 Combined Findings
+        </h3>
 
-                if (!concern) {
+        <div
+            id="combinedFindings"
+            class="finding-grid"
+        >
+            No combined findings available.
+        </div>
 
-                    showError(
-                        "Please describe your main skin concern."
-                    );
-
-                    return;
-                }
-
-
-                // ---------------------------------------------
-                // Create FormData
-                // ---------------------------------------------
-
-                const formData =
-                    new FormData();
+    </div>
 
 
-                formData.append(
-                    "image",
-                    imageInput.files[0]
-                );
+    <!-- =================================================
+         RAG + LLM
+         ================================================= -->
+
+    <div class="dash-card rag-card">
+
+        <h3>
+            🧠 Cosmora RAG + LLM Guidance
+        </h3>
+
+        <div
+            id="ragContent"
+            class="rag-content"
+        >
+            Personalized guidance will appear here.
+        </div>
+
+    </div>
 
 
-                formData.append(
-                    "concern",
-                    concern
-                );
+    <!-- =================================================
+         DAILY HABITS
+         ================================================= -->
+
+    <div class="dash-card routine-card">
+
+        <h3>
+            🌿 Daily Wellness Routine
+        </h3>
+
+        <div
+            id="routineContent"
+            class="routine-content"
+        >
+            Personalized routine will appear here.
+        </div>
+
+    </div>
 
 
-                // ---------------------------------------------
-                // Show loading
-                // ---------------------------------------------
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
 
-                loading.style.display =
+    <div class="dashboard-footer">
+
+        <p class="disclaimer">
+            Cosmora provides AI-based wellness guidance
+            and does not provide medical diagnoses.
+            If symptoms are severe, persistent, painful,
+            rapidly worsening, or concerning, consult
+            a qualified healthcare professional.
+        </p>
+
+        <a
+            href="index.html"
+            class="back-btn"
+        >
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   DOM REFERENCES
+   ========================================================= */
+
+const imageInput =
+    document.getElementById("faceImage");
+
+const concernInput =
+    document.getElementById("concern");
+
+const analyzeBtn =
+    document.getElementById("analyzeBtn");
+
+const loading =
+    document.getElementById("loading");
+
+const errorBox =
+    document.getElementById("error");
+
+const dashboard =
+    document.getElementById("dashboard");
+
+const inputCard =
+    document.getElementById("inputCard");
+
+const inputSection =
+    document.getElementById("inputSection");
+
+const imagePreview =
+    document.getElementById("imagePreview");
+
+const imagePreviewContainer =
+    document.getElementById(
+        "imagePreviewContainer"
+    );
+
+
+/* =========================================================
+   IMAGE PREVIEW
+   ========================================================= */
+
+imageInput.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) {
+
+            imagePreviewContainer.style.display =
+                "none";
+
+            return;
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function (event) {
+
+                imagePreview.src =
+                    event.target.result;
+
+                imagePreviewContainer.style.display =
                     "block";
+            };
 
-                analyzeBtn.disabled =
-                    true;
-
-                analyzeBtn.textContent =
-                    "Analyzing...";
-
-
-                try {
-
-                    // -----------------------------------------
-                    // Send request to Flask
-                    // -----------------------------------------
-
-                    const response =
-                        await fetch(
-                            "/skin-analysis",
-                            {
-                                method: "POST",
-                                body: formData
-                            }
-                        );
+        reader.readAsDataURL(file);
+    }
+);
 
 
-                    const data = await response.json();
+/* =========================================================
+   ANALYZE BUTTON
+   ========================================================= */
+
+analyzeBtn.addEventListener(
+    "click",
+    async function () {
+
+        errorBox.style.display =
+            "none";
+
+        dashboard.style.display =
+            "none";
 
 
-                    console.log("FULL BACKEND RESPONSE:", data);
-                    console.log("ASSESSMENT:", data.assessment);
+        if (!imageInput.files.length) {
+
+            showError(
+                "Please upload a face image first."
+            );
+
+            return;
+        }
 
 
+        const concern =
+            concernInput.value.trim();
 
-                    // -----------------------------------------
-                    // Handle error
-                    // -----------------------------------------
+        if (!concern) {
 
-                    if (!response.ok || !data.success) {
+            showError(
+                "Please describe your main skin concern."
+            );
 
-                        throw new Error(
-                            data.error ||
-                            "Unable to analyze the image."
-                        );
-
-                    }
+            return;
+        }
 
 
-                    // -----------------------------------------
-                    // Display result
-                    // -----------------------------------------
+        const formData =
+            new FormData();
 
-                    displayAssessment(
-                        data.assessment
-                    );
+        formData.append(
+            "image",
+            imageInput.files[0]
+        );
 
-
-                } catch (error) {
-
-                    console.error(
-                        "Face analysis error:",
-                        error
-                    );
-
-
-                    showError(
-                        error.message ||
-                        "Something went wrong. Please try again."
-                    );
-
-                }
-
-
-                // ---------------------------------------------
-                // Reset button
-                // ---------------------------------------------
-
-                loading.style.display =
-                    "none";
-
-                analyzeBtn.disabled =
-                    false;
-
-                analyzeBtn.textContent =
-                    "Analyze My Skin ✨";
-
-            }
+        formData.append(
+            "concern",
+            concern
         );
 
 
-        // =====================================================
-        // DISPLAY ASSESSMENT
-        // =====================================================
+        loading.style.display =
+            "block";
 
-        function displayAssessment(assessment) {
+        analyzeBtn.disabled =
+            true;
 
-            resultContent.innerHTML = "";
+        analyzeBtn.textContent =
+            "Analyzing...";
 
-            // =====================================================
-            // USER CONCERN
-            // =====================================================
 
-            if (assessment.user_concern) {
+        try {
 
-                const concern = document.createElement("p");
+            const response =
+                await fetch(
+                    "/skin-analysis",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
 
-                concern.innerHTML =
-                    `<strong>Your concern:</strong>
-                    ${escapeHtml(assessment.user_concern)}`;
 
-                resultContent.appendChild(concern);
+            let data;
+
+            try {
+
+                data =
+                    await response.json();
+
+            } catch (jsonError) {
+
+                throw new Error(
+                    "The server returned an invalid response."
+                );
             }
 
 
-            // =====================================================
-            // OVERALL SUMMARY
-            // =====================================================
+            console.log(
+                "Cosmora API response:",
+                data
+            );
 
-            if (assessment.assessment_note) {
-
-                const note = document.createElement("p");
-
-                note.innerHTML =
-                    `<strong>Assessment:</strong>
-                    ${escapeHtml(assessment.assessment_note)}`;
-
-                resultContent.appendChild(note);
-            }
-
-
-            // =====================================================
-            // TOOL RESULTS
-            // =====================================================
-
-            const toolResults =
-                assessment.tool_results ||
-                assessment.results ||
-                assessment.tools ||
-                [];
-
-
-            // -----------------------------------------------------
-            // Handle object format
-            // -----------------------------------------------------
 
             if (
-                !Array.isArray(toolResults) &&
-                typeof toolResults === "object"
+                !response.ok ||
+                data.success === false
             ) {
 
-                Object.entries(toolResults).forEach(
-                    function ([toolName, toolData]) {
-
-                        displayToolResult(
-                            toolName,
-                            toolData
-                        );
-
-                    }
+                throw new Error(
+                    data.error ||
+                    "Unable to analyze the image."
                 );
-
             }
 
 
-            // -----------------------------------------------------
-            // Handle array format
-            // -----------------------------------------------------
-
-            else if (Array.isArray(toolResults)) {
-
-                toolResults.forEach(
-                    function (toolData) {
-
-                        displayToolResult(
-                            toolData.tool ||
-                            toolData.tool_name ||
-                            "Skin Analysis Tool",
-
-                            toolData
-                        );
-
-                    }
-                );
-
-            }
+            displayDashboard(data);
 
 
-            // =====================================================
-            // OLD AGREEMENTS FORMAT
-            // =====================================================
+        } catch (error) {
 
-            if (
-                assessment.agreements &&
-                assessment.agreements.length
-            ) {
+            console.error(
+                "Face analysis error:",
+                error
+            );
 
-                const heading =
-                    document.createElement("h3");
-
-                heading.textContent =
-                    "Common Findings";
-
-                resultContent.appendChild(
-                    heading
-                );
+            showError(
+                error.message ||
+                "Something went wrong. Please try again."
+            );
 
 
-                const list =
-                    document.createElement("ul");
+        } finally {
 
+            loading.style.display =
+                "none";
 
-                assessment.agreements.forEach(
-                    function (item) {
+            analyzeBtn.disabled =
+                false;
 
-                        const li =
-                            document.createElement("li");
-
-                        li.textContent =
-                            `${item.finding} — reported by ${item.tool_count} tools`;
-
-                        list.appendChild(li);
-
-                    }
-                );
-
-
-                resultContent.appendChild(list);
-            }
-
-
-            // =====================================================
-            // SHOW RESULT
-            // =====================================================
-
-            resultBox.style.display = "block";
+            analyzeBtn.textContent =
+                "Analyze My Skin ✨";
         }
+    }
+);
 
 
+/* =========================================================
+   DISPLAY COMPLETE DASHBOARD
+   ========================================================= */
+
+function displayDashboard(data) {
+
+    const score =
+        data.overall_skin_score;
+
+    const overallScore =
+        document.getElementById(
+            "overallScore"
+        );
+
+    if (overallScore) {
+
+        overallScore.textContent =
+            score !== null &&
+            score !== undefined &&
+            score !== ""
+                ? score
+                : "—";
+    }
 
 
-        function displayToolResult(toolName, toolData) {
-
-            // =====================================================
-            // TOOL CARD
-            // =====================================================
-
-            const toolCard =
-                document.createElement("div");
-
-            toolCard.className =
-                "tool-result-card";
+    const dashboardImage =
+        document.getElementById(
+            "dashboardImage"
+        );
 
 
-            // =====================================================
-            // TOOL NAME
-            // =====================================================
+    if (
+        dashboardImage &&
+        imageInput.files &&
+        imageInput.files.length
+    ) {
 
-            const heading =
-                document.createElement("h3");
+        const file =
+            imageInput.files[0];
 
-            heading.textContent =
-                toolName;
+        const reader =
+            new FileReader();
 
-            toolCard.appendChild(heading);
+        reader.onload =
+            function (event) {
 
+                dashboardImage.src =
+                    event.target.result;
+            };
 
-            // =====================================================
-            // OVERALL SCORE
-            // =====================================================
-
-            if (
-                toolData.overall_skin_score !== undefined &&
-                toolData.overall_skin_score !== null
-            ) {
-
-                const score =
-                    document.createElement("p");
-
-                score.innerHTML =
-                    `<strong>Overall Skin Score:</strong>
-                    ${toolData.overall_skin_score}`;
-
-                toolCard.appendChild(score);
-            }
+        reader.readAsDataURL(file);
+    }
 
 
-            // =====================================================
-            // SKIN PROFILE
-            // =====================================================
-
-            if (toolData.skin_profile) {
-
-                const profileHeading =
-                    document.createElement("h4");
-
-                profileHeading.textContent =
-                    "Skin Profile";
-
-                toolCard.appendChild(profileHeading);
+    const userConcern =
+        document.getElementById(
+            "userConcern"
+        );
 
 
-                const profile =
-                    document.createElement("p");
+    if (userConcern) {
 
-                const skinType =
-                    toolData.skin_profile.skin_type;
-
-                const skinTone =
-                    toolData.skin_profile.skin_tone;
-
-
-                let profileText = "";
+        userConcern.textContent =
+            data.user_concern ||
+            concernInput.value.trim() ||
+            "General skin concern";
+    }
 
 
-                if (skinType) {
-
-                    profileText +=
-                        `Skin Type: ${
-                            skinType.classification || "Unknown"
-                        }`;
-
-                }
+    const toolResults =
+        Array.isArray(data.tool_results)
+            ? data.tool_results
+            : [];
 
 
-                if (skinTone) {
-
-                    if (profileText) {
-                        profileText += " | ";
-                    }
-
-                    profileText +=
-                        `Skin Tone: ${
-                            skinTone.skin_tone_label ||
-                            skinTone.category ||
-                            "Unknown"
-                        }`;
-
-                }
+    const rupam =
+        toolResults.find(
+            tool =>
+                String(
+                    tool.tool || ""
+                )
+                .toLowerCase()
+                .includes("rupam")
+        );
 
 
-                profile.textContent =
-                    profileText;
+    const dermiq =
+        toolResults.find(
+            tool =>
+                String(
+                    tool.tool || ""
+                )
+                .toLowerCase()
+                .includes("dermiq")
+        );
 
-                toolCard.appendChild(profile);
-            }
+
+    renderTool(
+        rupam,
+        "rupamContent"
+    );
 
 
-            // =====================================================
-            // FINDINGS
-            // =====================================================
+    renderTool(
+        dermiq,
+        "dermiqContent"
+    );
 
-            if (
-                toolData.findings &&
-                toolData.findings.length
-            ) {
 
-                const findingHeading =
-                    document.createElement("h4");
+    const combinedFindings =
+        Array.isArray(data.combined_findings)
+            ? data.combined_findings
+            : [];
 
-                findingHeading.textContent =
-                    "Findings";
 
-                toolCard.appendChild(
-                    findingHeading
+    renderCombinedFindings(
+        combinedFindings
+    );
+
+
+    renderRagGuidance(
+        data.final_guidance ||
+        data.rag_guidance ||
+        data.final_assessment ||
+        data.response ||
+        data.rag_response ||
+        data.llm_response ||
+        ""
+    );
+
+
+    if (inputCard) {
+
+        inputCard.style.display =
+            "none";
+    }
+
+
+    if (inputSection) {
+
+        inputSection.style.display =
+            "none";
+    }
+
+
+    if (dashboard) {
+
+        dashboard.style.display =
+            "flex";
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================================================
+   RENDER TOOL RESULT
+   ========================================================= */
+
+function renderTool(
+    tool,
+    containerId
+) {
+
+    const container =
+        document.getElementById(
+            containerId
+        );
+
+
+    if (!container) {
+
+        console.warn(
+            "Missing dashboard element:",
+            containerId
+        );
+
+        return;
+    }
+
+
+    container.innerHTML =
+        "";
+
+
+    if (!tool) {
+
+        container.innerHTML = `
+            <p>
+                This analysis tool did not return
+                a result.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    if (tool.success === false) {
+
+        container.innerHTML = `
+            <p>
+                Analysis unavailable.
+            </p>
+        `;
+
+
+        if (tool.error) {
+
+            const error =
+                document.createElement(
+                    "p"
                 );
 
+            error.textContent =
+                tool.error;
 
-                const findingsList =
-                    document.createElement("ul");
-
-
-                toolData.findings.forEach(
-                    function (finding) {
-
-                        const li =
-                            document.createElement("li");
-
-
-                        let text =
-                            `<strong>${
-                                finding.condition_name ||
-                                "Condition"
-                            }</strong>`;
-
-
-                        if (finding.severity) {
-
-                            text +=
-                                ` — Severity: ${
-                                    finding.severity
-                                }`;
-
-                        }
-
-
-                        if (
-                            finding.score !== undefined &&
-                            finding.score !== null
-                        ) {
-
-                            text +=
-                                ` | Score: ${
-                                    finding.score
-                                }`;
-
-                        }
-
-
-                        if (finding.grade) {
-
-                            text +=
-                                ` | Grade: ${
-                                    finding.grade
-                                }`;
-
-                        }
-
-
-                        li.innerHTML =
-                            text;
-
-                        findingsList.appendChild(li);
-
-                    }
-                );
-
-
-                toolCard.appendChild(
-                    findingsList
-                );
-            }
-
-
-            // =====================================================
-            // SUGGESTIONS
-            // =====================================================
-
-            if (
-                toolData.suggestions &&
-                toolData.suggestions.length
-            ) {
-
-                const suggestionHeading =
-                    document.createElement("h4");
-
-                suggestionHeading.textContent =
-                    "Suggestions";
-
-                toolCard.appendChild(
-                    suggestionHeading
-                );
-
-
-                const suggestionList =
-                    document.createElement("ul");
-
-
-                toolData.suggestions.forEach(
-                    function (suggestion) {
-
-                        const li =
-                            document.createElement("li");
-
-
-                        // Rupam suggestion format
-                        if (
-                            typeof suggestion === "object"
-                        ) {
-
-                            li.textContent =
-                                suggestion.text ||
-                                suggestion.suggestion ||
-                                JSON.stringify(
-                                    suggestion
-                                );
-
-                        }
-
-                        else {
-
-                            li.textContent =
-                                suggestion;
-
-                        }
-
-
-                        suggestionList.appendChild(li);
-
-                    }
-                );
-
-
-                toolCard.appendChild(
-                    suggestionList
-                );
-            }
-
-
-            // =====================================================
-            // ADD TOOL CARD TO PAGE
-            // =====================================================
-
-            resultContent.appendChild(
-                toolCard
+            container.appendChild(
+                error
             );
         }
 
+        return;
+    }
 
-        // =====================================================
-        // ERROR FUNCTION
-        // =====================================================
 
-        function showError(message) {
+    if (
+        tool.overall_skin_score !==
+            undefined &&
+        tool.overall_skin_score !==
+            null
+    ) {
 
-            errorBox.textContent =
-                message;
+        const score =
+            document.createElement(
+                "div"
+            );
 
-            errorBox.style.display =
-                "block";
+        score.className =
+            "tool-score";
 
+        score.textContent =
+            "Score: " +
+            tool.overall_skin_score;
+
+        container.appendChild(
+            score
+        );
+    }
+
+
+    if (tool.skin_profile) {
+
+        const profile =
+            tool.skin_profile;
+
+        let profileText =
+            "";
+
+
+        if (profile.skin_type) {
+
+            const skinType =
+                typeof profile.skin_type === "object"
+                    ? (
+                        profile.skin_type.classification ||
+                        profile.skin_type.label ||
+                        "Unknown"
+                    )
+                    : profile.skin_type;
+
+            profileText +=
+                "Skin Type: " +
+                skinType;
         }
 
 
-        // =====================================================
-        // BASIC HTML ESCAPING
-        // =====================================================
+        if (profile.skin_tone) {
 
-        function escapeHtml(text) {
+            if (profileText) {
 
-            const div =
-                document.createElement("div");
+                profileText +=
+                    " • ";
+            }
 
-            div.textContent =
+
+            const skinTone =
+                typeof profile.skin_tone === "object"
+                    ? (
+                        profile.skin_tone.skin_tone_label ||
+                        profile.skin_tone.category ||
+                        profile.skin_tone.label ||
+                        "Unknown"
+                    )
+                    : profile.skin_tone;
+
+
+            profileText +=
+                "Skin Tone: " +
+                skinTone;
+        }
+
+
+        if (profileText) {
+
+            const profileBox =
+                document.createElement(
+                    "div"
+                );
+
+            profileBox.className =
+                "finding-item";
+
+            profileBox.textContent =
+                profileText;
+
+            container.appendChild(
+                profileBox
+            );
+        }
+    }
+
+
+    const findings =
+        Array.isArray(tool.findings)
+            ? tool.findings
+            : [];
+
+
+    findings.forEach(
+        function (finding) {
+
+            const box =
+                document.createElement(
+                    "div"
+                );
+
+            box.className =
+                "finding-item";
+
+
+            const name =
+                finding.condition_name ||
+                finding.condition_id ||
+                finding.name ||
+                finding.label ||
+                "Skin observation";
+
+
+            let text =
+                name;
+
+
+            if (finding.severity) {
+
+                text +=
+                    " • Severity: " +
+                    finding.severity;
+            }
+
+
+            if (
+                finding.score !==
+                    undefined &&
+                finding.score !==
+                    null
+            ) {
+
+                text +=
+                    " • Score: " +
+                    finding.score;
+            }
+
+
+            if (finding.grade) {
+
+                text +=
+                    " • Grade: " +
+                    finding.grade;
+            }
+
+
+            if (finding.region) {
+
+                text +=
+                    " • Region: " +
+                    finding.region;
+            }
+
+
+            box.textContent =
                 text;
 
-            return div.innerHTML;
 
+            container.appendChild(
+                box
+            );
+        }
+    );
+
+
+    const suggestions =
+        Array.isArray(
+            tool.suggestions
+        )
+            ? tool.suggestions
+            : [];
+
+
+    if (suggestions.length) {
+
+        const heading =
+            document.createElement(
+                "h4"
+            );
+
+        heading.textContent =
+            "Suggestions";
+
+        container.appendChild(
+            heading
+        );
+
+
+        suggestions
+            .slice(0, 5)
+            .forEach(
+                function (suggestion) {
+
+                    const box =
+                        document.createElement(
+                            "div"
+                        );
+
+                    box.className =
+                        "finding-item";
+
+
+                    if (
+                        typeof suggestion ===
+                        "object"
+                    ) {
+
+                        box.textContent =
+                            suggestion.text ||
+                            suggestion.suggestion ||
+                            suggestion.description ||
+                            JSON.stringify(
+                                suggestion
+                            );
+
+                    } else {
+
+                        box.textContent =
+                            suggestion;
+                    }
+
+
+                    container.appendChild(
+                        box
+                    );
+                }
+            );
+    }
+
+
+    if (
+        !tool.findings?.length &&
+        !tool.suggestions?.length &&
+        !tool.skin_profile &&
+        tool.overall_skin_score ===
+            undefined
+    ) {
+
+        const result =
+            document.createElement(
+                "div"
+            );
+
+        result.className =
+            "finding-item";
+
+        result.textContent =
+            "Analysis result received.";
+
+        container.appendChild(
+            result
+        );
+    }
+}
+
+
+/* =========================================================
+   COMBINED FINDINGS
+   GROUP REPEATED CONDITIONS
+   ========================================================= */
+
+function renderCombinedFindings(
+    findings
+) {
+
+    const container =
+        document.getElementById(
+            "combinedFindings"
+        );
+
+
+    if (!container) {
+
+        console.warn(
+            "Missing dashboard element: combinedFindings"
+        );
+
+        return;
+    }
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        !Array.isArray(findings) ||
+        findings.length === 0
+    ) {
+
+        container.textContent =
+            "No combined findings were available.";
+
+        return;
+    }
+
+
+    /*
+     * =====================================================
+     * GROUP FINDINGS
+     * =====================================================
+     *
+     * Findings are grouped using:
+     *
+     * source + condition
+     *
+     * Therefore:
+     *
+     * DermIQ + hd_wrinkle
+     *
+     * becomes ONE card.
+     *
+     * DermIQ + hd_pore
+     *
+     * becomes ONE card.
+     *
+     * Rupam + Acne
+     *
+     * remains separate from DermIQ + Acne.
+     */
+
+    const grouped =
+        {};
+
+
+    findings.forEach(
+        function (finding) {
+
+            const source =
+                finding.source ||
+                "AI analysis";
+
+
+            const rawName =
+                finding.condition_name ||
+                finding.condition_id ||
+                finding.name ||
+                finding.label ||
+                "Skin observation";
+
+
+            /*
+             * Normalize the condition name.
+             *
+             * Example:
+             *
+             * hd_wrinkle
+             *       ↓
+             * wrinkle
+             *
+             * hd_pore
+             *       ↓
+             * pore
+             */
+
+            const normalizedCondition =
+                String(rawName)
+                    .trim()
+                    .toLowerCase()
+                    .replace(
+                        /^hd_/,
+                        ""
+                    )
+                    .replace(
+                        /[_-]+/g,
+                        " "
+                    );
+
+
+            /*
+             * Convert technical names
+             * into user-friendly names.
+             */
+
+            const displayNames = {
+
+                acne:
+                    "Acne",
+
+                pigmentation:
+                    "Pigmentation",
+
+                pores:
+                    "Pores",
+
+                pore:
+                    "Pores",
+
+                wrinkles:
+                    "Wrinkles",
+
+                wrinkle:
+                    "Wrinkles",
+
+                redness:
+                    "Redness",
+
+                oiliness:
+                    "Oiliness",
+
+                texture:
+                    "Texture",
+
+                firmness:
+                    "Firmness",
+
+                "dark circles":
+                    "Dark Circles"
+            };
+
+
+            const displayName =
+                displayNames[
+                    normalizedCondition
+                ] ||
+                normalizedCondition
+                    .replace(
+                        /\b\w/g,
+                        function (letter) {
+
+                            return letter.toUpperCase();
+
+                        }
+                    );
+
+
+            /*
+             * Unique grouping key.
+             */
+
+            const groupKey =
+                source
+                    .toLowerCase()
+                    .trim() +
+                "|" +
+                normalizedCondition;
+
+
+            if (!grouped[groupKey]) {
+
+                grouped[groupKey] = {
+
+                    source:
+                        source,
+
+                    name:
+                        displayName,
+
+                    scores:
+                        [],
+
+                    severities:
+                        [],
+
+                    regions:
+                        []
+                };
+            }
+
+
+            const group =
+                grouped[groupKey];
+
+
+            /*
+             * Add score.
+             */
+
+            if (
+                finding.score !==
+                    undefined &&
+                finding.score !==
+                    null &&
+                finding.score !==
+                    ""
+            ) {
+
+                group.scores.push(
+                    finding.score
+                );
+            }
+
+
+            /*
+             * Add severity.
+             */
+
+            if (
+                finding.severity &&
+                !group.severities.includes(
+                    finding.severity
+                )
+            ) {
+
+                group.severities.push(
+                    finding.severity
+                );
+            }
+
+
+            /*
+             * Add region.
+             *
+             * DermIQ can return the same
+             * condition for different facial
+             * regions.
+             */
+
+            if (
+                finding.region &&
+                !group.regions.includes(
+                    finding.region
+                )
+            ) {
+
+                group.regions.push(
+                    finding.region
+                );
+            }
+        }
+    );
+
+
+    /*
+     * =====================================================
+     * RENDER GROUPED FINDINGS
+     * =====================================================
+     */
+
+    Object.values(grouped).forEach(
+        function (group) {
+
+            const box =
+                document.createElement(
+                    "div"
+                );
+
+            box.className =
+                "combined-finding";
+
+
+            /*
+             * CONDITION NAME
+             */
+
+            const name =
+                document.createElement(
+                    "div"
+                );
+
+            name.className =
+                "finding-name";
+
+            name.textContent =
+                group.name;
+
+
+            box.appendChild(
+                name
+            );
+
+
+            /*
+             * SOURCE + SCORES + REGIONS
+             */
+
+            const source =
+                document.createElement(
+                    "div"
+                );
+
+            source.className =
+                "finding-source";
+
+
+            let sourceText =
+                group.source;
+
+
+            /*
+             * Display all scores together.
+             */
+
+            if (
+                group.scores.length
+            ) {
+
+                sourceText +=
+                    " • Scores: " +
+                    group.scores.join(
+                        ", "
+                    );
+            }
+
+
+            /*
+             * Display all regions together.
+             */
+
+            if (
+                group.regions.length
+            ) {
+
+                const formattedRegions =
+                    group.regions
+                        .map(
+                            function (region) {
+
+                                return String(
+                                    region
+                                )
+                                    .replace(
+                                        /[_-]+/g,
+                                        " "
+                                    )
+                                    .replace(
+                                        /\b\w/g,
+                                        function (letter) {
+
+                                            return letter.toUpperCase();
+
+                                        }
+                                    );
+                            }
+                        )
+                        .join(", ");
+
+
+                sourceText +=
+                    " • Regions: " +
+                    formattedRegions;
+            }
+
+
+            /*
+             * Display severity if available.
+             */
+
+            if (
+                group.severities.length
+            ) {
+
+                sourceText +=
+                    " • Severity: " +
+                    group.severities.join(
+                        ", "
+                    );
+            }
+
+
+            source.textContent =
+                sourceText;
+
+
+            box.appendChild(
+                source
+            );
+
+
+            container.appendChild(
+                box
+            );
+        }
+    );
+}
+
+
+/* =========================================================
+   RAG + LLM GUIDANCE
+   ========================================================= */
+
+function renderRagGuidance(
+    data
+) {
+
+    const container =
+        document.getElementById(
+            "ragContent"
+        );
+
+    const routineContainer =
+        document.getElementById(
+            "routineContent"
+        );
+
+
+    if (!container || !routineContainer) {
+
+        console.warn(
+            "RAG or routine dashboard element is missing."
+        );
+
+        return;
+    }
+
+
+    container.innerHTML =
+        "";
+
+    routineContainer.innerHTML =
+        "";
+
+
+    if (!data) {
+
+        container.innerHTML = `
+            <div class="rag-section">
+
+                <div class="rag-section-title">
+                    Personalized AI Guidance
+                </div>
+
+                <div class="rag-section-content">
+                    Personalized RAG + LLM guidance
+                    was not available.
+                </div>
+
+            </div>
+        `;
+
+
+        routineContainer.innerHTML = `
+            <div class="routine-box">
+
+                <strong>
+                    Wellness guidance
+                </strong>
+
+                <span>
+                    No personalized routine was
+                    returned by the AI system.
+                </span>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    let responseData =
+        data;
+
+
+    if (
+        typeof responseData ===
+        "string"
+    ) {
+
+        try {
+
+            const parsed =
+                JSON.parse(
+                    responseData
+                );
+
+            responseData =
+                parsed;
+
+        } catch (error) {
+
+            /*
+             * Normal plain text.
+             */
+        }
+    }
+
+
+    let sections =
+        null;
+
+    let plainText =
+        "";
+
+
+    if (
+        typeof responseData ===
+            "object" &&
+        responseData !== null
+    ) {
+
+        sections =
+            responseData.sections ||
+            null;
+
+
+        plainText =
+            responseData.text ||
+            "";
+
+    } else {
+
+        plainText =
+            String(
+                responseData
+            );
+    }
+
+
+    if (
+        sections &&
+        typeof sections ===
+            "object"
+    ) {
+
+        if (
+            sections.observation
+        ) {
+
+            renderRagSection(
+                container,
+                "SKIN ANALYSIS SUMMARY",
+                sections.observation
+            );
         }
 
-    </script>
+
+        if (
+            Array.isArray(
+                sections.key_concerns
+            )
+        ) {
+
+            renderRagListSection(
+                container,
+                "KEY SKIN CONCERNS",
+                sections.key_concerns
+            );
+        }
+
+
+        if (
+            Array.isArray(
+                sections.possible_factors
+            )
+        ) {
+
+            renderRagListSection(
+                container,
+                "POSSIBLE CONTRIBUTING FACTORS",
+                sections.possible_factors
+            );
+        }
+
+
+        if (
+            Array.isArray(
+                sections.suggestions
+            )
+        ) {
+
+            renderRagListSection(
+                container,
+                "NATURAL SKINCARE & LIFESTYLE PLAN",
+                sections.suggestions
+            );
+        }
+
+
+        if (
+            Array.isArray(
+                sections.avoid
+            )
+        ) {
+
+            renderRagListSection(
+                container,
+                "WHAT TO AVOID",
+                sections.avoid
+            );
+        }
+
+
+        if (
+            sections.professional_care
+        ) {
+
+            renderRagSection(
+                container,
+                "WHEN TO SEE A DERMATOLOGIST",
+                sections.professional_care
+            );
+        }
+
+
+        if (
+            sections.disclaimer
+        ) {
+
+            renderRagSection(
+                container,
+                "DISCLAIMER",
+                sections.disclaimer
+            );
+        }
+
+
+        const routine =
+            sections.routine;
+
+
+        if (
+            routine &&
+            typeof routine ===
+                "object"
+        ) {
+
+            if (
+                Array.isArray(
+                    routine.morning
+                )
+            ) {
+
+                const morning =
+                    cleanRoutineItems(
+                        routine.morning
+                    );
+
+
+                if (morning.length) {
+
+                    renderRoutineSection(
+                        routineContainer,
+                        "MORNING",
+                        morning
+                    );
+                }
+            }
+
+
+            if (
+                Array.isArray(
+                    routine.evening
+                )
+            ) {
+
+                const evening =
+                    cleanRoutineItems(
+                        routine.evening
+                    );
+
+
+                if (evening.length) {
+
+                    renderRoutineSection(
+                        routineContainer,
+                        "EVENING",
+                        evening
+                    );
+                }
+            }
+
+
+            if (
+                Array.isArray(
+                    routine.weekly
+                )
+            ) {
+
+                const weekly =
+                    cleanRoutineItems(
+                        routine.weekly
+                    );
+
+
+                if (weekly.length) {
+
+                    renderRoutineSection(
+                        routineContainer,
+                        "WEEKLY",
+                        weekly
+                    );
+                }
+            }
+        }
+
+
+        return;
+    }
+
+
+    if (plainText) {
+
+        const parsed =
+            parseLLMSections(
+                plainText
+            );
+
+
+        parsed.forEach(
+            function (section) {
+
+                const title =
+                    section.title
+                        .toLowerCase();
+
+
+                if (
+                    title.includes(
+                        "daily routine"
+                    ) ||
+                    title ===
+                        "routine"
+                ) {
+
+                    const box =
+                        document.createElement(
+                            "div"
+                        );
+
+                    box.className =
+                        "routine-box";
+
+
+                    const strong =
+                        document.createElement(
+                            "strong"
+                        );
+
+                    strong.textContent =
+                        section.title;
+
+
+                    box.appendChild(
+                        strong
+                    );
+
+
+                    const span =
+                        document.createElement(
+                            "span"
+                        );
+
+                    span.innerHTML =
+                        formatLLMText(
+                            section.content
+                        );
+
+
+                    box.appendChild(
+                        span
+                    );
+
+
+                    routineContainer.appendChild(
+                        box
+                    );
+
+
+                    return;
+                }
+
+
+                renderRagSection(
+                    container,
+                    section.title,
+                    section.content
+                );
+            }
+        );
+    }
+}
+
+
+/* =========================================================
+   CLEAN ROUTINE ITEMS
+   ========================================================= */
+
+function cleanRoutineItems(
+    items
+) {
+
+    if (!Array.isArray(items)) {
+
+        return [];
+    }
+
+
+    return items.filter(
+        function (item) {
+
+            const text =
+                String(item)
+                    .trim()
+                    .toUpperCase();
+
+
+            if (
+                text === "MORNING" ||
+                text === "MORNING*" ||
+                text === "EVENING" ||
+                text === "EVENING*" ||
+                text === "WEEKLY" ||
+                text === "WEEKLY*"
+            ) {
+
+                return false;
+            }
+
+
+            return true;
+        }
+    );
+}
+
+
+/* =========================================================
+   RENDER RAG SECTION
+   ========================================================= */
+
+function renderRagSection(
+    container,
+    title,
+    content
+) {
+
+    const box =
+        document.createElement(
+            "div"
+        );
+
+    box.className =
+        "rag-section";
+
+
+    const titleElement =
+        document.createElement(
+            "div"
+        );
+
+    titleElement.className =
+        "rag-section-title";
+
+    titleElement.textContent =
+        title;
+
+
+    const contentElement =
+        document.createElement(
+            "div"
+        );
+
+    contentElement.className =
+        "rag-section-content";
+
+
+    if (
+        typeof content ===
+            "object" &&
+        content !== null
+    ) {
+
+        contentElement.innerHTML =
+            formatObjectContent(
+                content
+            );
+
+    } else {
+
+        contentElement.innerHTML =
+            formatLLMText(
+                String(content)
+            );
+    }
+
+
+    box.appendChild(
+        titleElement
+    );
+
+    box.appendChild(
+        contentElement
+    );
+
+    container.appendChild(
+        box
+    );
+}
+
+
+/* =========================================================
+   RENDER RAG LIST SECTION
+   ========================================================= */
+
+function renderRagListSection(
+    container,
+    title,
+    items
+) {
+
+    const box =
+        document.createElement(
+            "div"
+        );
+
+    box.className =
+        "rag-section";
+
+
+    const titleElement =
+        document.createElement(
+            "div"
+        );
+
+    titleElement.className =
+        "rag-section-title";
+
+    titleElement.textContent =
+        title;
+
+
+    const list =
+        document.createElement(
+            "ul"
+        );
+
+
+    items.forEach(
+        function (item) {
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+
+            if (
+                typeof item ===
+                    "object" &&
+                item !== null
+            ) {
+
+                li.innerHTML =
+                    formatObjectContent(
+                        item
+                    );
+
+            } else {
+
+                li.innerHTML =
+                    formatLLMText(
+                        String(item)
+                    );
+            }
+
+
+            list.appendChild(
+                li
+            );
+        }
+    );
+
+
+    box.appendChild(
+        titleElement
+    );
+
+    box.appendChild(
+        list
+    );
+
+    container.appendChild(
+        box
+    );
+}
+
+
+/* =========================================================
+   RENDER ROUTINE SECTION
+   ========================================================= */
+
+function renderRoutineSection(
+    container,
+    title,
+    items
+) {
+
+    const box =
+        document.createElement(
+            "div"
+        );
+
+    box.className =
+        "routine-box";
+
+
+    const strong =
+        document.createElement(
+            "strong"
+        );
+
+    strong.textContent =
+        title;
+
+
+    const list =
+        document.createElement(
+            "ul"
+        );
+
+
+    items.forEach(
+        function (item) {
+
+            const upper =
+                String(item)
+                    .trim()
+                    .toUpperCase();
+
+
+            if (
+                upper ===
+                    "MORNING" ||
+                upper ===
+                    "MORNING*" ||
+                upper ===
+                    "EVENING" ||
+                upper ===
+                    "EVENING*" ||
+                upper ===
+                    "WEEKLY" ||
+                upper ===
+                    "WEEKLY*"
+            ) {
+
+                return;
+            }
+
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+
+            if (
+                typeof item ===
+                    "object" &&
+                item !== null
+            ) {
+
+                li.innerHTML =
+                    formatObjectContent(
+                        item
+                    );
+
+            } else {
+
+                li.innerHTML =
+                    formatLLMText(
+                        String(item)
+                    );
+            }
+
+
+            list.appendChild(
+                li
+            );
+        }
+    );
+
+
+    box.appendChild(
+        strong
+    );
+
+    box.appendChild(
+        list
+    );
+
+    container.appendChild(
+        box
+    );
+}
+
+
+/* =========================================================
+   FORMAT OBJECT CONTENT
+   ========================================================= */
+
+function formatObjectContent(
+    object
+) {
+
+    if (
+        object === null ||
+        object === undefined
+    ) {
+
+        return "";
+    }
+
+
+    if (Array.isArray(object)) {
+
+        return `
+            <ul>
+                ${
+                    object
+                        .map(
+                            item =>
+                                `<li>${formatObjectContent(item)}</li>`
+                        )
+                        .join("")
+                }
+            </ul>
+        `;
+    }
+
+
+    if (
+        typeof object ===
+        "object"
+    ) {
+
+        let html =
+            "";
+
+
+        Object.entries(object)
+            .forEach(
+                function ([key, value]) {
+
+                    const title =
+                        key
+                            .replace(
+                                /_/g,
+                                " "
+                            )
+                            .replace(
+                                /\b\w/g,
+                                letter =>
+                                    letter.toUpperCase()
+                            );
+
+
+                    html += `
+                        <div class="object-content-item">
+
+                            <strong>
+                                ${escapeHtml(title)}
+                            </strong>
+
+                            <div>
+                                ${formatObjectContent(value)}
+                            </div>
+
+                        </div>
+                    `;
+                }
+            );
+
+
+        return html;
+    }
+
+
+    return formatLLMText(
+        String(object)
+    );
+}
+
+
+/* =========================================================
+   PARSE LLM HEADINGS
+   ========================================================= */
+
+function parseLLMSections(
+    text
+) {
+
+    const lines =
+        String(text)
+            .replace(
+                /\r/g,
+                ""
+            )
+            .split("\n");
+
+
+    const sections = [];
+
+    let current =
+        null;
+
+
+    lines.forEach(
+        function (line) {
+
+            const trimmed =
+                line.trim();
+
+
+            if (!trimmed) {
+
+                if (current) {
+
+                    current.content +=
+                        "\n";
+                }
+
+                return;
+            }
+
+
+            const cleaned =
+                trimmed
+                    .replace(
+                        /^#{1,6}\s*/,
+                        ""
+                    )
+                    .replace(
+                        /^\*\*(.*?)\*\*$/,
+                        "$1"
+                    )
+                    .trim();
+
+
+            const headingMatch =
+                cleaned.match(
+                    /^(?:\d+\s*[.):\-]\s*)?([A-Z][A-Z0-9 &+\/\-']{3,})$/
+                );
+
+
+            if (headingMatch) {
+
+                if (current) {
+
+                    sections.push(
+                        current
+                    );
+                }
+
+
+                current = {
+
+                    title:
+                        headingMatch[1]
+                            .trim(),
+
+                    content:
+                        ""
+                };
+
+
+                return;
+            }
+
+
+            if (!current) {
+
+                current = {
+
+                    title:
+                        "Cosmora Observation",
+
+                    content:
+                        ""
+                };
+            }
+
+
+            current.content +=
+                trimmed +
+                "\n";
+        }
+    );
+
+
+    if (current) {
+
+        sections.push(
+            current
+        );
+    }
+
+
+    return sections;
+}
+
+
+/* =========================================================
+   FORMAT LLM CONTENT
+   ========================================================= */
+
+function formatLLMText(
+    text
+) {
+
+    if (!text) {
+
+        return "";
+    }
+
+
+    let escaped =
+        escapeHtml(
+            String(text)
+        );
+
+
+    escaped =
+        escaped.replace(
+            /\*\*(.*?)\*\*/g,
+            "<strong>$1</strong>"
+        );
+
+
+    escaped =
+        escaped.replace(
+            /(^|[^*])\*([^*\n]+)\*(?!\*)/g,
+            "$1<em>$2</em>"
+        );
+
+
+    const lines =
+        escaped.split("\n");
+
+
+    let html =
+        "";
+
+    let inList =
+        false;
+
+
+    lines.forEach(
+        function (line) {
+
+            const trimmed =
+                line.trim();
+
+
+            if (
+                trimmed.startsWith("- ") ||
+                trimmed.startsWith("* ") ||
+                /^\d+\.\s+/.test(
+                    trimmed
+                )
+            ) {
+
+                if (!inList) {
+
+                    html +=
+                        "<ul>";
+
+                    inList =
+                        true;
+                }
+
+
+                let item =
+                    trimmed
+                        .replace(
+                            /^[-*]\s+/,
+                            ""
+                        )
+                        .replace(
+                            /^\d+\.\s+/,
+                            ""
+                        );
+
+
+                html +=
+                    "<li>" +
+                    item +
+                    "</li>";
+
+            } else {
+
+                if (inList) {
+
+                    html +=
+                        "</ul>";
+
+                    inList =
+                        false;
+                }
+
+
+                if (trimmed) {
+
+                    html +=
+                        "<div>" +
+                        trimmed +
+                        "</div>";
+                }
+            }
+        }
+    );
+
+
+    if (inList) {
+
+        html +=
+            "</ul>";
+    }
+
+
+    return html;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+function showError(
+    message
+) {
+
+    if (!errorBox) {
+
+        console.error(
+            message
+        );
+
+        return;
+    }
+
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+}
+
+
+/* =========================================================
+   HTML ESCAPING
+   ========================================================= */
+
+function escapeHtml(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.textContent =
+        String(text);
+
+    return div.innerHTML;
+}
+
+</script>
 
 </body>
 

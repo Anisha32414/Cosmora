@@ -1,3 +1,5 @@
+import re
+
 from rag.vectorstore import get_skin_vectorstore
 from llm.llm import get_llm
 from llm.prompts import SKIN_SYSTEM_PROMPT
@@ -97,6 +99,294 @@ cosmetics, advertisements, or upselling.
 
 
 # ============================================================
+# HELPER: EXTRACT BULLET ITEMS
+# ============================================================
+
+def extract_bullets(text):
+    """
+    Convert markdown-style bullet/numbered text into
+    a clean Python list.
+    """
+
+    if not text:
+        return []
+
+    items = []
+
+    lines = text.split("\n")
+
+    for line in lines:
+
+        line = line.strip()
+
+        if not line:
+            continue
+
+        # Remove markdown bullets
+        line = re.sub(
+            r"^[-*•]\s*",
+            "",
+            line
+        )
+
+        # Remove numbered bullets
+        line = re.sub(
+            r"^\d+[\.\)]\s*",
+            "",
+            line
+        )
+
+        line = line.strip()
+
+        if line:
+            items.append(line)
+
+    return items
+
+
+# ============================================================
+# HELPER: EXTRACT SUBSECTION
+# ============================================================
+
+def extract_subsection(text, subsection_name):
+    """
+    Extract a subsection such as MORNING, EVENING,
+    or WEEKLY from the DAILY ROUTINE section.
+    """
+
+    if not text:
+        return []
+
+    pattern = re.compile(
+        rf"{subsection_name}\s*:?\s*(.*?)(?="
+        rf"\n\s*(?:MORNING|EVENING|WEEKLY)\s*:?"
+        rf"|$)",
+        re.IGNORECASE | re.DOTALL
+    )
+
+    match = pattern.search(text)
+
+    if not match:
+        return []
+
+    content = match.group(1).strip()
+
+    return extract_bullets(content)
+
+
+# ============================================================
+# PARSE LLM RESPONSE INTO DASHBOARD SECTIONS
+# ============================================================
+
+def parse_skin_guidance(text):
+    """
+    Convert the LLM's structured skincare response into
+    separate sections for the Cosmora frontend dashboard.
+
+    The original complete LLM response is preserved separately.
+    """
+
+    sections = {
+
+        "observation": "",
+
+        "key_concerns": [],
+
+        "possible_factors": [],
+
+        "suggestions": [],
+
+        "routine": {
+
+            "morning": [],
+
+            "evening": [],
+
+            "weekly": []
+
+        },
+
+        "avoid": [],
+
+        "professional_care": "",
+
+        "disclaimer": ""
+
+    }
+
+    if not text:
+        return sections
+
+    # --------------------------------------------------------
+    # Normalize line endings
+    # --------------------------------------------------------
+
+    text = text.replace(
+        "\r\n",
+        "\n"
+    )
+
+    text = text.replace(
+        "\r",
+        "\n"
+    )
+
+    # --------------------------------------------------------
+    # Detect section headings
+    # --------------------------------------------------------
+
+    heading_pattern = re.compile(
+        r"(?:^|\n)"
+        r"\s*"
+        r"(?:#+\s*)?"
+        r"\**\s*"
+        r"(?:\d+\.\s*)?"
+        r"(SKIN ANALYSIS SUMMARY|"
+        r"KEY SKIN CONCERNS|"
+        r"POSSIBLE CONTRIBUTING FACTORS|"
+        r"NATURAL SKINCARE\s*(?:&|AND)\s*LIFESTYLE PLAN|"
+        r"DAILY ROUTINE|"
+        r"WHAT TO AVOID|"
+        r"WHEN TO SEE A DERMATOLOGIST|"
+        r"DISCLAIMER)"
+        r"\s*\**"
+        r"\s*:?\s*",
+        re.IGNORECASE
+    )
+
+    matches = list(
+        heading_pattern.finditer(text)
+    )
+
+    extracted = {}
+
+    # --------------------------------------------------------
+    # Extract content between headings
+    # --------------------------------------------------------
+
+    for index, match in enumerate(matches):
+
+        heading = (
+            match.group(1)
+            .strip()
+            .upper()
+        )
+
+        start = match.end()
+
+        if index + 1 < len(matches):
+
+            end = matches[index + 1].start()
+
+        else:
+
+            end = len(text)
+
+        content = text[
+            start:end
+        ].strip()
+
+        extracted[heading] = content
+
+    # ========================================================
+    # 1. SKIN ANALYSIS SUMMARY
+    # ========================================================
+
+    sections["observation"] = extracted.get(
+        "SKIN ANALYSIS SUMMARY",
+        ""
+    ).strip()
+
+    # ========================================================
+    # 2. KEY SKIN CONCERNS
+    # ========================================================
+
+    sections["key_concerns"] = extract_bullets(
+        extracted.get(
+            "KEY SKIN CONCERNS",
+            ""
+        )
+    )
+
+    # ========================================================
+    # 3. POSSIBLE CONTRIBUTING FACTORS
+    # ========================================================
+
+    sections["possible_factors"] = extract_bullets(
+        extracted.get(
+            "POSSIBLE CONTRIBUTING FACTORS",
+            ""
+        )
+    )
+
+    # ========================================================
+    # 4. NATURAL SKINCARE & LIFESTYLE PLAN
+    # ========================================================
+
+    sections["suggestions"] = extract_bullets(
+        extracted.get(
+            "NATURAL SKINCARE & LIFESTYLE PLAN",
+            ""
+        )
+    )
+
+    # ========================================================
+    # 5. DAILY ROUTINE
+    # ========================================================
+
+    routine_text = extracted.get(
+        "DAILY ROUTINE",
+        ""
+    )
+
+    sections["routine"]["morning"] = extract_subsection(
+        routine_text,
+        "MORNING"
+    )
+
+    sections["routine"]["evening"] = extract_subsection(
+        routine_text,
+        "EVENING"
+    )
+
+    sections["routine"]["weekly"] = extract_subsection(
+        routine_text,
+        "WEEKLY"
+    )
+
+    # ========================================================
+    # 6. WHAT TO AVOID
+    # ========================================================
+
+    sections["avoid"] = extract_bullets(
+        extracted.get(
+            "WHAT TO AVOID",
+            ""
+        )
+    )
+
+    # ========================================================
+    # 7. WHEN TO SEE A DERMATOLOGIST
+    # ========================================================
+
+    sections["professional_care"] = extracted.get(
+        "WHEN TO SEE A DERMATOLOGIST",
+        ""
+    ).strip()
+
+    # ========================================================
+    # 8. DISCLAIMER
+    # ========================================================
+
+    sections["disclaimer"] = extracted.get(
+        "DISCLAIMER",
+        ""
+    ).strip()
+
+    return sections
+
+
+# ============================================================
 # IMAGE-ANALYSIS SKIN RAG
 # ============================================================
 
@@ -109,6 +399,26 @@ def skin_analysis_rag(tool_results, user_concern=""):
     - User concern
     - ChromaDB skin knowledge base
     - Groq LLM
+
+    Returns:
+
+    {
+        "text": "...complete LLM response...",
+        "sections": {
+            "observation": "...",
+            "key_concerns": [],
+            "possible_factors": [],
+            "suggestions": [],
+            "routine": {
+                "morning": [],
+                "evening": [],
+                "weekly": []
+            },
+            "avoid": [],
+            "professional_care": "...",
+            "disclaimer": "..."
+        }
+    }
     """
 
     print("\n")
@@ -142,7 +452,10 @@ def skin_analysis_rag(tool_results, user_concern=""):
             "Unknown Tool"
         )
 
-        for finding in tool.get("findings", []):
+        for finding in tool.get(
+            "findings",
+            []
+        ):
 
             condition = (
                 finding.get("condition_name")
@@ -150,19 +463,27 @@ def skin_analysis_rag(tool_results, user_concern=""):
                 or "Unknown"
             )
 
-            score = finding.get("score")
+            score = finding.get(
+                "score"
+            )
 
-            region = finding.get("region")
+            region = finding.get(
+                "region"
+            )
 
             findings.append({
 
-                "tool": tool_name,
+                "tool":
+                    tool_name,
 
-                "condition": condition,
+                "condition":
+                    condition,
 
-                "score": score,
+                "score":
+                    score,
 
-                "region": region
+                "region":
+                    region
 
             })
 
@@ -170,11 +491,16 @@ def skin_analysis_rag(tool_results, user_concern=""):
     # 3. Check Findings
     # --------------------------------------------------------
 
-    print("\nNumber of detected findings:", len(findings))
+    print(
+        "\nNumber of detected findings:",
+        len(findings)
+    )
 
     if not findings:
 
-        print("WARNING: No successful findings were received.")
+        print(
+            "WARNING: No successful findings were received."
+        )
 
     # --------------------------------------------------------
     # 4. Convert Findings Into Text
@@ -192,7 +518,10 @@ def skin_analysis_rag(tool_results, user_concern=""):
     )
 
     print("\nDetected findings:")
-    print(findings_text)
+
+    print(
+        findings_text
+    )
 
     # --------------------------------------------------------
     # 5. Build Retrieval Query
@@ -253,7 +582,9 @@ def skin_analysis_rag(tool_results, user_concern=""):
 
     )
 
-    print("\nRetrieved knowledge successfully.")
+    print(
+        "\nRetrieved knowledge successfully."
+    )
 
     # --------------------------------------------------------
     # 8. Prepare Tool Summary
@@ -272,7 +603,9 @@ def skin_analysis_rag(tool_results, user_concern=""):
                 tool.get("tool"),
 
             "overall_skin_score":
-                tool.get("overall_skin_score"),
+                tool.get(
+                    "overall_skin_score"
+                ),
 
             "findings":
                 tool.get(
@@ -436,6 +769,13 @@ Examples include:
 - concerns that do not improve with basic care
 
 
+8. DISCLAIMER
+
+End with a short disclaimer explaining that
+Cosmora provides AI-based wellness guidance and
+does not provide medical diagnosis.
+
+
 ============================================================
 IMPORTANT RULES
 ============================================================
@@ -461,14 +801,23 @@ IMPORTANT RULES
     # 10. Call Groq LLM
     # --------------------------------------------------------
 
-    print("\nSending data to Groq LLM...")
+    print(
+        "\nSending data to Groq LLM..."
+    )
 
     llm = get_llm()
 
     response = llm.invoke(
         [
-            ("system", SKIN_SYSTEM_PROMPT),
-            ("human", user_prompt)
+            (
+                "system",
+                SKIN_SYSTEM_PROMPT
+            ),
+
+            (
+                "human",
+                user_prompt
+            )
         ]
     )
 
@@ -483,12 +832,140 @@ IMPORTANT RULES
     print("LLM RESPONSE RECEIVED")
     print("=" * 60)
 
-    print(final_guidance)
+    print(
+        final_guidance
+    )
 
     print("=" * 60)
 
     # --------------------------------------------------------
-    # 12. Return Final Guidance
+    # 12. Parse Response For Dashboard
     # --------------------------------------------------------
 
-    return final_guidance
+    dashboard_sections = parse_skin_guidance(
+        final_guidance
+    )
+
+    # --------------------------------------------------------
+    # 13. Debug Dashboard Sections
+    # --------------------------------------------------------
+
+    print("\n")
+    print("=" * 60)
+    print("DASHBOARD SECTIONS CREATED")
+    print("=" * 60)
+
+    print(
+        "Observation:",
+        bool(
+            dashboard_sections.get(
+                "observation"
+            )
+        )
+    )
+
+    print(
+        "Key concerns:",
+        len(
+            dashboard_sections.get(
+                "key_concerns",
+                []
+            )
+        )
+    )
+
+    print(
+        "Possible factors:",
+        len(
+            dashboard_sections.get(
+                "possible_factors",
+                []
+            )
+        )
+    )
+
+    print(
+        "Suggestions:",
+        len(
+            dashboard_sections.get(
+                "suggestions",
+                []
+            )
+        )
+    )
+
+    print(
+        "Morning routine:",
+        len(
+            dashboard_sections.get(
+                "routine",
+                {}
+            ).get(
+                "morning",
+                []
+            )
+        )
+    )
+
+    print(
+        "Evening routine:",
+        len(
+            dashboard_sections.get(
+                "routine",
+                {}
+            ).get(
+                "evening",
+                []
+            )
+        )
+    )
+
+    print(
+        "Weekly routine:",
+        len(
+            dashboard_sections.get(
+                "routine",
+                {}
+            ).get(
+                "weekly",
+                []
+            )
+        )
+    )
+
+    print(
+        "Things to avoid:",
+        len(
+            dashboard_sections.get(
+                "avoid",
+                []
+            )
+        )
+    )
+
+    print(
+        "Professional care section:",
+        bool(
+            dashboard_sections.get(
+                "professional_care"
+            )
+        )
+    )
+
+    print("=" * 60)
+
+    # --------------------------------------------------------
+    # 14. Return Complete RAG Result
+    # --------------------------------------------------------
+
+    return {
+
+        # Complete original LLM response
+        "text":
+            final_guidance,
+
+        # Structured dashboard information
+        "sections":
+            dashboard_sections
+
+    }
