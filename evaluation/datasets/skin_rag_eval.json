@@ -1,0 +1,902 @@
+[
+  {
+    "id": "skin_001",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne and oily skin",
+      "face_washing": "twice a day",
+      "diet": "high sugar intake",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "I have oily skin and frequent acne. What lifestyle habits may help?",
+    "expected_topics": ["acne", "oily skin", "face washing", "diet", "hydration", "stress", "sun protection"],
+    "reference_answer": "Gentle face washing, adequate hydration, a balanced diet, stress management and sun protection may support healthier acne-prone oily skin."
+  },
+  {
+    "id": "skin_002",
+    "profile": {
+      "skin_concern": "dry skin",
+      "skin_concerns": "dry and flaky skin",
+      "face_washing": "three times a day",
+      "diet": "balanced diet",
+      "sunscreen": "sometimes",
+      "cosmetics": "rarely",
+      "water_intake": "low",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My skin is dry and flaky. What habits could support better hydration?",
+    "expected_topics": ["dry skin", "hydration", "face washing", "water", "gentle cleansing", "sun protection"],
+    "reference_answer": "Gentle cleansing, adequate water intake, avoiding excessive washing and protecting the skin from environmental exposure may help support dry skin."
+  },
+  {
+    "id": "skin_003",
+    "profile": {
+      "skin_concern": "sensitive skin",
+      "skin_concerns": "redness and irritation",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "high"
+    },
+    "question": "I have sensitive skin with occasional redness and irritation. What should I focus on?",
+    "expected_topics": ["sensitive skin", "irritation", "redness", "gentle cleansing", "sun protection", "stress"],
+    "reference_answer": "Sensitive skin may benefit from gentle cleansing, avoiding irritating practices, sun protection and managing stress."
+  },
+  {
+    "id": "skin_004",
+    "profile": {
+      "skin_concern": "dark spots",
+      "skin_concerns": "uneven skin tone and pigmentation",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I have dark spots and uneven skin tone. What lifestyle factors should I consider?",
+    "expected_topics": ["dark spots", "pigmentation", "uneven skin tone", "sun exposure", "sun protection", "skin care"],
+    "reference_answer": "Sun exposure can contribute to pigmentation concerns, so consistent sun protection and gentle skincare habits may be helpful."
+  },
+  {
+    "id": "skin_005",
+    "profile": {
+      "skin_concern": "dull skin",
+      "skin_concerns": "dull and tired-looking skin",
+      "face_washing": "once a day",
+      "diet": "low fruit and vegetable intake",
+      "sunscreen": "sometimes",
+      "cosmetics": "occasionally",
+      "water_intake": "low",
+      "sun_exposure": "moderate",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "My skin looks dull and tired. Could my lifestyle be contributing?",
+    "expected_topics": ["dull skin", "sleep", "hydration", "diet", "stress", "sun exposure"],
+    "reference_answer": "Poor sleep, low hydration, an unbalanced diet and high stress may contribute to a tired-looking appearance."
+  },
+  {
+    "id": "skin_006",
+    "profile": {
+      "skin_concern": "oily skin",
+      "skin_concerns": "excess oil and enlarged-looking pores",
+      "face_washing": "four times a day",
+      "diet": "high processed food intake",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "My face becomes very oily during the day. Am I washing it too much?",
+    "expected_topics": ["oily skin", "face washing", "excessive washing", "gentle cleansing", "stress"],
+    "reference_answer": "Very frequent washing may irritate the skin, so a gentle cleansing routine and balanced skincare habits may be preferable."
+  },
+  {
+    "id": "skin_007",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "occasional breakouts",
+      "face_washing": "once a day",
+      "diet": "high sugar and processed foods",
+      "sunscreen": "rarely",
+      "cosmetics": "frequent",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "I get occasional breakouts and have a stressful lifestyle. What habits could help?",
+    "expected_topics": ["acne", "stress", "diet", "face washing", "hydration", "sun protection"],
+    "reference_answer": "Stress management, gentle cleansing, adequate hydration, balanced eating and sun protection can support general skin health."
+  },
+  {
+    "id": "skin_008",
+    "profile": {
+      "skin_concern": "dehydrated skin",
+      "skin_concerns": "tight and dry feeling skin",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "very low",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "My skin often feels tight and dehydrated. What lifestyle change should I make?",
+    "expected_topics": ["dehydration", "hydration", "water intake", "dry skin", "sun exposure"],
+    "reference_answer": "Adequate fluid intake and protection from excessive environmental exposure may support skin hydration."
+  },
+  {
+    "id": "skin_009",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "forehead acne",
+      "face_washing": "twice a day",
+      "diet": "high dairy and processed food intake",
+      "sunscreen": "sometimes",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "6 hours",
+      "stress": "moderate"
+    },
+    "question": "I mostly get acne on my forehead. What lifestyle factors are worth reviewing?",
+    "expected_topics": ["acne", "diet", "face washing", "sleep", "stress", "skin care"],
+    "reference_answer": "Reviewing cleansing habits, diet, sleep, stress and general skincare practices may help identify factors associated with breakouts."
+  },
+  {
+    "id": "skin_010",
+    "profile": {
+      "skin_concern": "sun exposure",
+      "skin_concerns": "sun sensitivity and tanning",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "very high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "I spend a lot of time in the sun and my skin tans easily. What should I focus on?",
+    "expected_topics": ["sun exposure", "sun protection", "sunscreen", "skin protection", "hydration"],
+    "reference_answer": "Reducing excessive sun exposure and using consistent sun protection are important general skincare habits."
+  },
+  {
+    "id": "skin_011",
+    "profile": {
+      "skin_concern": "combination skin",
+      "skin_concerns": "oily T-zone and dry cheeks",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I have an oily T-zone but dry cheeks. How can I maintain balance?",
+    "expected_topics": ["combination skin", "oily skin", "dry skin", "gentle cleansing", "hydration"],
+    "reference_answer": "Combination skin may benefit from gentle cleansing and maintaining adequate hydration without overly aggressive washing."
+  },
+  {
+    "id": "skin_012",
+    "profile": {
+      "skin_concern": "skin irritation",
+      "skin_concerns": "redness after using cosmetics",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My skin becomes irritated after using cosmetics. What should I do?",
+    "expected_topics": ["irritation", "sensitive skin", "cosmetics", "gentle skincare", "redness"],
+    "reference_answer": "Avoiding products or practices that trigger irritation and keeping the routine gentle may help. Persistent irritation may warrant professional advice."
+  },
+  {
+    "id": "skin_013",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "persistent acne",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My acne has continued for several months. When should I consider seeing a dermatologist?",
+    "expected_topics": ["acne", "persistent acne", "dermatologist", "professional care", "skin health"],
+    "reference_answer": "Persistent or worsening acne, especially when painful or affecting daily life, may be a reason to seek professional dermatological advice."
+  },
+  {
+    "id": "skin_014",
+    "profile": {
+      "skin_concern": "dry skin",
+      "skin_concerns": "dryness during winter",
+      "face_washing": "three times a day",
+      "diet": "balanced",
+      "sunscreen": "sometimes",
+      "cosmetics": "rarely",
+      "water_intake": "low",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "My skin becomes extremely dry during winter. What habits may help?",
+    "expected_topics": ["dry skin", "winter", "hydration", "water", "gentle cleansing"],
+    "reference_answer": "Gentle cleansing, avoiding excessive washing and maintaining adequate hydration may support dry skin during colder weather."
+  },
+  {
+    "id": "skin_015",
+    "profile": {
+      "skin_concern": "pimples",
+      "skin_concerns": "frequent pimples around the cheeks",
+      "face_washing": "once a day",
+      "diet": "high processed foods",
+      "sunscreen": "rarely",
+      "cosmetics": "frequent",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "I frequently get pimples on my cheeks. Which lifestyle habits should I review?",
+    "expected_topics": ["pimples", "acne", "face washing", "diet", "stress", "hydration"],
+    "reference_answer": "Reviewing cleansing habits, diet, hydration, sleep and stress may support better overall skin health."
+  },
+  {
+    "id": "skin_016",
+    "profile": {
+      "skin_concern": "uneven skin tone",
+      "skin_concerns": "uneven tone and tanning",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "What habits can help me manage uneven skin tone caused by frequent sun exposure?",
+    "expected_topics": ["uneven skin tone", "sun exposure", "sun protection", "tanning", "skincare"],
+    "reference_answer": "Consistent sun protection and reducing unnecessary sun exposure are important habits for managing sun-related skin concerns."
+  },
+  {
+    "id": "skin_017",
+    "profile": {
+      "skin_concern": "sensitive skin",
+      "skin_concerns": "easily irritated skin",
+      "face_washing": "three times a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "My sensitive skin gets irritated easily. Could frequent washing be a problem?",
+    "expected_topics": ["sensitive skin", "irritation", "face washing", "gentle cleansing", "stress"],
+    "reference_answer": "Frequent washing can sometimes irritate sensitive skin, so a gentle and consistent cleansing routine may be preferable."
+  },
+  {
+    "id": "skin_018",
+    "profile": {
+      "skin_concern": "dullness",
+      "skin_concerns": "dull complexion",
+      "face_washing": "twice a day",
+      "diet": "low fruit intake",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "Why might my skin look dull when I sleep poorly and drink little water?",
+    "expected_topics": ["dull skin", "sleep", "hydration", "water", "stress", "diet"],
+    "reference_answer": "Poor sleep, inadequate hydration, stress and an unbalanced diet may contribute to a tired or dull-looking complexion."
+  },
+  {
+    "id": "skin_019",
+    "profile": {
+      "skin_concern": "oily skin",
+      "skin_concerns": "oily skin and clogged pores",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "heavy makeup",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My skin is oily and I regularly use heavy makeup. What should I consider?",
+    "expected_topics": ["oily skin", "cosmetics", "makeup", "clogged pores", "cleansing"],
+    "reference_answer": "Maintaining gentle cleansing and reviewing cosmetic habits may be useful when managing oily or congestion-prone skin."
+  },
+  {
+    "id": "skin_020",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "general skin wellness",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "8 hours",
+      "stress": "low"
+    },
+    "question": "What basic lifestyle habits support healthy skin?",
+    "expected_topics": ["skin health", "hydration", "sleep", "diet", "sun protection", "stress", "cleansing"],
+    "reference_answer": "Adequate hydration, balanced nutrition, sufficient sleep, stress management, gentle cleansing and sun protection support general skin wellness."
+  },
+  {
+    "id": "skin_021",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne with high stress",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "5 hours",
+      "stress": "very high"
+    },
+    "question": "Can stress and lack of sleep be relevant to my acne-prone skin?",
+    "expected_topics": ["acne", "stress", "sleep", "lifestyle", "skin health"],
+    "reference_answer": "Stress and inadequate sleep may be relevant lifestyle factors for overall skin health and should be managed alongside gentle skincare."
+  },
+  {
+    "id": "skin_022",
+    "profile": {
+      "skin_concern": "dry skin",
+      "skin_concerns": "dryness and low water intake",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "very low",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "I have dry skin and rarely drink water. Could hydration be important?",
+    "expected_topics": ["dry skin", "hydration", "water intake", "skin health"],
+    "reference_answer": "Maintaining adequate hydration is an important general habit for supporting overall skin wellness."
+  },
+  {
+    "id": "skin_023",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne and frequent face touching",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "sometimes",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I have acne and frequently touch my face. What habits should I avoid?",
+    "expected_topics": ["acne", "face touching", "skin hygiene", "cleansing", "avoid"],
+    "reference_answer": "Avoid unnecessary touching or picking of the face and maintain a gentle, consistent cleansing routine."
+  },
+  {
+    "id": "skin_024",
+    "profile": {
+      "skin_concern": "skin irritation",
+      "skin_concerns": "irritation after excessive exfoliation",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My skin became irritated after frequent exfoliation. What should I avoid?",
+    "expected_topics": ["irritation", "exfoliation", "sensitive skin", "gentle skincare", "sun protection"],
+    "reference_answer": "Overly aggressive skincare practices can irritate the skin, so simplifying the routine and protecting the skin may be appropriate."
+  },
+  {
+    "id": "skin_025",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "poor lifestyle habits",
+      "face_washing": "once a day",
+      "diet": "mostly processed foods",
+      "sunscreen": "rarely",
+      "cosmetics": "frequent",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "My lifestyle is unhealthy overall. Which habits should I improve first for my skin?",
+    "expected_topics": ["skin health", "diet", "hydration", "sleep", "stress", "sun protection"],
+    "reference_answer": "Improving hydration, sleep, nutrition, stress management and sun protection can provide a strong foundation for general skin wellness."
+  },
+  {
+    "id": "skin_026",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "breakouts after poor diet",
+      "face_washing": "twice a day",
+      "diet": "high sugar and processed foods",
+      "sunscreen": "sometimes",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "Can improving my diet be useful when I have acne?",
+    "expected_topics": ["acne", "diet", "sugar", "nutrition", "skin health"],
+    "reference_answer": "A balanced diet with nutritious foods may support general skin health, although diet alone does not determine acne."
+  },
+  {
+    "id": "skin_027",
+    "profile": {
+      "skin_concern": "sun damage",
+      "skin_concerns": "frequent outdoor exposure",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "very high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "I work outdoors and have frequent sun exposure. What skincare habit is most important?",
+    "expected_topics": ["sun exposure", "sun protection", "sunscreen", "outdoor exposure", "skin protection"],
+    "reference_answer": "Consistent sun protection and reducing unnecessary direct sun exposure are important habits for people who spend significant time outdoors."
+  },
+  {
+    "id": "skin_028",
+    "profile": {
+      "skin_concern": "dry skin",
+      "skin_concerns": "dry skin from frequent hot showers",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "My skin is dry and I take very hot showers. Could my routine contribute?",
+    "expected_topics": ["dry skin", "hot water", "hydration", "gentle skincare"],
+    "reference_answer": "Very hot water can be irritating or drying for some people, so gentler bathing habits may help support the skin barrier."
+  },
+  {
+    "id": "skin_029",
+    "profile": {
+      "skin_concern": "sensitive skin",
+      "skin_concerns": "sensitive skin with high pollution exposure",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I live in a polluted environment and have sensitive skin. What habits may help?",
+    "expected_topics": ["sensitive skin", "pollution", "cleansing", "skin protection", "irritation"],
+    "reference_answer": "A gentle cleansing routine and avoiding unnecessary irritation may help support skin exposed to environmental pollutants."
+  },
+  {
+    "id": "skin_030",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne with poor sleep",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "4 to 5 hours",
+      "stress": "high"
+    },
+    "question": "My sleep is poor and I have acne. What lifestyle changes can I consider?",
+    "expected_topics": ["acne", "sleep", "stress", "lifestyle", "skin health"],
+    "reference_answer": "Improving sleep and managing stress may support overall wellbeing and skin health alongside a consistent skincare routine."
+  },
+  {
+    "id": "skin_031",
+    "profile": {
+      "skin_concern": "dark circles",
+      "skin_concerns": "tired appearance and dark circles",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "sometimes",
+      "cosmetics": "occasionally",
+      "water_intake": "low",
+      "sun_exposure": "moderate",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "I have dark circles and look tired. What lifestyle factors should I improve?",
+    "expected_topics": ["dark circles", "sleep", "hydration", "stress", "diet"],
+    "reference_answer": "Adequate sleep, hydration, balanced nutrition and stress management may support a healthier-looking appearance."
+  },
+  {
+    "id": "skin_032",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne and heavy cosmetics",
+      "face_washing": "once a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "heavy daily makeup",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I have acne and wear heavy makeup every day. What should I pay attention to?",
+    "expected_topics": ["acne", "cosmetics", "makeup", "cleansing", "skin hygiene"],
+    "reference_answer": "Reviewing cosmetic habits and maintaining gentle, consistent cleansing may be useful for acne-prone skin."
+  },
+  {
+    "id": "skin_033",
+    "profile": {
+      "skin_concern": "skin dryness",
+      "skin_concerns": "dryness and air-conditioned environment",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "low",
+      "sun_exposure": "low",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My skin feels dry after spending all day in air conditioning. What can I do?",
+    "expected_topics": ["dry skin", "hydration", "water", "environment", "skin moisture"],
+    "reference_answer": "Maintaining adequate hydration and using gentle skincare habits may help when environmental conditions leave the skin feeling dry."
+  },
+  {
+    "id": "skin_034",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne and high stress",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "6 hours",
+      "stress": "very high"
+    },
+    "question": "My acne seems worse during stressful periods. What lifestyle practices could help?",
+    "expected_topics": ["acne", "stress", "sleep", "lifestyle", "skin health"],
+    "reference_answer": "Stress management, adequate sleep and consistent gentle skincare may support overall skin wellness."
+  },
+  {
+    "id": "skin_035",
+    "profile": {
+      "skin_concern": "oily skin",
+      "skin_concerns": "oily skin in hot weather",
+      "face_washing": "four times a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "My skin becomes oily in hot weather, so I wash my face four times a day. Is that appropriate?",
+    "expected_topics": ["oily skin", "face washing", "excessive washing", "gentle cleansing", "sun exposure"],
+    "reference_answer": "Excessive washing may irritate the skin, so maintaining a gentle cleansing routine and protecting the skin from sun exposure may be preferable."
+  },
+  {
+    "id": "skin_036",
+    "profile": {
+      "skin_concern": "pigmentation",
+      "skin_concerns": "post-acne dark marks",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "adequate",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I have dark marks left after acne. What general skincare habits are useful?",
+    "expected_topics": ["pigmentation", "dark marks", "acne", "sun protection", "gentle skincare"],
+    "reference_answer": "Gentle skincare and consistent sun protection can support overall skin health when dealing with post-acne marks."
+  },
+  {
+    "id": "skin_037",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "poor hydration",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "very low",
+      "sun_exposure": "high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "How important is water intake for maintaining healthy skin?",
+    "expected_topics": ["hydration", "water intake", "skin health", "sun exposure"],
+    "reference_answer": "Adequate hydration is an important general wellness habit and can support overall skin health."
+  },
+  {
+    "id": "skin_038",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "irregular sleep and stress",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "How can sleep and stress management affect general skin wellness?",
+    "expected_topics": ["sleep", "stress", "skin health", "lifestyle"],
+    "reference_answer": "Adequate sleep and stress management can support overall wellbeing and may contribute to healthier skin habits."
+  },
+  {
+    "id": "skin_039",
+    "profile": {
+      "skin_concern": "sensitive skin",
+      "skin_concerns": "redness and dryness",
+      "face_washing": "three times a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "frequent",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "6 hours",
+      "stress": "moderate"
+    },
+    "question": "I have redness and dryness together. What simple habits should I follow?",
+    "expected_topics": ["sensitive skin", "redness", "dry skin", "hydration", "gentle cleansing", "sun protection"],
+    "reference_answer": "Gentle cleansing, adequate hydration and sun protection may help support skin that is dry and easily irritated."
+  },
+  {
+    "id": "skin_040",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "mild acne",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "8 hours",
+      "stress": "low"
+    },
+    "question": "What simple routine can I follow for mild acne-prone skin?",
+    "expected_topics": ["acne", "gentle cleansing", "sun protection", "skin routine", "hydration"],
+    "reference_answer": "A simple routine with gentle cleansing, adequate hydration and consistent sun protection can support acne-prone skin."
+  },
+  {
+    "id": "skin_041",
+    "profile": {
+      "skin_concern": "dry skin",
+      "skin_concerns": "dryness from harsh cleansing",
+      "face_washing": "five times a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "Could washing my face five times a day contribute to dryness?",
+    "expected_topics": ["dry skin", "face washing", "excessive washing", "gentle cleansing"],
+    "reference_answer": "Very frequent cleansing may contribute to irritation or dryness, so a gentler and less frequent routine may be more suitable."
+  },
+  {
+    "id": "skin_042",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "poor nutrition",
+      "face_washing": "twice a day",
+      "diet": "low protein and low vegetable intake",
+      "sunscreen": "sometimes",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "Can a balanced diet support healthier skin?",
+    "expected_topics": ["diet", "nutrition", "skin health", "balanced diet"],
+    "reference_answer": "A varied and balanced diet provides nutrients that support general health and can contribute to overall skin wellness."
+  },
+  {
+    "id": "skin_043",
+    "profile": {
+      "skin_concern": "skin irritation",
+      "skin_concerns": "irritation and excessive cosmetics",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "many products daily",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "I use many cosmetic products and my skin is irritated. What should I reconsider?",
+    "expected_topics": ["skin irritation", "cosmetics", "sensitive skin", "gentle skincare", "avoid"],
+    "reference_answer": "Reducing unnecessary cosmetic products and simplifying the routine may help when the skin is irritated."
+  },
+  {
+    "id": "skin_044",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "acne and poor hygiene habits",
+      "face_washing": "once a day",
+      "diet": "balanced",
+      "sunscreen": "sometimes",
+      "cosmetics": "frequent",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "What basic hygiene habits are useful for acne-prone skin?",
+    "expected_topics": ["acne", "hygiene", "face washing", "gentle cleansing", "cosmetics"],
+    "reference_answer": "Consistent gentle cleansing and avoiding unnecessary touching or picking can support acne-prone skin."
+  },
+  {
+    "id": "skin_045",
+    "profile": {
+      "skin_concern": "skin health",
+      "skin_concerns": "high stress and poor lifestyle",
+      "face_washing": "twice a day",
+      "diet": "mostly processed foods",
+      "sunscreen": "rarely",
+      "cosmetics": "occasionally",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "5 hours",
+      "stress": "high"
+    },
+    "question": "What are the most important lifestyle habits for improving general skin wellness?",
+    "expected_topics": ["skin health", "sleep", "stress", "hydration", "diet", "sun protection"],
+    "reference_answer": "Prioritize adequate sleep, hydration, balanced nutrition, stress management and consistent sun protection."
+  },
+  {
+    "id": "skin_046",
+    "profile": {
+      "skin_concern": "acne",
+      "skin_concerns": "painful worsening acne",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "moderate"
+    },
+    "question": "My acne is becoming painful and is getting worse quickly. Should I seek professional help?",
+    "expected_topics": ["acne", "painful acne", "worsening", "dermatologist", "professional care"],
+    "reference_answer": "Painful or rapidly worsening acne may be a reason to seek professional dermatological advice."
+  },
+  {
+    "id": "skin_047",
+    "profile": {
+      "skin_concern": "sun exposure",
+      "skin_concerns": "frequent tanning",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "rarely",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "very high",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "I frequently tan because I spend time outside. How can I protect my skin?",
+    "expected_topics": ["sun exposure", "tanning", "sun protection", "sunscreen", "skin protection"],
+    "reference_answer": "Reducing direct sun exposure and using consistent sun protection can help protect the skin from excessive ultraviolet exposure."
+  },
+  {
+    "id": "skin_048",
+    "profile": {
+      "skin_concern": "dry and sensitive skin",
+      "skin_concerns": "dryness and irritation",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "rarely",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "7 hours",
+      "stress": "low"
+    },
+    "question": "What simple natural lifestyle habits can support dry and sensitive skin?",
+    "expected_topics": ["dry skin", "sensitive skin", "hydration", "gentle cleansing", "skin protection"],
+    "reference_answer": "Adequate hydration, gentle cleansing and avoiding unnecessary irritation can support dry and sensitive skin."
+  },
+  {
+    "id": "skin_049",
+    "profile": {
+      "skin_concern": "skin wellness",
+      "skin_concerns": "general skincare prevention",
+      "face_washing": "twice a day",
+      "diet": "balanced",
+      "sunscreen": "daily",
+      "cosmetics": "moderate",
+      "water_intake": "adequate",
+      "sun_exposure": "moderate",
+      "sleep": "8 hours",
+      "stress": "low"
+    },
+    "question": "What preventive habits can help maintain healthy skin long term?",
+    "expected_topics": ["skin health", "prevention", "hydration", "sleep", "diet", "sun protection", "cleansing"],
+    "reference_answer": "Consistent gentle cleansing, hydration, balanced nutrition, sufficient sleep, stress management and sun protection can support long-term skin wellness."
+  },
+  {
+    "id": "skin_050",
+    "profile": {
+      "skin_concern": "multiple skin concerns",
+      "skin_concerns": "acne, dryness and uneven tone",
+      "face_washing": "three times a day",
+      "diet": "high processed food intake",
+      "sunscreen": "rarely",
+      "cosmetics": "frequent",
+      "water_intake": "low",
+      "sun_exposure": "high",
+      "sleep": "6 hours",
+      "stress": "high"
+    },
+    "question": "I have acne, dryness and uneven skin tone at the same time. Which lifestyle factors should I prioritize?",
+    "expected_topics": ["acne", "dry skin", "uneven skin tone", "hydration", "sun protection", "sleep", "stress", "diet"],
+    "reference_answer": "Prioritize gentle cleansing, hydration, balanced nutrition, adequate sleep, stress management and consistent sun protection."
+  }
+]

@@ -1,0 +1,767 @@
+{
+    "test_cases": 50,
+    "top_k": 5,
+    "retrieval": {
+        "precision_at_5": 0.728,
+        "recall_at_5": 0.7010952380952381,
+        "hit_rate_at_5": 1.0,
+        "mrr": 0.9666666666666667
+    },
+    "generation": {
+        "answer_relevance": 0.5973333333333334,
+        "answer_correctness": 0.5499858290144668,
+        "context_support": 0.8666651562774501
+    },
+    "cases": [
+        {
+            "id": "skin_001",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.7142857142857143,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.5714285714285714,
+                "answer_correctness": 0.55,
+                "context_support": 0.8518518518518519
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin shows signs of acne and excess oil, likely influenced by high sugar intake, low hydration, frequent sun exposure, and high stress. These factors can increase inflammation and sebum production, making breakouts more common. The goal is to reduce triggers, support skin barrier health, and keep pores clear with simple, natural habits.\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 Tbsp raw honey with ½ tsp cinnamon. Apply to clean skin for 10 min, rinse with lukewarm water. Honey’s antibacterial properties and cinnamon’s circulation boost help calm blemishes.  \n- **Aloe vera gel** – Use pure aloe gel as a light moisturizer after cleansing. It calms redness and provides gentle hydration without clogging pores.  \n- **Green tea compress** – Steep a green tea bag, cool it, and place on the face for 5–10 min. Antioxidants help reduce inflammation and soothe irritated skin.\n\n**3. Lifestyle improvements**  \n- Wash face with lukewarm water, not hot, and use a gentle, fragrance‑free cleanser.  \n- Pat skin dry with a clean towel; avoid rubbing or aggressive scrubbing.  \n- Keep pillowcases and phone screens clean; change pillowcases weekly.  \n- Incorporate short breathing or meditation breaks to lower daily stress.\n\n**4. Diet and hydration**  \n- Replace sugary drinks with water or infused water (cucumber, lemon, mint).  \n- Add omega‑3 rich foods: chia seeds, walnuts, flaxseed, or a small handful of almonds.  \n- Include leafy greens and berries for antioxidants that support skin repair.  \n- Aim for at least 8 cups (≈2 L) of water per day; sip regularly, not just when thirsty.\n\n**5. Preventive habits**  \n- Apply a broad‑spectrum SPF 30+ sunscreen every morning, even on cloudy days.  \n- Seek shade or wear a wide‑brimmed hat during peak sun hours (10 am‑4 pm).  \n- Maintain a consistent sleep schedule: aim for 7–8 h nightly and a calming pre‑bed routine.  \n- Avoid touching the face with unwashed hands; keep makeup brushes clean and replace them often.\n\n**6. When to consult a professional**  \n- Breakouts become painful, swollen, or show signs of infection (pus, increased redness).  \n- Acne persists or worsens for more than 4 weeks despite home care.  \n- You notice new, severe scarring or significant changes in skin texture.\n\n---\n\n*This guidance is AI‑based wellness advice and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical care.*"
+        },
+        {
+            "id": "skin_002",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.8333333333333334,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.5,
+                "answer_correctness": 0.5789473684210527,
+                "context_support": 0.8888888888888888
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing dry, flaky skin despite a balanced diet and moderate sun exposure. Washing your face three times a day and low water intake can contribute to moisture loss. The goal is to restore hydration, protect the skin barrier, and keep the routine gentle and sustainable.\n\n**2. Natural remedies**  \n- **Honey & yogurt mask** – Mix 1 Tbsp raw honey with 1 Tbsp plain yogurt. Apply to the face for 10 min, rinse with lukewarm water. Honey is a humectant; yogurt contains lactic acid that gently exfoliates.  \n- **Aloe vera gel** – Use pure aloe gel after cleansing. It calms irritation and supplies natural polysaccharides that lock in moisture.  \n- **Oatmeal bath** – Add ½ cup colloidal oatmeal to a lukewarm shower. Oatmeal releases avenanthramides that soothe dryness and strengthen the skin barrier.\n\n**3. Lifestyle improvements**  \n- Reduce washing frequency to 2 times a day; cleanse only when visibly sweaty or oily.  \n- Use lukewarm water and a mild, fragrance‑free cleanser; avoid hot showers that strip natural oils.  \n- Pat the face dry with a soft towel; never rub or scrub.  \n- Replace harsh soaps on body with gentle, moisturizing cleansers to keep the overall skin barrier intact.\n\n**4. Diet and hydration**  \n- Aim for 8–10 cups of water daily; sip water throughout the day, not just before meals.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia seeds) to support skin lipid production.  \n- Eat plenty of fruits and vegetables high in vitamin C and antioxidants (berries, citrus, leafy greens).  \n- Limit caffeine and alcohol, which can dehydrate the skin.\n\n**5. Preventive habits**  \n- Use a cool‑mist humidifier in dry indoor environments; add a few drops of essential oil (lavender or chamomile) for a calming scent.  \n- Wear a wide‑brimmed hat and lightweight, breathable clothing when outdoors; apply a broad‑spectrum SPF 30 sunscreen every morning, even on cloudy days.  \n- Replace pillowcases and towels weekly; keep them clean to avoid bacterial buildup that can irritate dry skin.  \n- After washing, apply a light, fragrance‑free moisturizer while the skin is still damp to lock in moisture.\n\n**6. When to consult a professional**  \n- Persistent flaking that does not improve after 4–6 weeks of consistent care.  \n- Pain, itching, or redness that worsens or spreads.  \n- Signs of infection (pus, swelling, fever) or severe irritation.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms persist or worsen, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_003",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6666666666666666,
+                "answer_correctness": 0.4,
+                "context_support": 0.9090909090909091
+            },
+            "answer": "**1. Understanding the concern**  \n- Sensitive skin that shows redness and irritation can be triggered by heat, harsh products, sun, and stress.  \n- Your routine (twice‑daily washing, daily sunscreen, frequent cosmetics, high sun exposure, and high stress) can amplify irritation if not managed gently.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n- **Aloe vera gel** – apply a thin layer after cleansing; it cools and calms inflammation.  \n- **Chamomile tea compress** – steep tea bags, cool, and press on the face for 5–10 min to soothe redness.  \n- **Oatmeal mask** – mix colloidal oatmeal with water or yogurt; leave on for 10 min, then rinse to moisturize and reduce itching.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n- Use lukewarm water and a soft washcloth; avoid hot showers that strip natural oils.  \n- Pat the skin dry instead of rubbing; this reduces friction‑induced irritation.  \n- Limit makeup to fragrance‑free, hypoallergenic products; remove gently with a mild cleanser.  \n- Practice short breathing or meditation breaks during the day to lower stress‑related flare‑ups.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n- **Omega‑3 rich foods** (flaxseed, walnuts, chia) support skin barrier function.  \n- **Vitamin C sources** (citrus, berries, bell peppers) help protect against UV‑induced redness.  \n- **Hydrate consistently** – aim for 8–10 cups of water daily; add herbal teas if you enjoy them.  \n- **Limit spicy, salty, and caffeinated foods** that can increase blood flow and worsen redness.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n- Apply broad‑spectrum SPF 30+ every morning and reapply after sweating or swimming.  \n- Wear a wide‑brimmed hat and sunglasses when outdoors; seek shade during peak sun hours.  \n- Keep pillowcases, towels, and phone screens clean to reduce bacterial irritation.  \n- Schedule a consistent sleep routine: 7–8 h, dim lights, and no screens 30 min before bed.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n- Redness becomes severe, painful, or spreads beyond the face.  \n- Persistent irritation lasts more than a week despite home care.  \n- Signs of infection (pus, swelling, fever) or worsening skin condition.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_004",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.6666666666666666,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8333333333333334,
+                "answer_correctness": 0.6470588235294118,
+                "context_support": 0.9629629629629629
+            },
+            "answer": "**1. Understanding the concern**  \nYou notice dark spots and an uneven skin tone, especially after frequent sun exposure. Dark spots often appear when the skin’s pigment production is triggered by UV light, inflammation, or hormonal changes. Your routine—washing twice a day, balanced diet, adequate water, and moderate stress—provides a solid base, but infrequent sunscreen use and high sun exposure are key factors that can worsen pigmentation.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer to the spots after cleansing. Aloe’s soothing properties can calm inflammation and help fade hyperpigmentation over time.  \n- **Lemon‑citrus mask (1 % citric acid)** – Mix a few drops of fresh lemon juice with plain yogurt or honey. Apply for 10 minutes, rinse with cool water. The mild acid gently exfoliates and lightens spots; use only 2–3 times a week to avoid irritation.  \n- **Green tea compress** – Steep a green tea bag, let it cool, and press it on the face for 5–10 minutes. Antioxidants help protect skin from UV damage and may reduce darkening.\n\n---\n\n**3. Lifestyle improvements**  \n- **Sun protection routine** – Wear a wide‑brimmed hat, sunglasses, and long sleeves whenever you’re outdoors.  \n- **Shade strategy** – Seek shade during peak sun hours (10 am–4 pm).  \n- **Gentle cleansing** – Use lukewarm water, avoid hot water and harsh scrubs; pat dry with a soft towel.  \n- **Consistent sleep** – Keep a regular bedtime and limit screen time an hour before sleep to support skin repair.\n\n---\n\n**4. Diet and hydration**  \n- **Antioxidant‑rich foods** – Include berries, leafy greens, and nuts to help neutralize free radicals from sun exposure.  \n- **Omega‑3 sources** – Add fatty fish or flaxseed to support skin barrier health.  \n- **Hydrating fluids** – Aim for 8–10 cups of water daily; add herbal teas for variety.  \n- **Limit sugary drinks** – Excess sugar can promote inflammation that may worsen pigmentation.\n\n---\n\n**5. Preventive habits**  \n- **Daily sunscreen** – Even on cloudy days, apply a broad‑spectrum SPF 30+ before heading outdoors.  \n- **Regular pillowcase changes** – Swap every 3–4 days to reduce bacterial transfer that can trigger spots.  \n- **Hand hygiene** – Wash hands before touching the face to avoid oil and dirt buildup.  \n- **Mindful makeup removal** – Gently cleanse after cosmetics; avoid rubbing or using harsh wipes.\n\n---\n\n**6. When to consult a professional**  \n- If dark spots become painful, bleed, or rapidly spread.  \n- If you notice new, persistent redness or swelling around the spots.  \n- If over-the‑counter remedies and lifestyle changes do not improve the appearance after 6–8 weeks.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For personalized care, consult a qualified dermatologist.*"
+        },
+        {
+            "id": "skin_005",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.6666666666666666,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6666666666666666,
+                "answer_correctness": 0.7058823529411765,
+                "context_support": 0.84
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re noticing a dull, tired‑looking complexion. Factors that often contribute include limited fruit/veg intake, low water consumption, short sleep, high stress, and inconsistent sun protection. These can reduce skin radiance and slow natural renewal.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n\n- **Aloe vera gel** – Apply a thin layer after cleansing; it calms irritation and supplies mild hydration.  \n- **Honey face mask** – Mix 1 Tbsp honey with 1 Tbsp warm water, leave 10 min, rinse. Honey’s natural enzymes help brighten.  \n- **Oatmeal rinse** – Blend ½ cup oats into a paste, apply for 5 min, rinse. Oats soothe and gently exfoliate, revealing fresher skin.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n\n- **Consistent sleep schedule** – Aim for 7–8 h nightly; set a bedtime alarm to wind down.  \n- **Reduce screen time before bed** – Dim lights, use blue‑light filters, and pause devices 30 min before sleep.  \n- **Regular walking or light exercise** – 20–30 min, 3–4 days/week to boost circulation and stress relief.  \n- **Breathing or short meditation** – 5 min daily to lower cortisol and calm the nervous system.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n\n- **Increase fruit & veg** – Target 5 servings/day; berries, citrus, leafy greens add antioxidants.  \n- **Add omega‑3 sources** – Flaxseed, chia, walnuts support skin barrier health.  \n- **Hydrate steadily** – Aim for 8 cups water/day; sip regularly, not just when thirsty.  \n- **Limit sugary drinks** – Reduce soda, energy drinks; opt for herbal teas or infused water.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n\n- **Daily sunscreen** – Apply SPF 30+ every morning, reapply after 2 h outdoors.  \n- **Gentle cleansing** – Use lukewarm water, avoid harsh scrubs; pat dry with a soft towel.  \n- **Clean pillowcases & towels** – Wash weekly to reduce bacterial buildup.  \n- **Shade during peak sun** – Seek shade or wear a wide‑brim hat when outdoors for >30 min.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n\n- If dullness persists despite consistent care for 6 weeks.  \n- If you notice redness, swelling, or a new rash that worsens.  \n- If skin becomes painful, itchy, or shows signs of infection (pus, severe irritation).\n\n---\n\n*Disclaimer: This is AI‑generated wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_006",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.5,
+                "context_support": 0.9615384615384616
+            },
+            "answer": "**1. Understanding the concern**  \nYou have oily skin that produces excess sebum and makes pores look enlarged. Washing the face four times a day can strip natural oils and trigger more production. A diet high in processed foods, high stress, and limited sleep can further upset the skin’s balance. The goal is to calm oiliness, refine pores, and support overall skin health with simple, affordable habits.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it soothes inflammation and reduces shine.  \n- **Honey mask (1 tsp honey + 1 tsp plain yogurt)** – Leave on 10 min, rinse with lukewarm water; honey’s antibacterial properties help control excess oil.  \n- **Green‑tea extract rinse** – Brew a cup of green tea, cool, and use as a final rinse; its antioxidants calm the skin and help tighten pores.\n\n---\n\n**3. Lifestyle improvements**  \n- Wash the face **2–3 times a day** with lukewarm water; avoid hot water and vigorous scrubbing.  \n- Use a **gentle, oil‑free cleanser** (e.g., a mild foam or gel) and pat dry with a clean towel.  \n- Limit heavy or frequent cosmetics; choose **non‑comedogenic, water‑based** products when needed.  \n- Practice **regular stress‑reduction** (short walks, breathing exercises, or a 5‑minute meditation) to help regulate hormone‑driven oil production.\n\n---\n\n**4. Diet and hydration**  \n- Cut back on processed snacks, sugary drinks, and refined carbs; replace them with whole grains and legumes.  \n- Increase intake of **omega‑3 rich foods** (flaxseed, walnuts, chia seeds) to support skin barrier function.  \n- Add **antioxidant‑rich fruits** (berries, citrus) and vegetables (spinach, broccoli) to your meals.  \n- Continue drinking **adequate water** (≈8 cups/day) and consider a cup of herbal tea (e.g., chamomile) in the evening to aid relaxation.\n\n---\n\n**5. Preventive habits**  \n- Change pillowcases and wash towels **twice a week** to reduce bacterial buildup.  \n- Keep a clean, dry phone screen and avoid touching the face with unwashed hands.  \n- Use a **weekly light‑weight sheet mask** (plain, natural ingredients) to refresh the skin without adding oil.  \n- Protect skin from UV by wearing a wide‑brim hat or seeking shade during peak sun hours, even if you already use sunscreen.\n\n---\n\n**6. When to consult a professional**  \n- If oiliness becomes **severe, painful, or persistent** despite home care.  \n- If you notice **redness, swelling, or signs of infection** (pus, increased warmth).  \n- If enlarged pores or oiliness start to cause **scarring or significant emotional distress**.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_007",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8333333333333334,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.5,
+                "answer_correctness": 0.625,
+                "context_support": 0.7692307692307693
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing occasional breakouts that flare up when you’re stressed, sleep‑short, or expose your skin to heat and sun. A simple daily wash, limited sugar, and more hydration can help calm the skin. This guidance is AI‑based wellness advice, not a medical diagnosis.\n\n**2. Natural remedies**  \n- **Honey mask** – Apply raw honey to the face for 10 min, rinse with lukewarm water. Honey’s antibacterial and soothing properties can reduce redness.  \n- **Aloe vera gel** – Dab a thin layer of pure aloe on blemishes after cleansing. It cools inflammation and moisturises without clogging pores.  \n- **Green tea compress** – Steep a tea bag, cool it, and press on the skin for 5 min. Antioxidants help calm irritation.\n\n**3. Lifestyle improvements**  \n- Wash the face twice daily (morning & night) with lukewarm water and a gentle cleanser; avoid hot water and harsh scrubbing.  \n- Replace pillowcases and towels every 3–4 days; keep phones and other face‑touching items clean.  \n- Aim for 7–8 hours of sleep per night; keep a consistent bedtime routine.  \n- Incorporate 10–15 min of stress‑reduction breathing or short walks into your day.\n\n**4. Diet and hydration**  \n- Cut back on sugary drinks and processed snacks; replace them with whole‑grain crackers or fruit.  \n- Include omega‑3‑rich foods such as walnuts, chia seeds, or flaxseed to support skin barrier health.  \n- Drink at least 8 cups (≈2 L) of water daily; carry a refillable bottle to sip throughout the day.  \n- Add antioxidant‑rich berries or leafy greens to meals to help neutralise free radicals.\n\n**5. Preventive habits**  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors for long periods.  \n- Apply a broad‑spectrum SPF 30 sunscreen every morning, even on cloudy days.  \n- Keep your hands off the face; wash hands before touching the skin.  \n- Avoid picking or squeezing blemishes; use a clean, soft cloth to pat dry after washing.\n\n**6. When to consult a professional**  \n- Breakouts become frequent, painful, or start to scar.  \n- Skin shows signs of infection (pus, severe swelling, fever).  \n- You notice persistent redness or swelling that does not improve with home care.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or severe skin concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_008",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 0.5
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.38461538461538464,
+                "context_support": 0.88
+            },
+            "answer": "**1. Understanding the concern**  \nYou report tight, dry skin that feels dehydrated. Your routine includes twice‑daily washing, daily sunscreen, and a balanced diet, but water intake is very low and sun exposure is high. Low hydration and intense UV exposure are common contributors to dry, tight skin.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it soothes and adds surface moisture.  \n- **Honey mask** – Mix 1 Tbsp honey with 1 Tbsp warm water, leave on the face 10 min, then rinse. Honey is a natural humectant.  \n- **Oatmeal bath** – Add ½ cup colloidal oatmeal to lukewarm bath water; soak 10–15 min to soften skin and lock in moisture.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water; avoid hot showers that strip natural oils.  \n- Pat the face dry with a soft towel instead of rubbing.  \n- Replace one daily wash with a gentle cleanse if you feel the skin is overly stripped.  \n- Wear a wide‑brimmed hat and lightweight long‑sleeve shirts when outdoors to reduce direct UV contact.\n\n**4. Diet and hydration**  \n- Aim for 8–10 cups of water daily; try infusing with cucumber or lemon for flavor.  \n- Include omega‑3 rich foods: chia seeds, walnuts, flaxseed, and fatty fish.  \n- Eat water‑rich fruits and veggies: watermelon, cucumber, oranges, and leafy greens.  \n- Add herbal teas (e.g., chamomile) to your routine; they provide hydration without caffeine.\n\n**5. Preventive habits**  \n- Apply a light, fragrance‑free moisturizer immediately after washing to seal in moisture.  \n- Change pillowcases and wash towels weekly to keep surfaces clean.  \n- Use a humidifier in dry indoor environments to add moisture to the air.  \n- Schedule a brief 5‑minute break during long sun exposure periods to seek shade.\n\n**6. When to consult a professional**  \n- Persistent tightness or flaking that does not improve after a few weeks of home care.  \n- Development of cracks, bleeding, or signs of infection (redness, swelling, pus).  \n- If dryness is accompanied by severe itching, pain, or a rash that spreads.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_009",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8333333333333334,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6666666666666666,
+                "answer_correctness": 0.5882352941176471,
+                "context_support": 0.8888888888888888
+            },
+            "answer": "**1. Understanding the concern**  \nYour profile shows frequent acne on the forehead, a twice‑daily wash routine, occasional sunscreen use, and a diet high in dairy and processed foods. Stress and limited sleep may also contribute. Acne can flare when the skin’s natural balance is disturbed, so the focus here is on gentle, natural habits that support healthy skin without harsh chemicals or expensive products.\n\n---\n\n**2. Natural remedies**  \n- **Honey & Cinnamon Mask** – Mix 1 Tbsp raw honey with ½ tsp cinnamon powder. Apply to the forehead for 10 min, rinse with lukewarm water. Honey’s antibacterial properties and cinnamon’s anti‑inflammatory effect can calm breakouts.  \n- **Aloe Vera Gel** – Use pure aloe gel (from the plant or a 100 % aloe product) after cleansing. It soothes irritation and reduces redness.  \n- **Green Tea Compress** – Steep a green tea bag, let it cool, and place it on the forehead for 5–10 min. The antioxidants help calm inflammation.\n\n---\n\n**3. Lifestyle improvements**  \n- Keep the face clean but gentle: use lukewarm water, avoid hot water and vigorous scrubbing.  \n- Limit frequent cosmetic use; give the skin a “no‑product” day each week.  \n- Replace the phone and pillowcase every 2–3 days to reduce bacterial transfer.  \n- Maintain a consistent sleep schedule of 7–8 hrs; use a calming bedtime routine.\n\n---\n\n**4. Diet and hydration**  \n- Cut back on dairy: try plant‑based milks and reduce cheese or yogurt intake.  \n- Replace processed snacks with whole foods—nuts, seeds, fruit, and vegetables.  \n- Include omega‑3 sources: chia seeds, flaxseed, walnuts, or a small portion of fatty fish.  \n- Drink at least 8 cups of water daily; add herbal teas (peppermint, chamomile) for variety.\n\n---\n\n**5. Preventive habits**  \n- Pat the face dry with a clean towel; avoid rubbing.  \n- Wash hands before touching the face; use a mild hand soap.  \n- Use a clean, breathable pillowcase; wash it weekly.  \n- Apply sunscreen (SPF 30+) every morning, even on cloudy days, to protect skin from UV‑induced inflammation.\n\n---\n\n**6. When to consult a professional**  \n- Acne becomes severe, painful, or shows signs of infection (pus, swelling).  \n- Breakouts persist for more than 6 weeks despite consistent self‑care.  \n- You notice significant scarring or emotional distress from skin issues.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_010",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.38461538461538464,
+                "context_support": 0.9565217391304348
+            },
+            "answer": "**1. Understanding the concern**  \nYou experience high sun exposure and occasional sun sensitivity, but you rarely use sunscreen. Your skin is generally healthy: you wash twice a day, sleep well, and maintain a balanced diet. The main issue is protecting the skin from UV damage and preventing premature aging or irritation.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after sun exposure to soothe redness and hydrate.  \n- **Cucumber slices** – Place chilled slices on the face for 10–15 min to reduce inflammation and refresh the skin.  \n- **Honey mask** – Mix 1 Tbsp honey with 1 Tbsp warm water, apply for 10 min, then rinse; honey’s antibacterial and antioxidant properties help calm sun‑touched skin.\n\n---\n\n**3. Lifestyle improvements**  \n- **Seek shade** during peak UV hours (10 a.m.–4 p.m.).  \n- **Wear protective clothing**: long‑sleeved shirts, wide‑brimmed hats, and UV‑blocking sunglasses.  \n- **Use a broad‑spectrum sunscreen** (SPF 30+) even on cloudy days; reapply every 2 hours when outdoors.  \n- **Limit outdoor activities** to early morning or late afternoon when the sun is less intense.\n\n---\n\n**4. Diet and hydration**  \n- **Increase antioxidant‑rich foods**: berries, leafy greens, nuts, and seeds to support skin repair.  \n- **Include omega‑3 sources**: fatty fish, flaxseed, or chia seeds to help maintain skin barrier function.  \n- **Consume vitamin C‑rich foods**: citrus, kiwi, bell peppers to aid collagen production.  \n- **Stay hydrated**: aim for 8–10 cups of water daily; add herbal teas or infused water for variety.\n\n---\n\n**5. Preventive habits**  \n- **Gentle face washing**: use lukewarm water, avoid hot water and harsh scrubbing; pat dry with a clean towel.  \n- **Keep pillowcases and towels clean**; change them weekly to reduce bacterial buildup.  \n- **Avoid touching the face** with unwashed hands, especially after sweating.  \n- **Create a relaxing bedtime routine**: dim lights, limit screen time, and maintain a consistent sleep schedule to support skin recovery.\n\n---\n\n**6. When to consult a professional**  \n- Persistent or worsening redness, burning, or itching after sun exposure.  \n- Development of new, dark spots or uneven skin tone that does not improve with home care.  \n- Signs of infection such as pus, swelling, or severe pain.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms become severe, persistent, or concerning, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_011",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.6,
+                "context_support": 0.875
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin is combination: an oily T‑zone and drier cheeks. You wash twice daily, use sunscreen, and keep a balanced diet and adequate hydration. Moderate sun exposure, 7 h of sleep, and moderate stress are good, but the contrast in oiliness and dryness can still feel uncomfortable or uneven.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – apply a thin layer to the T‑zone after cleansing; it calms excess oil and soothes dry patches.  \n- **Honey mask** – mix one tablespoon of raw honey with a few drops of water, spread on the face, leave 10 min, then rinse. Honey’s antibacterial and humectant properties help balance oil and moisture.  \n- **Cucumber slices** – place chilled slices on the eyes and cheeks for 5–10 min to reduce puffiness and refresh dry skin.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water and a gentle, fragrance‑free cleanser; avoid hot water that strips natural oils.  \n- Pat the face dry with a soft towel; do not rub aggressively.  \n- Keep a consistent sleep routine: go to bed and wake up at similar times each day.  \n- Incorporate short breathing or meditation breaks to lower moderate stress levels.\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water daily; add herbal teas if you prefer variety.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia) to support skin barrier health.  \n- Eat antioxidant‑dense fruits and vegetables (berries, leafy greens) to fight free‑radical damage.  \n- Limit sugary snacks and refined carbs, which can spike oil production.\n\n**5. Preventive habits**  \n- Change pillowcases and wash towels weekly to reduce bacterial buildup.  \n- Keep hands clean and avoid touching the face, especially after exercise or sweating.  \n- When outdoors, seek shade or wear a wide‑brimmed hat to protect the T‑zone from UV rays.  \n- Use a light, non‑comedogenic moisturizer on dry cheeks after cleansing; this helps maintain moisture without clogging pores.\n\n**6. When to consult a professional**  \n- Persistent redness, swelling, or pain that does not improve with home care.  \n- Signs of infection (pus, increasing warmth, or spreading rash).  \n- If dryness or oiliness becomes severe, persistent, or starts to cause scarring or breakouts that affect daily life.\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_012",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.7777777777777778,
+                "context_support": 0.9583333333333334
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing redness and irritation after using cosmetics. The skin is likely sensitive to certain ingredients or the frequency of product application. Your routine—washing twice a day, daily sunscreen, balanced diet, adequate water, moderate sun exposure, 7 hrs sleep, and moderate stress—provides a solid foundation, but a few adjustments can help soothe irritation and protect the skin barrier.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n- **Cold compress** – Place a clean, cool washcloth on the irritated area for 5–10 min to reduce redness and calm inflammation.  \n- **Aloe vera gel** – Apply a thin layer of pure aloe (no added fragrance) after cleansing; it hydrates and has mild anti‑inflammatory properties.  \n- **Chamomile tea compress** – Brew a strong chamomile tea, let it cool, and dab the tea bag on the skin for 5–10 min; chamomile can soothe irritation and reduce redness.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n- **Use lukewarm water** when washing; avoid hot water that can strip natural oils.  \n- **Gentle cleansing** – Choose a mild, fragrance‑free cleanser and pat dry with a soft towel; skip vigorous scrubbing.  \n- **Limit cosmetic layers** – Apply fewer products at a time; give the skin a break by using a “no‑cosmetic” day once a week.  \n- **Keep tools clean** – Wash makeup brushes, sponges, and pillowcases regularly to prevent bacterial buildup that can irritate the skin.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n- **Omega‑3 fatty acids** – Include sources like flaxseed, chia seeds, or walnuts to support skin barrier health.  \n- **Vitamin C‑rich foods** – Citrus, berries, and bell peppers help protect against oxidative stress and aid collagen production.  \n- **Hydration** – Aim for 8–10 cups of water daily; add herbal teas (e.g., green tea) for antioxidant benefits.  \n- **Limit processed sugars** – Reducing refined sugar can help lower systemic inflammation that may worsen skin irritation.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n- **Daily sunscreen** – Continue applying broad‑spectrum SPF 30+ every morning, even on cloudy days.  \n- **Avoid picking or rubbing** – Touching the face frequently can transfer irritants and worsen redness.  \n- **Change pillowcases weekly** – Fresh linens reduce exposure to oils and dirt that can trigger irritation.  \n- **Use fragrance‑free, hypoallergenic products** – When choosing new cosmetics, look for minimal ingredient lists and avoid known irritants like alcohol or strong fragrances.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n- If redness becomes **severe, persistent, or spreading** beyond the initial area.  \n- If you notice **pain, swelling, or signs of infection** (pus, warmth, fever).  \n- If irritation **worsens despite consistent home care** or you develop new symptoms such as itching or burning.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For personalized advice or if symptoms worsen, please consult a qualified healthcare professional.*"
+        },
+        {
+            "id": "skin_013",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.5789473684210527,
+                "context_support": 0.8275862068965517
+            },
+            "answer": "**1. Understanding the concern**  \nYou report persistent acne despite a balanced diet, regular sunscreen use, and a consistent washing routine. Acne can flare from hormonal shifts, stress, or environmental factors. Your current habits—twice‑daily washing, adequate sleep, and moderate sun exposure—are solid foundations, but small tweaks can help reduce breakouts and soothe inflammation.\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 Tbsp raw honey with ½ tsp cinnamon powder. Apply to clean skin for 10 min, rinse with lukewarm water. Honey’s antibacterial properties and cinnamon’s anti‑inflammatory effect can calm active lesions.  \n- **Aloe vera gel** – Use pure aloe gel (no added fragrance) as a post‑wash soothing agent. It cools redness and supports barrier repair.  \n- **Green tea compress** – Steep 1 green tea bag in hot water, cool, and press onto the face for 5 min. The catechins help reduce sebum production and inflammation.\n\n**3. Lifestyle improvements**  \n- Keep pillowcases, towels, and phone screens clean; change pillowcases weekly.  \n- Avoid touching or picking at blemishes; use a clean, soft cloth if you need to dab excess oil.  \n- Maintain a consistent sleep schedule; aim for 7–8 h each night to support hormonal balance.  \n- Incorporate 20–30 min of moderate exercise (e.g., brisk walking) 3–4 days a week to lower stress hormones that can trigger acne.\n\n**4. Diet and hydration**  \n- Increase omega‑3 intake: add chia seeds, walnuts, or flaxseed to meals.  \n- Reduce refined sugars and high‑glycemic foods; opt for whole‑grain alternatives.  \n- Consume plenty of fresh fruit and leafy greens—rich in antioxidants that protect skin cells.  \n- Drink at least 8 cups (≈2 L) of water daily; consider herbal teas (e.g., chamomile) for added soothing benefits.\n\n**5. Preventive habits**  \n- Use a gentle, fragrance‑free cleanser; avoid hot water and vigorous scrubbing.  \n- Pat the face dry with a clean towel; do not rub.  \n- Apply sunscreen with broad‑spectrum protection (SPF 30+) every morning, even on cloudy days.  \n- Keep hair away from the face; wash hair regularly to prevent oil transfer to the skin.\n\n**6. When to consult a professional**  \n- If breakouts become painful, swollen, or form deep cysts.  \n- If acne persists for several months despite consistent self‑care.  \n- If you notice scarring, discoloration, or significant emotional distress from skin issues.\n\n---\n\n*This guidance is AI‑generated wellness advice and not a medical diagnosis. For persistent or severe symptoms, please seek professional medical evaluation.*"
+        },
+        {
+            "id": "skin_014",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.5,
+                "context_support": 0.9615384615384616
+            },
+            "answer": "**Understanding the concern**  \nYou have dry skin that worsens in winter, wash your face three times a day, drink little water, and use sunscreen only sometimes. These habits can strip natural oils and reduce moisture, especially in cold, dry air.\n\n**Natural remedies**  \n- **Oatmeal bath** – Add ½ cup colloidal oatmeal to lukewarm water and soak 10 min. Oats soothe irritation and help lock in moisture.  \n- **Aloe vera gel** – Apply a thin layer of pure aloe to damp skin after washing. It calms dryness and adds a light humectant layer.  \n- **Coconut oil mask** – Mix 1 Tbsp organic coconut oil with a few drops of lavender essential oil (optional). Apply for 15 min, then rinse with cool water. Coconut oil is a natural emollient that seals surface moisture.\n\n**Lifestyle improvements**  \n- Reduce face washing to twice a day; use lukewarm water and a gentle cleanser.  \n- Replace hot showers with short, warm showers; add a humidifier to indoor air during winter.  \n- Wear a scarf or light mask when outdoors in cold wind to protect skin from drying air.  \n- Pat the face dry with a soft towel instead of rubbing.\n\n**Diet and hydration**  \n- Aim for 8 cups (≈2 L) of water daily; keep a reusable bottle nearby.  \n- Include omega‑3 foods such as walnuts, chia seeds, and fatty fish to support the skin barrier.  \n- Add antioxidant‑rich fruits like blueberries, oranges, and kiwi to protect against environmental stress.  \n- Snack on a small handful of nuts or seeds for healthy fats that help skin hydration.\n\n**Preventive habits**  \n- Apply a light, fragrance‑free moisturizer immediately after washing to trap moisture.  \n- Change pillowcases and wash towels weekly to reduce dust and bacteria that can irritate dry skin.  \n- Use a gentle, alcohol‑free toner if you prefer an extra step; avoid high‑alcohol products.  \n- Keep a consistent sleep schedule; aim for 7–8 hrs and dim lights an hour before bed.\n\n**When to consult a professional**  \n- If dryness becomes severe, with cracking or bleeding skin.  \n- If you notice persistent redness, itching, or swelling that does not improve with home care.  \n- If new symptoms such as a rash or unexplained changes in skin texture appear.\n\n**Disclaimer**  \nThis is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice."
+        },
+        {
+            "id": "skin_015",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8333333333333334,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8333333333333334,
+                "answer_correctness": 0.5714285714285714,
+                "context_support": 0.8695652173913043
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing frequent pimples around the cheeks. Your routine includes once‑daily washing, limited sunscreen, high processed food intake, low water, high sun exposure, short sleep, and high stress. These factors can contribute to breakouts, so a balanced approach that targets cleansing, protection, hydration, and stress is helpful.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer to clear spots; it soothes inflammation and is gentle on skin.  \n- **Green tea compress** – Steep a bag, cool it, and press on the area; the antioxidants help calm redness.  \n- **Honey mask (1 tsp honey + 1 tsp yogurt)** – Leave on 10 min, rinse; honey’s antibacterial properties reduce excess oil.\n\n---\n\n**3. Lifestyle improvements**  \n- Wash your face twice daily (morning and night) with lukewarm water and a mild cleanser; avoid hot water and scrubbing.  \n- Replace frequent cosmetics with minimal‑to‑none days; when you do use makeup, choose non‑comedogenic, fragrance‑free options.  \n- Incorporate 20‑minute walks or light exercise 3–4 times a week to help regulate hormones and reduce stress.  \n- Keep pillowcases, towels, and phone screens clean; change pillowcases weekly to reduce bacterial transfer.\n\n---\n\n**4. Diet and hydration**  \n- Replace processed snacks with fresh fruits, vegetables, and whole grains; aim for 5 servings of produce daily.  \n- Add omega‑3‑rich foods (walnuts, chia seeds, flaxseed) to help balance skin oil production.  \n- Drink at least 8 cups (≈2 L) of water per day; carry a reusable bottle to sip regularly.  \n- Limit sugary drinks and refined carbs; they can spike insulin and worsen breakouts.\n\n---\n\n**5. Preventive habits**  \n- Apply broad‑spectrum SPF 30+ sunscreen every morning, even on cloudy days; reapply after sweating or towel drying.  \n- Pat skin dry with a clean towel; avoid rubbing, which can irritate pores.  \n- Use a clean washcloth or cotton pad to remove makeup; never reuse the same cloth on the face.  \n- Practice a nightly wind‑down routine: dim lights, reduce screen time, and consider a short breathing exercise.\n\n---\n\n**6. When to consult a professional**  \n- Breakouts become painful, swollen, or form deep cysts.  \n- Acne persists for more than 6 weeks despite consistent home care.  \n- You notice scarring, significant discoloration, or emotional distress from skin issues.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or severe symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_016",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.5333333333333333,
+                "context_support": 0.9583333333333334
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re noticing uneven skin tone and occasional tanning, especially with high sun exposure and infrequent sunscreen use. Uneven tone often stems from sun damage, post‑inflammatory marks, or pigment changes. The good news is that many lifestyle tweaks and simple natural remedies can help even out your complexion over time.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it soothes sun‑exposed skin and supports gentle pigment fading.  \n- **Honey & lemon mask** – Mix 1 Tbsp honey with a few drops of fresh lemon juice; leave on for 10 min. Honey’s humectant properties keep skin hydrated, while lemon’s mild acidity can brighten dull patches.  \n- **Cucumber slices** – Place chilled slices on the face for 15 min to calm redness and provide a light, natural bleaching effect.\n\n---\n\n**3. Lifestyle improvements**  \n- Wash your face twice daily with lukewarm water and a gentle cleanser; avoid hot water and harsh scrubbing.  \n- Pat the skin dry with a soft towel; do not rub.  \n- After sweating, cleanse promptly and change into clean, breathable clothing.  \n- Keep your pillowcases and towels clean; change them weekly to reduce bacterial buildup.\n\n---\n\n**4. Diet and hydration**  \n- **Vitamin‑C rich foods** (oranges, strawberries, bell peppers) support collagen and pigment regulation.  \n- **Omega‑3 sources** (flaxseed, walnuts) help reduce inflammation that can worsen discoloration.  \n- **Hydrate** with at least 8 cups of water daily; add herbal teas or infused water for variety.  \n- **Limit sugary snacks** that can trigger inflammatory responses and affect skin tone.\n\n---\n\n**5. Preventive habits**  \n- **Apply broad‑spectrum sunscreen (SPF 30+) daily**, even on cloudy days; reapply every 2 hrs when outdoors.  \n- **Seek shade** during peak UV hours (10 am‑4 pm); use hats, umbrellas, or protective clothing.  \n- **Maintain a consistent sleep schedule** (7–8 hrs) and reduce screen time 30 min before bed to support skin repair.  \n- **Practice gentle facial massage** with fingertips to improve circulation and promote even tone.\n\n---\n\n**6. When to consult a professional**  \n- If discoloration becomes darker, spreads, or changes rapidly.  \n- If you experience pain, itching, or signs of infection (redness, swelling, pus).  \n- If sunburns are severe or you notice new, persistent spots that do not fade with home care.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_017",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.5882352941176471,
+                "context_support": 0.9166666666666666
+            },
+            "answer": "**1. Understanding the concern**  \nYou have sensitive, easily irritated skin that is washed three times daily, uses cosmetics frequently, and experiences high stress. The combination of frequent cleansing, cosmetic use, and stress can heighten irritation and redness. The goal is to simplify the routine, reduce triggers, and support skin barrier health.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to soothe redness and calm inflammation.  \n- **Oatmeal mask** – Mix colloidal oatmeal with plain water, apply for 10 min, then rinse; it calms irritation and restores moisture.  \n- **Chamomile tea compress** – Steep tea bags, cool, and press gently on the face for 5 min to reduce itching and inflammation.\n\n**3. Lifestyle improvements**  \n- Wash the face with lukewarm water and a gentle, fragrance‑free cleanser; avoid hot water and vigorous scrubbing.  \n- Reduce cosmetic use to essential products; opt for minimal‑ingredient, hypoallergenic options.  \n- Incorporate short, daily breathing or meditation sessions to lower stress levels.  \n- Keep pillowcases and towels clean; change them at least twice a week to prevent bacterial buildup.\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water daily; sip water throughout the day rather than large amounts at once.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia) to support skin barrier function.  \n- Consume antioxidant‑rich fruits and vegetables (berries, leafy greens) to help counteract oxidative stress.  \n- Limit highly processed foods and added sugars, which can exacerbate inflammation.\n\n**5. Preventive habits**  \n- Apply a broad‑spectrum SPF 30+ daily, re‑apply every 2 hours when outdoors.  \n- Use a soft, microfiber towel to pat the face dry; avoid rubbing.  \n- Wear a wide‑brimmed hat and sunglasses when in direct sunlight to reduce UV exposure.  \n- Schedule a consistent bedtime routine: dim lights, reduce screen time 30 min before sleep, and aim for 7–8 hours of rest.\n\n**6. When to consult a professional**  \n- If redness, burning, or itching becomes severe, persistent, or spreads beyond the face.  \n- If you notice signs of infection such as pus, swelling, or increasing pain.  \n- If skin changes worsen despite home care or new symptoms appear (e.g., sudden dark spots, severe dryness).\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For personalized care, consult a qualified healthcare professional.*"
+        },
+        {
+            "id": "skin_018",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.6666666666666666,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 1.0,
+                "answer_correctness": 0.5555555555555556,
+                "context_support": 0.88
+            },
+            "answer": "**1. Understanding the concern**  \nYour profile shows a dull complexion, low fruit intake, infrequent sunscreen use, limited water, high sun exposure, short sleep, and high stress. These factors can reduce skin radiance and slow renewal. The guidance below focuses on natural, affordable habits that can help brighten and refresh your skin.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it calms irritation and promotes cell turnover.  \n- **Honey mask** – Mix 1 Tbsp honey with 1 Tbsp warm water, leave on for 10 min, then rinse. Honey’s natural enzymes help lift dullness.  \n- **Cucumber slices** – Place chilled slices on the eyes or face for 5–10 min; the coolness and antioxidants refresh the skin.\n\n**3. Lifestyle improvements**  \n- **Consistent sleep** – Aim for 7–8 h nightly; set a bedtime routine and limit screens 30 min before sleep.  \n- **Stress‑reduction** – Incorporate 10 min of deep‑breathing or short walks during breaks.  \n- **Gentle cleansing** – Use lukewarm water, a mild cleanser, and pat dry; avoid hot water and harsh scrubbing.  \n- **Sun protection habits** – Seek shade, wear a wide‑brim hat, and reapply a broad‑spectrum SPF 30+ after swimming or sweating.\n\n**4. Diet and hydration**  \n- **Increase fruit intake** – Add a serving of berries, citrus, or kiwi daily for vitamin C and antioxidants.  \n- **Hydrate consistently** – Aim for 8 cups (≈2 L) of water per day; sip throughout the day, not just when thirsty.  \n- **Omega‑3 sources** – Include flaxseed, walnuts, or chia seeds to support skin barrier health.  \n- **Limit sugary drinks** – Reduce soda or sweetened juices that can dull skin tone.\n\n**5. Preventive habits**  \n- **Clean pillowcases weekly** – Fresh linens reduce bacterial buildup that can dull skin.  \n- **Avoid touching the face** – Keep hands away to prevent oil and dirt transfer.  \n- **Use a clean towel** – Pat dry with a fresh towel each time; avoid reusing damp cloths.  \n- **Regular gentle exfoliation** – Once a week, use a mild natural scrub (e.g., oatmeal + yogurt) to remove dead cells.\n\n**6. When to consult a professional**  \n- Persistent dullness that does not improve after 4–6 weeks of these habits.  \n- Noticeable changes in skin texture, new spots, or worsening discoloration.  \n- Any skin irritation, redness, or pain that lasts more than a couple of days.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you have concerns, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_019",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.47058823529411764,
+                "context_support": 0.8928571428571429
+            },
+            "answer": "**1. Understanding the concern**  \nYou have oily skin with clogged pores, wash twice a day, use heavy makeup, and apply daily sunscreen. Your diet is balanced, water intake adequate, sleep 7 h, and stress moderate. Oily skin can lead to shine and clogged pores, especially when heavy makeup and hot water are involved. The goal is to reduce excess oil, keep pores clear, and maintain a gentle routine that supports skin health.\n\n**2. Natural remedies**  \n- **Honey‑lemon mask (1 × week)** – Mix 1 tbsp raw honey with 1 tsp fresh lemon juice. Apply to the face for 10 min, rinse with lukewarm water. Honey’s antibacterial properties and lemon’s mild astringency help control oil and clear pores.  \n- **Green tea toner (daily)** – Brew a cup of green tea, let it cool, then apply with a cotton pad. Green tea’s polyphenols reduce inflammation and sebum production.  \n- **Aloe vera gel (as needed)** – Use pure aloe gel after washing to soothe the skin and provide light hydration without adding oil.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water and gentle cleansing; avoid hot showers that stimulate sebum.  \n- Pat the skin dry with a clean towel; do not rub.  \n- Remove heavy makeup before bed; use a gentle, oil‑free cleanser.  \n- Replace pillowcases and towels weekly to reduce bacterial buildup.\n\n**4. Diet and hydration**  \n- Increase intake of omega‑3 rich foods (e.g., walnuts, chia seeds) to support skin barrier function.  \n- Consume plenty of fresh vegetables and fruits high in antioxidants (berries, leafy greens).  \n- Drink at least 8 cups of water daily; add cucumber or lemon slices for flavor.  \n- Limit sugary snacks and refined carbs that can spike insulin and oil production.\n\n**5. Preventive habits**  \n- Apply broad‑spectrum SPF 30+ every morning, even on cloudy days.  \n- Wear a breathable cotton hat or use a UV‑blocking umbrella when outdoors.  \n- Wash hands before touching the face; keep a clean face‑cleaning routine after sweating.  \n- Keep a small, oil‑free blotting paper handy to absorb excess shine without over‑washing.\n\n**6. When to consult a professional**  \n- Persistent redness, swelling, or pain around pores.  \n- Sudden increase in acne or blackheads that do not improve with routine.  \n- Any signs of infection (pus, severe itching, or spreading rash).\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_020",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.7142857142857143,
+                "answer_correctness": 0.6470588235294118,
+                "context_support": 0.9090909090909091
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re aiming for overall skin wellness with a balanced routine: twice‑daily washing, daily sunscreen, adequate sleep, low stress, and a balanced diet. The goal is to keep the skin clean, hydrated, and protected without relying on expensive products or treatments.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to soothe and moisturize.  \n- **Honey face mask** – Mix one tablespoon of raw honey with a teaspoon of warm water; leave on 10 min for gentle hydration and antibacterial support.  \n- **Oatmeal rinse** – Blend ½ cup of plain oats into a fine powder, mix with warm water to create a paste, and rinse the face for a calming, exfoliating wash.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water and a gentle, fragrance‑free cleanser to avoid stripping natural oils.  \n- Pat the face dry with a clean towel instead of rubbing.  \n- Wash your face only after activities that cause significant sweating or when visibly dirty.  \n- Keep your pillowcases and towels clean; change them weekly to reduce bacterial buildup.\n\n**4. Diet and hydration**  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia seeds) to support skin barrier function.  \n- Consume antioxidant‑dense fruits and vegetables (berries, leafy greens, bell peppers) to help neutralize free radicals.  \n- Aim for 8–10 cups of water daily, adjusting for activity level and climate.  \n- Limit sugary snacks and processed foods that can trigger inflammation.\n\n**5. Preventive habits**  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors, even on cloudy days.  \n- Apply a broad‑spectrum SPF 30+ sunscreen every morning and reapply every 2 hours if you’re outside.  \n- Keep your hands clean and avoid touching your face throughout the day.  \n- Maintain a consistent sleep schedule; create a calming pre‑sleep routine to support skin repair.\n\n**6. When to consult a professional**  \n- Persistent redness, swelling, or pain that lasts more than a few days.  \n- Signs of infection such as pus, increased warmth, or spreading rash.  \n- If skin changes worsen or new symptoms appear despite consistent self‑care.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. For any concerning or persistent symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_021",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.5,
+                "context_support": 0.8846153846153846
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with acne that seems to flare up when stress is high. You wash your face twice daily, use sunscreen, keep a balanced diet, drink enough water, and limit sun exposure, but you’re only getting about 5 hours of sleep and report very high stress. Stress, sleep deprivation, and skin‑touch habits can all contribute to breakouts.\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 tbsp raw honey with a pinch of cinnamon, apply to clean skin for 10 min, then rinse. Honey’s antibacterial properties help calm blemishes.  \n- **Aloe vera gel** – Use pure gel from the plant or a store‑bought 100 % aloe product. Apply to inflamed spots; it cools and reduces redness.  \n- **Green tea compress** – Steep a tea bag, cool it, and press on the face for 5 min. Antioxidants help soothe irritated skin.\n\n**3. Lifestyle improvements**  \n- **Consistent sleep schedule** – Aim for 7–8 hrs; go to bed and wake up at the same times, even on weekends.  \n- **Stress‑reduction routine** – Try 5‑minute breathing exercises or a short walk during breaks to lower cortisol.  \n- **Clean pillowcases & towels** – Change them at least twice a week to reduce bacterial buildup.  \n- **Limit screen time before bed** – Dim lights and avoid screens 30 min before sleep to improve rest quality.\n\n**4. Diet and hydration**  \n- **Omega‑3 sources** – Include chia seeds, walnuts, or flaxseed in meals to support skin barrier health.  \n- **Probiotic foods** – Yogurt, kefir, or kimchi can help balance gut flora, which may influence acne.  \n- **Reduce refined sugars** – Cut back on sugary drinks and snacks that can spike insulin and worsen breakouts.  \n- **Hydrate with water** – Continue adequate intake; consider adding cucumber or lemon slices for flavor and extra antioxidants.\n\n**5. Preventive habits**  \n- **Gentle cleansing** – Use lukewarm water, avoid hot showers, and pat dry with a soft towel.  \n- **Hands off the face** – Keep fingers clean and avoid touching or picking blemishes.  \n- **Use a clean phone case** – Change or wash it regularly to reduce bacterial transfer.  \n- **Apply sunscreen daily** – Even on cloudy days, a broad‑spectrum SPF 30 protects against UV‑induced inflammation.\n\n**6. When to consult a professional**  \n- Breakouts become severe, painful, or start to scar.  \n- Acne persists for more than 6 weeks despite home care.  \n- You notice new symptoms such as swelling, pus, or significant redness.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you’re concerned, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_022",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.5,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 1.0,
+                "answer_correctness": 0.46153846153846156,
+                "context_support": 0.9130434782608695
+            },
+            "answer": "**1. Understanding the concern**  \nYou report dry skin, low water intake, and a balanced diet. Dryness often stems from insufficient moisture on the skin’s surface and from not replenishing that moisture internally. Your routine of washing twice a day, daily sunscreen, and moderate sun exposure is good, but the very low water intake is a key factor that can worsen dryness.\n\n---\n\n**2. Natural remedies**  \n- **Coconut oil**: Apply a thin layer after cleansing; it locks in moisture and is inexpensive.  \n- **Aloe vera gel**: Use pure gel on damp skin to soothe and hydrate.  \n- **Honey mask**: Mix one tablespoon honey with a teaspoon of warm water, apply for 10 min, then rinse; honey is a natural humectant.\n\n---\n\n**3. Lifestyle improvements**  \n- Replace hot showers with lukewarm water and limit shower time to 5–7 min.  \n- Pat your face dry with a soft towel instead of rubbing.  \n- Use a humidifier in dry indoor environments to add moisture to the air.  \n- Incorporate a short walk or light stretching each day to improve circulation and overall skin health.\n\n---\n\n**4. Diet and hydration**  \n- Aim for 8–10 cups of water daily; keep a refillable bottle handy.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia) to support skin barrier function.  \n- Add vitamin‑E sources (almonds, sunflower seeds) to help retain moisture.  \n- Snack on fresh fruits like oranges or berries, which provide natural antioxidants and hydration.\n\n---\n\n**5. Preventive habits**  \n- Apply sunscreen every morning, even on cloudy days, and reapply every 2 hours when outdoors.  \n- Wash your hands before touching your face to avoid transferring oils and dirt.  \n- Change pillowcases and wash towels weekly to reduce bacterial buildup.  \n- Avoid harsh soaps; choose fragrance‑free, gentle cleansers.\n\n---\n\n**6. When to consult a professional**  \n- If dryness becomes severe, with cracking or bleeding skin.  \n- If you notice persistent itching, redness, or swelling that does not improve with home care.  \n- If you develop new symptoms such as pain, infection, or a rash that spreads.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_023",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.8,
+                "context_support": 0.9230769230769231
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with acne and a habit of frequently touching your face. The skin is washed twice daily, you drink enough water, sleep 7 h, and keep a balanced diet, but sunscreen use is inconsistent and stress is moderate. These factors can contribute to breakouts, so a gentle, consistent routine and lifestyle tweaks can help calm the skin.\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 tbsp raw honey with a pinch of cinnamon, apply to clean skin for 10 min, rinse with lukewarm water. Honey’s antibacterial properties soothe blemishes.  \n- **Aloe vera gel** – Use pure gel from the plant or a 99 % aloe product. Apply after cleansing; it calms inflammation and hydrates without clogging pores.  \n- **Green tea compress** – Steep 1 cup of green tea, let cool, soak a clean cloth, press on acne‑prone areas for 5 min. Antioxidants help reduce redness.\n\n**3. Lifestyle improvements**  \n- Keep hands clean before touching the face; wash or sanitize them after using phones or touching your face.  \n- Change pillowcases and wash towels weekly to reduce bacterial transfer.  \n- Use a gentle, fragrance‑free cleanser; avoid hot water and vigorous scrubbing.  \n- Aim for a consistent sleep schedule and incorporate short relaxation breaks (breathing or stretching) to lower stress.\n\n**4. Diet and hydration**  \n- Include omega‑3 rich foods (flaxseed, walnuts, salmon) to support skin barrier function.  \n- Consume plenty of fresh fruits and vegetables for vitamins C and E, which aid repair.  \n- Limit sugary snacks and refined carbs that can spike insulin and worsen acne.  \n- Continue drinking adequate water; aim for 8–10 cups a day, especially if you exercise or sweat.\n\n**5. Preventive habits**  \n- Pat the face dry gently with a clean towel; avoid rubbing.  \n- Apply a broad‑spectrum SPF 30+ sunscreen every morning, even on cloudy days.  \n- Use a clean, soft cloth or cotton pad when applying any topical treatment.  \n- Store cosmetics in a clean, dry area; replace them every 6–12 months to avoid bacterial buildup.\n\n**6. When to consult a professional**  \n- Acne becomes severe, painful, or shows signs of infection (pus, swelling).  \n- Breakouts persist for more than 8 weeks despite consistent home care.  \n- You notice scarring, hyperpigmentation, or significant emotional distress from skin issues.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you’re unsure, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_024",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.3125,
+                "context_support": 0.9583333333333334
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin is irritated after frequent exfoliation, which can strip the natural barrier and leave it sensitive to sun, heat, and harsh cleansers. The combination of high sun exposure, frequent cosmetics, and a twice‑daily wash routine can exacerbate redness, dryness, and discomfort. The goal is to soothe the skin, rebuild its barrier, and adopt habits that prevent further irritation.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer to calm redness and provide a cooling effect.  \n- **Chamomile tea compress** – Steep chamomile, cool, and press a cloth over the face for 5–10 min to reduce inflammation.  \n- **Oatmeal bath** – Add colloidal oatmeal to lukewarm water; soak for 10 min to soothe irritated skin and lock in moisture.\n\n**3. Lifestyle improvements**  \n- Reduce exfoliation to once a week or less; use a gentle, non‑abrasive scrub if needed.  \n- Wash the face with lukewarm water; avoid hot showers that can dry out the skin.  \n- Pat the skin dry with a soft towel instead of rubbing.  \n- Limit the use of heavy cosmetics; choose fragrance‑free, hypoallergenic options when possible.\n\n**4. Diet and hydration**  \n- Increase omega‑3 intake (e.g., flaxseed, walnuts) to support skin barrier repair.  \n- Consume vitamin C‑rich foods (citrus, berries) to aid collagen production and antioxidant protection.  \n- Drink 8–10 cups of water daily; add a slice of cucumber or lemon for flavor and extra hydration.  \n- Include probiotic foods (yogurt, kefir) to promote gut health, which can influence skin inflammation.\n\n**5. Preventive habits**  \n- Apply broad‑spectrum SPF 30+ every morning, even on cloudy days.  \n- Seek shade or wear a wide‑brimmed hat during peak sun hours (10 am‑4 pm).  \n- Keep pillowcases and towels clean; change them at least twice a week.  \n- Avoid touching the face with unwashed hands; wash hands before applying cosmetics or touching the skin.\n\n**6. When to consult a professional**  \n- If redness, swelling, or pain persists for more than 2 weeks.  \n- If you notice signs of infection (pus, increasing warmth, or spreading rash).  \n- If irritation worsens despite gentle care or starts to affect daily activities.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms are severe, persistent, or concerning, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_025",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8333333333333334,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.0,
+                "answer_correctness": 0.0,
+                "context_support": 0.0
+            },
+            "answer": ""
+        },
+        {
+            "id": "skin_026",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.47058823529411764,
+                "context_support": 0.8518518518518519
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin shows acne breakouts that seem linked to a high‑sugar, processed‑food diet. You wash twice a day, use sunscreen only sometimes, and have moderate sun exposure, sleep 7 h, and moderate stress. These factors together can feed inflammation and clog pores, making breakouts more likely.\n\n---\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 Tbsp raw honey with ½ tsp cinnamon. Apply to the face for 10 min, rinse with lukewarm water. Honey’s antibacterial properties help clear blemishes, while cinnamon reduces redness.  \n- **Aloe vera gel** – Use pure gel from the plant or a store‑bought 100 % aloe product. Apply after cleansing; it soothes inflammation and keeps the skin barrier intact.  \n- **Green‑tea compress** – Steep a bag in hot water, cool, and press on the face for 5 min. The polyphenols calm excess oil and reduce swelling.\n\n---\n\n**3. Lifestyle improvements**  \n- **Consistent, gentle cleansing** – Use lukewarm water, a mild cleanser, and pat dry. Avoid hot water and harsh scrubbing that irritate pores.  \n- **Hands off the face** – Keep fingers clean before touching the face and avoid picking or squeezing blemishes to prevent scarring.  \n- **Regular sleep routine** – Go to bed and wake up at the same times each day; a stable schedule supports hormone balance that can reduce breakouts.  \n- **Stress‑reduction practices** – Try 5‑minute breathing exercises or a short walk after meals to lower cortisol, a hormone that can worsen acne.\n\n---\n\n**4. Diet and hydration**  \n- **Cut refined sugar** – Replace sugary drinks and snacks with water, herbal tea, or fruit‑infused water.  \n- **Increase omega‑3 foods** – Add chia seeds, walnuts, or flaxseed to meals; these fats help calm inflammation.  \n- **Load up on leafy greens** – Spinach, kale, and broccoli provide antioxidants that support skin repair.  \n- **Stay hydrated** – Aim for 8–10 cups of water daily; add a slice of cucumber or lemon for flavor if plain water feels bland.\n\n---\n\n**5. Preventive habits**  \n- **Clean pillowcases and towels** – Change them at least twice a week to reduce bacteria that can clog pores.  \n- **Use clean phone screens** – Wipe the screen with a mild disinfectant before touching your face.  \n- **Apply sunscreen daily** – Even on cloudy days, a broad‑spectrum SPF 30 protects against UV‑induced inflammation.  \n- **Avoid heavy, occlusive creams** – Stick to lightweight, non‑comedogenic moisturizers that won’t trap oil.\n\n---\n\n**6. When to consult a professional**  \n- Breakouts become **severe, painful, or infected** (red, swollen, pus‑filled).  \n- Acne **persists for more than 6 weeks** despite consistent home care.  \n- You notice **significant scarring or emotional distress** that affects daily life.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis.*"
+        },
+        {
+            "id": "skin_027",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.3333333333333333,
+                "context_support": 0.9090909090909091
+            },
+            "answer": "**1. Understanding the concern**  \nYou experience sun damage from frequent outdoor exposure and rarely use sunscreen. The skin is already showing early signs of premature aging, so the focus is on protecting, repairing, and supporting the skin’s natural barrier.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after sun exposure to soothe irritation and provide mild cooling.  \n- **Coconut oil** – Use sparingly as a nighttime moisturizer; its fatty acids help restore moisture and support barrier repair.  \n- **Green tea compress** – Steep a tea bag, cool it, and place on the face for 10 min to reduce inflammation and provide antioxidants.\n\n---\n\n**3. Lifestyle improvements**  \n- Wash the face twice daily with lukewarm water and a gentle cleanser; avoid hot water and harsh scrubbing.  \n- Wear a wide‑brimmed hat and UV‑blocking sunglasses whenever you’re outside.  \n- Schedule outdoor activities for early morning or late afternoon to reduce peak UV intensity.  \n- Keep a reusable water bottle handy to remind yourself to sip water regularly throughout the day.\n\n---\n\n**4. Diet and hydration**  \n- Include foods rich in vitamin C (citrus, berries) to support collagen production.  \n- Add omega‑3 sources (flaxseed, walnuts) to help maintain skin elasticity.  \n- Consume antioxidant‑dense foods (dark leafy greens, nuts) to counteract free‑radical damage.  \n- Aim for 8–10 cups of water daily; drink a glass before each meal to stay hydrated.\n\n---\n\n**5. Preventive habits**  \n- Apply a broad‑spectrum natural sunscreen (mineral‑based, SPF 30+) every morning, even on cloudy days.  \n- Reapply sunscreen every 2 hours when outdoors and after swimming or sweating.  \n- Use a clean towel to pat the face dry; avoid rubbing.  \n- Change pillowcases and wash towels weekly to reduce bacterial buildup.\n\n---\n\n**6. When to consult a professional**  \n- If you notice new, persistent dark spots or uneven pigmentation that does not fade.  \n- If skin becomes painful, blistered, or shows signs of infection (redness, pus).  \n- If you experience rapid worsening of texture or severe sunburn that lasts more than a few days.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_028",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.5,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.5,
+                "answer_correctness": 0.42857142857142855,
+                "context_support": 0.7916666666666666
+            },
+            "answer": "**1. Understanding the concern**  \nYou experience dry, tight skin mainly after frequent hot showers. The skin feels rough and may flake, especially on the cheeks and forehead. You cleanse twice daily, use sunscreen, and keep a balanced diet, but hot water and repeated washing likely strip natural oils.\n\n**2. Natural remedies**  \n- **Oatmeal wash‑in mask** – Mix 1 Tbsp colloidal oatmeal with warm water, apply for 5 min, rinse with cool water.  \n- **Aloe vera gel** – Apply a thin layer after showering; it soothes and adds moisture.  \n- **Honey‑oil blend** – Mix 1 tsp raw honey with 1 tsp coconut oil, leave on skin 10 min, rinse.  \n\n**3. Lifestyle improvements**  \n- Reduce shower duration to 5–7 min and use lukewarm water.  \n- Replace harsh soaps with a gentle, fragrance‑free cleanser.  \n- Pat skin dry with a soft towel; avoid vigorous rubbing.  \n- Use a clean, soft washcloth for face cleansing instead of rough sponges.  \n\n**4. Diet and hydration**  \n- Include omega‑3 rich foods: chia seeds, walnuts, flaxseed.  \n- Consume vitamin‑E sources: almonds, sunflower seeds, spinach.  \n- Drink 8–10 cups of water daily; add herbal teas if desired.  \n- Eat citrus fruits (oranges, kiwi) for vitamin C, which supports collagen.  \n\n**5. Preventive habits**  \n- Apply a light, natural moisturizer (e.g., shea butter) within 2 min of drying.  \n- Use a humidifier in dry indoor air, especially during winter.  \n- Wear breathable cotton clothing to reduce friction and sweat.  \n- Replace pillowcases every 2–3 weeks to keep skin clean.  \n\n**6. When to consult a professional**  \n- Persistent dryness that spreads to cracks or fissures.  \n- Pain, itching, or signs of infection (redness, swelling).  \n- Symptoms that worsen despite consistent home care.  \n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms persist or worsen, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_029",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 0.3333333333333333
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.6875,
+                "context_support": 0.875
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin is sensitive and regularly exposed to pollution. You wash twice daily, use sunscreen, keep a balanced diet, drink enough water, sleep 7 hrs, and manage moderate stress. Pollution and heat can irritate sensitive skin, causing redness, dryness, or stinging. The goal is to soothe irritation, strengthen the barrier, and reduce exposure to harsh environmental triggers.  \n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to calm redness and provide a cooling effect.  \n- **Oatmeal mask** – Mix colloidal oatmeal with plain yogurt; leave on for 10 min to soothe irritation and hydrate.  \n- **Chamomile tea compress** – Steep tea bags, cool them, and press gently on the face for 5 min to relieve stinging and reduce inflammation.  \n\n**3. Lifestyle improvements**  \n- Use lukewarm water and a soft washcloth; avoid hot showers that strip natural oils.  \n- Pat the skin dry instead of rubbing; this minimizes friction‑induced irritation.  \n- Wear a wide‑brimmed hat and UV‑blocking sunglasses when outdoors, especially during peak pollution hours.  \n- Incorporate a brief 5‑minute breathing or meditation routine each morning to lower stress‑related flare‑ups.  \n\n**4. Diet and hydration**  \n- Increase intake of omega‑3 rich foods (flaxseed, walnuts) to support skin barrier repair.  \n- Consume antioxidant‑rich fruits (berries, citrus) to counteract pollution‑induced oxidative stress.  \n- Drink 2–3 L of water daily; add cucumber or mint slices for flavor and extra hydration.  \n- Limit sugary snacks that can worsen inflammation; replace with whole‑grain alternatives.  \n\n**5. Preventive habits**  \n- Change pillowcases and wash towels weekly to reduce bacterial buildup.  \n- Keep a small bottle of distilled water or a gentle, fragrance‑free cleanser at work to refresh the face after sweating.  \n- Avoid touching the face with unwashed hands; wash hands before meals and after using the restroom.  \n- Use a clean, soft cloth to blot excess sweat after exercise; avoid rubbing the skin.  \n\n**6. When to consult a professional**  \n- Persistent redness or swelling that lasts more than a few days.  \n- Painful or itchy lesions that worsen or spread.  \n- Signs of infection such as pus, increasing warmth, or fever.  \n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_030",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.5625,
+                "context_support": 1.0
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with acne while getting only 4‑5 hours of sleep and experiencing high stress. Both sleep deprivation and stress can increase inflammation, which may worsen breakouts. The good news is that many lifestyle tweaks can help calm the skin and improve sleep quality.\n\n**2. Natural remedies**  \n- **Honey mask** – Apply a thin layer of raw honey to the face, leave for 10 min, then rinse. Honey’s antibacterial properties can soothe blemishes.  \n- **Aloe vera gel** – Dab a small amount on active spots; it calms redness and hydrates without irritation.  \n- **Green‑tea compress** – Steep a bag, cool it, and press gently on the skin for 5 min. The antioxidants help reduce inflammation.\n\n**3. Lifestyle improvements**  \n- Keep a consistent bedtime: aim to go to bed and wake up at the same time each day.  \n- Reduce screen time 30 min before sleep; dim the lights to cue melatonin production.  \n- Practice short breathing or meditation sessions when stress spikes.  \n- Wash your face only twice a day with lukewarm water and a gentle cleanser; avoid hot water and scrubbing.\n\n**4. Diet and hydration**  \n- Continue a balanced diet but add omega‑3‑rich foods (e.g., walnuts, chia seeds) to support skin barrier health.  \n- Limit sugary snacks and refined carbs that can spike insulin and trigger breakouts.  \n- Drink 8–10 cups of water daily; consider adding cucumber or lemon slices for flavor.  \n- Include leafy greens and berries for antioxidants that protect skin cells.\n\n**5. Preventive habits**  \n- Change pillowcases and wash towels weekly to reduce bacteria transfer.  \n- Keep hands clean before touching the face; wash after using phones or touching your face.  \n- Avoid picking or squeezing blemishes to prevent scarring and infection.  \n- Use a broad‑spectrum sunscreen daily, even on cloudy days, to protect against UV‑induced inflammation.\n\n**6. When to consult a professional**  \n- If acne becomes painful, swollen, or shows signs of infection (pus, increasing redness).  \n- If breakouts persist for more than 6 weeks despite consistent self‑care.  \n- If you notice significant scarring, dark spots, or emotional distress from skin issues.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you’re uncertain, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_031",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 1.0,
+                "answer_correctness": 0.5,
+                "context_support": 0.9230769230769231
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re noticing dark circles and a tired look around your eyes. These can be influenced by sleep, hydration, stress, and sun exposure. The guidance below focuses on natural, everyday habits that can help reduce the appearance and support overall skin health.\n\n---\n\n**2. Natural remedies** *(choose up to 3)*  \n- **Cold tea bags** – Place cooled, used green or chamomile tea bags over closed eyes for 10–15 min. The caffeine and antioxidants help constrict blood vessels and soothe puffiness.  \n- **Cucumber slices** – Chill fresh cucumber slices and lay them on the eyes for 10–12 min. The high water content and mild astringent properties can refresh the skin.  \n- **Aloe vera gel** – Apply a thin layer of pure aloe gel around the orbital area before bed. Its cooling effect and vitamin A content support skin repair.\n\n---\n\n**3. Lifestyle improvements** *(up to 4)*  \n- **Consistent sleep schedule** – Aim for 7–8 h nightly; set a bedtime and wake‑up time even on weekends.  \n- **Reduce pre‑sleep screen time** – Turn off bright screens at least 30 min before bed; use dim lighting or blue‑light filters.  \n- **Stress‑reduction routine** – Incorporate 5–10 min of deep‑breathing, gentle stretching, or short walks during the day.  \n- **Pillowcase hygiene** – Change pillowcases at least twice a week to keep the eye area clean and free of irritants.\n\n---\n\n**4. Diet and hydration** *(up to 4)*  \n- **Increase water intake** – Aim for 8–10 cups (≈2 L) daily; carry a reusable bottle to sip throughout the day.  \n- **Iron‑rich foods** – Include lentils, spinach, and beans to support healthy blood circulation.  \n- **Vitamin C sources** – Citrus fruits, berries, and bell peppers help collagen production and brighten skin.  \n- **Magnesium‑rich snacks** – Nuts, seeds, and dark chocolate (in moderation) can ease muscle tension and improve sleep quality.\n\n---\n\n**5. Preventive habits** *(up to 4)*  \n- **Daily sunscreen** – Apply broad‑spectrum SPF 30+ to the face and eye area every morning, even on cloudy days.  \n- **Gentle cleansing** – Use lukewarm water and a mild cleanser; pat dry with a soft towel.  \n- **Avoid hot showers** – Hot water can strip natural oils and worsen puffiness.  \n- **Regular pillowcase changes** – Prevent buildup of sweat and oils that can irritate the delicate eye skin.\n\n---\n\n**6. When to consult a professional** *(up to 3)*  \n- Dark circles become darker, larger, or spread beyond the orbital area.  \n- You notice swelling, redness, or pain that persists or worsens.  \n- Symptoms interfere with daily life or you’re unsure of the cause.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms persist or worsen, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_032",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.5333333333333333,
+                "context_support": 0.88
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with acne that’s worsened by heavy daily makeup and infrequent cleansing. The combination of makeup residue, limited washing, and occasional sun exposure can clog pores and trigger breakouts. This guidance is AI‑based wellness support, not a medical diagnosis.\n\n**2. Natural remedies**  \n- **Honey mask** – Apply raw honey to the face for 10 min, rinse with lukewarm water. Honey’s antibacterial properties help calm inflamed spots.  \n- **Aloe vera gel** – Dab a thin layer of pure aloe on blemishes; it soothes redness and reduces swelling.  \n- **Green tea compress** – Steep a tea bag, cool it, and press onto the skin for 5 min. Antioxidants help control excess oil and inflammation.\n\n**3. Lifestyle improvements**  \n- Wash the face twice daily: once in the morning and once before bed, using a gentle, fragrance‑free cleanser.  \n- Remove makeup thoroughly each night with a mild, non‑comedogenic remover or a warm, damp cloth.  \n- Keep hands clean and avoid touching the face; use a clean towel to pat dry after washing.  \n- Limit heavy makeup to evenings only; opt for lighter, breathable formulas when possible.\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water per day to support skin hydration.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia seeds) to help regulate oil production.  \n- Reduce refined sugars and processed snacks that can spike insulin and worsen acne.  \n- Add antioxidant‑rich fruits and vegetables (berries, leafy greens) to support skin repair.\n\n**5. Preventive habits**  \n- Use a broad‑spectrum sunscreen (SPF 30+) every day, even on cloudy days, to protect against UV‑induced inflammation.  \n- Replace pillowcases and towels every 3–4 days to minimize bacterial buildup.  \n- Store makeup in a cool, dry place and discard expired products to avoid contamination.  \n- Practice stress‑reduction techniques (deep breathing, short walks) to help keep hormonal balance in check.\n\n**6. When to consult a professional**  \n- Breakouts become severe, painful, or spread rapidly.  \n- You notice signs of infection (pus, extreme redness, swelling).  \n- Acne persists for several months despite consistent self‑care and causes scarring or emotional distress.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you’re unsure, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_033",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.5555555555555556,
+                "context_support": 0.7857142857142857
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing dry skin, especially in an air‑conditioned setting. Dryness can feel tight, rough, or flaky and is often worsened by hot showers, frequent washing, low fluid intake, and dry indoor air. Your routine—washing twice a day, daily sunscreen, balanced diet, and moderate stress—provides a good foundation, but a few tweaks can help restore moisture.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n- **Oatmeal mask** – Mix 2 Tbsp colloidal oatmeal with warm water to form a paste. Apply for 10 min, rinse with cool water. Oatmeal soothes and locks in moisture.  \n- **Honey & avocado** – Blend 1 Tbsp raw honey with half an avocado. Apply to damp skin, leave 10 min, rinse. Honey is a natural humectant; avocado supplies fatty acids.  \n- **Aloe vera gel** – Use pure aloe gel after washing. It calms irritation and provides light hydration without heaviness.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n- Replace hot showers with lukewarm water; keep duration under 5 min.  \n- Pat skin dry with a soft towel instead of rubbing.  \n- Wash face only when visibly soiled or after sweating; avoid daily cleansing if skin feels tight.  \n- Use a small, room‑temperature humidifier in the bedroom to add moisture to dry indoor air.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n- Aim for 8–10 cups of water daily; sip throughout the day, not just when thirsty.  \n- Include omega‑3 rich foods: walnuts, chia seeds, flaxseed, and fatty fish.  \n- Add vitamin E sources: almonds, sunflower seeds, and spinach.  \n- Consume hydrating fruits and veggies: cucumber, watermelon, oranges, and berries.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n- Use a gentle, fragrance‑free cleanser that preserves natural oils.  \n- Apply a lightweight, non‑comedogenic moisturizer immediately after drying to lock in moisture.  \n- Change pillowcases and wash towels weekly to reduce dust and bacteria that can irritate skin.  \n- Keep hands clean and avoid touching the face with unwashed hands to prevent transfer of oils and dirt.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n- Persistent dryness that causes cracking, bleeding, or pain.  \n- Signs of infection: redness, swelling, pus, or a foul odor.  \n- If dryness worsens despite consistent self‑care or if you notice new symptoms such as itching or rash.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_034",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.6153846153846154,
+                "context_support": 0.92
+            },
+            "answer": "**1. Understanding the concern**  \nYou have acne and very high stress, wash twice daily, use sunscreen, drink enough water, and eat a balanced diet. Sleep is only 6 hrs and stress is high, both of which can worsen breakouts. A holistic routine can help manage these factors.\n\n**2. Natural remedies**  \n- **Honey mask** – Apply raw honey to clean skin for 10 min, rinse. Antibacterial and soothing.  \n- **Aloe vera gel** – Use pure gel on blemishes; it calms redness and reduces inflammation.  \n- **Oatmeal wash** – Mix colloidal oatmeal with warm water, gently rub onto the face, rinse. Soothes irritation and absorbs excess oil.\n\n**3. Lifestyle improvements**  \n- Keep a consistent sleep schedule; aim for 7–8 hrs when possible.  \n- Practice daily breathing or short meditation to lower stress.  \n- Avoid touching or picking at acne; use clean hands before any facial touch.  \n- Wash pillowcases and towels every 2–3 days to reduce bacterial buildup.\n\n**4. Diet and hydration**  \n- Continue a balanced diet; include plenty of leafy greens and whole grains.  \n- Add omega‑3 rich foods (flaxseed, walnuts) to support skin barrier health.  \n- Reduce refined sugars and processed snacks that can spike insulin.  \n- Drink at least 8 cups of water daily; consider herbal teas if you enjoy variety.\n\n**5. Preventive habits**  \n- Use lukewarm water and gentle, circular motions when washing; avoid hot water and harsh scrubbing.  \n- Pat the face dry with a clean towel; do not rub.  \n- Apply sunscreen every morning, even on cloudy days.  \n- Keep your phone screen and face‑touching objects clean; wipe them with alcohol wipes weekly.\n\n**6. When to consult a professional**  \n- Breakouts become severe, painful, or start to scar.  \n- Acne persists for several months despite home care.  \n- You notice signs of infection (pus, increased redness, swelling).\n\n**Disclaimer**  \nThis is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice."
+        },
+        {
+            "id": "skin_035",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.2,
+                "answer_correctness": 0.42105263157894735,
+                "context_support": 0.9565217391304348
+            },
+            "answer": "**1. Understanding the concern**  \nYou have oily skin that becomes especially shiny in hot weather. Washing your face four times a day can strip natural oils and trigger more sebum production. You already use daily sunscreen, drink enough water, sleep well, and keep stress low—great foundations for healthy skin.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it calms excess oil and soothes the skin.  \n- **Green‑tea compress** – Steep a tea bag, cool it, and press gently on the face for 5 minutes to reduce shine.  \n- **Honey mask (1 tbsp honey + 1 tbsp plain yogurt)** – Leave on for 10 minutes, rinse with lukewarm water; honey’s antibacterial properties help keep pores clear.\n\n---\n\n**3. Lifestyle improvements**  \n- Wash with lukewarm water, not hot, to avoid stimulating oil glands.  \n- Reduce washing to 2–3 times a day; cleanse after heavy sweating or a long day in the sun.  \n- Pat the skin dry with a clean towel instead of rubbing.  \n- Keep your pillowcases and towels clean; change them at least twice a week.\n\n---\n\n**4. Diet and hydration**  \n- Include omega‑3 rich foods (flaxseed, walnuts) to balance sebum production.  \n- Limit sugary snacks that can spike insulin and oil output.  \n- Drink at least 8 cups of water daily; add herbal teas (peppermint, chamomile) for extra hydration.  \n- Eat plenty of colorful fruits and vegetables for antioxidants that support skin health.\n\n---\n\n**5. Preventive habits**  \n- Apply broad‑spectrum SPF 30+ every morning, re‑apply after swimming or sweating.  \n- Wear a wide‑brimmed hat or use an umbrella when the sun is strongest.  \n- Avoid touching your face with unwashed hands; use a clean cloth to blot excess oil.  \n- Keep your environment cool and well‑ventilated; use a fan or air‑conditioning in hot weather.\n\n---\n\n**6. When to consult a professional**  \n- Persistent, painful breakouts that don’t improve with home care.  \n- Severe redness, swelling, or signs of infection (pus, warmth).  \n- If oiliness worsens or new symptoms appear despite consistent routine.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms persist or worsen, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_036",
+            "retrieval": {
+                "precision_at_5": 0.6,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.7647058823529411,
+                "context_support": 0.8
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re noticing post‑acne dark marks that look like uneven skin tone. These marks are common after inflammation and can be influenced by sun exposure, stress, and skincare habits. The goal is to support natural fading while protecting the skin from further irritation.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it calms inflammation and contains compounds that help lighten hyperpigmentation.  \n- **Honey compress** – Warm a small amount of raw honey, apply to the marks for 10 minutes, then rinse. Honey’s mild acidity and antioxidants aid in gentle exfoliation.  \n- **Green‑tea mask** – Brew strong green tea, cool, and apply with a cotton pad. The catechins reduce melanin production and soothe the skin.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water and a soft washcloth; avoid hot water and harsh scrubbing.  \n- Pat the face dry gently; do not rub the skin.  \n- Wash after sweating or outdoor activity to remove sweat‑induced irritation.  \n- Keep pillowcases and towels clean; change them weekly to reduce bacterial buildup.\n\n**4. Diet and hydration**  \n- Include foods rich in vitamin C (citrus, berries, bell peppers) to support collagen and pigment regulation.  \n- Add omega‑3 sources (flaxseed, walnuts, chia) for anti‑inflammatory benefits.  \n- Consume antioxidant‑dense foods (dark leafy greens, nuts, seeds) to counteract UV‑induced oxidative stress.  \n- Aim for 8–10 cups of water daily; sip water throughout the day, especially after sun exposure.\n\n**5. Preventive habits**  \n- Apply broad‑spectrum sunscreen (SPF 30+) every morning, even on cloudy days.  \n- Seek shade or wear a wide‑brimmed hat during peak sun hours (10 am‑4 pm).  \n- Avoid prolonged direct sunlight; use umbrellas or protective clothing when outdoors.  \n- Maintain a consistent sleep schedule (7–8 hrs) and reduce screen time before bed to support skin repair.\n\n**6. When to consult a professional**  \n- Dark marks become darker, larger, or spread rapidly.  \n- You notice pain, swelling, or signs of infection (redness, pus).  \n- The marks persist despite consistent home care for 6 months or more.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or you’re uncertain, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_037",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.75,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.75,
+                "answer_correctness": 0.5714285714285714,
+                "context_support": 0.96
+            },
+            "answer": "**1. Understanding the concern**  \nYour profile shows good habits—daily sunscreen, balanced meals, adequate sleep, and low stress—but your skin feels poorly hydrated and you drink very little water. High sun exposure and a low water intake can leave the skin dry, flaky, and more vulnerable to damage. The goal is to boost moisture, protect from UV rays, and support the skin’s natural barrier with simple, affordable steps.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it soothes and locks in moisture.  \n- **Honey mask** – Mix 1 tbsp honey with a few drops of water, leave on for 10 min, then rinse. Honey’s humectant properties draw water into the skin.  \n- **Cucumber slices** – Place chilled slices on the eyes or face for 5–10 min to reduce puffiness and hydrate the surface.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n- Use lukewarm water for washing; avoid hot water that strips natural oils.  \n- Pat the face dry gently with a clean towel; skip vigorous rubbing.  \n- Wash only after sweating or when visibly dirty; twice a day is fine but not excessive.  \n- Keep your pillowcase and towels clean and change them weekly to reduce bacterial buildup.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n- Aim for 8–10 cups of water daily; sip slowly throughout the day rather than gulping at once.  \n- Include hydrating foods: cucumber, watermelon, oranges, strawberries, and leafy greens.  \n- Add a cup of herbal tea (e.g., chamomile) in the evening to boost fluid intake without caffeine.  \n- Keep a small water bottle on your desk or in your bag to remind you to drink regularly.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors, especially between 10 am–4 pm.  \n- Reapply sunscreen every 2 hours if you’re outside for extended periods.  \n- Keep your skin moisturized with a light, fragrance‑free lotion after washing and before bed.  \n- Avoid touching your face with unwashed hands; wash hands before applying any topical product.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n- Persistent dryness that causes itching, cracking, or pain.  \n- Redness, swelling, or signs of infection (pus, increased warmth).  \n- If skin changes worsen or do not improve after a few weeks of these measures.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms are severe, persistent, or concerning, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_038",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.0,
+                "answer_correctness": 0.0,
+                "context_support": 0.0
+            },
+            "answer": ""
+        },
+        {
+            "id": "skin_039",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.6666666666666666,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6666666666666666,
+                "answer_correctness": 0.625,
+                "context_support": 0.9166666666666666
+            },
+            "answer": "**1. Understanding the concern**  \nYou have sensitive skin that shows redness and dryness. You wash your face three times a day, use sunscreen daily, and wear cosmetics frequently. Sun exposure is high, water intake is low, sleep is 6 h, and stress is moderate. These habits can aggravate irritation and dry out the skin, so gentle, consistent care is key.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to soothe redness and lock in moisture.  \n- **Oatmeal mask** – Mix colloidal oatmeal with water or plain yogurt, leave on for 10 min, then rinse; it calms irritation and nourishes dry skin.  \n- **Chamomile tea compress** – Steep chamomile, cool, and press a damp cloth on the face for 5–10 min to reduce inflammation.\n\n---\n\n**3. Lifestyle improvements**  \n- Reduce face washing to 2 times a day; use lukewarm water and a gentle, fragrance‑free cleanser.  \n- Replace frequent cosmetics with minimal‑ingredient, hypoallergenic options and remove them before bed.  \n- Wear a wide‑brimmed hat and UV‑blocking sunglasses when outdoors; seek shade during peak sun hours.  \n- Incorporate 10–15 min of light walking or stretching each day to lower stress and improve circulation.\n\n---\n\n**4. Diet and hydration**  \n- Aim for 8–10 cups of water daily; keep a reusable bottle handy to track intake.  \n- Add omega‑3 rich foods (flaxseed, walnuts, chia seeds) to support skin barrier function.  \n- Include antioxidant‑rich fruits (berries, citrus) and vegetables (spinach, bell peppers) to fight oxidative stress.  \n- Limit sugary drinks and excessive caffeine; replace with herbal teas or infused water.\n\n---\n\n**5. Preventive habits**  \n- Pat the face dry with a soft towel; avoid rubbing or aggressive scrubbing.  \n- Change pillowcases and wash towels weekly to reduce bacterial transfer.  \n- Keep your phone and other frequently touched items clean; wipe them with a mild, alcohol‑free wipe.  \n- Use a humidifier in dry indoor environments to maintain skin moisture.\n\n---\n\n**6. When to consult a professional**  \n- If redness, dryness, or irritation becomes severe, painful, or persists for more than 2 weeks.  \n- If you notice new, rapidly changing spots or signs of infection (pus, swelling).  \n- If skin discomfort interferes with sleep or daily activities.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For personalized care, consult a qualified healthcare professional.*"
+        },
+        {
+            "id": "skin_040",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.7058823529411765,
+                "context_support": 0.8571428571428571
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with mild acne that appears to be under control with a balanced routine: twice‑daily washing, daily sunscreen, minimal cosmetics, adequate sleep, low stress, and good hydration. Acne can flare when the skin’s natural barrier is disrupted or when excess oil, dead cells, or bacteria accumulate. Your current habits are solid, but a few targeted tweaks can help keep breakouts at bay and support clearer skin.\n\n---\n\n**2. Natural remedies**  \n- **Honey‑tea tree mask** – Mix 1 tsp honey with 1 tsp diluted tea‑tree oil (1 part oil to 10 parts water). Apply to affected areas for 10 min, rinse with cool water. Honey’s soothing properties and tea‑tree oil’s antibacterial action can calm inflammation.  \n- **Aloe vera gel** – Use pure aloe gel as a light, non‑comedogenic moisturizer. Apply after cleansing; it hydrates without clogging pores.  \n- **Green‑tea compress** – Steep a green‑tea bag in hot water, let cool, then press on blemishes for 5 min. Antioxidants help reduce redness and support healing.\n\n---\n\n**3. Lifestyle improvements**  \n- Keep phone screens and pillowcases clean; change pillowcases weekly.  \n- Pat skin dry gently after washing; avoid rubbing or aggressive scrubbing.  \n- Use lukewarm water for cleansing; hot water can strip natural oils and irritate.  \n- Maintain a consistent sleep schedule; aim for 7–9 hrs each night.\n\n---\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water daily; sip water throughout the day rather than gulping at once.  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia) to support skin barrier function.  \n- Consume antioxidant‑rich fruits (berries, citrus) to help neutralize free radicals.  \n- Limit sugary or highly processed snacks that can spike insulin and potentially worsen acne.\n\n---\n\n**5. Preventive habits**  \n- Wash face only when visibly sweaty or after outdoor activity; over‑washing can irritate.  \n- Use a clean, soft towel each time you pat dry; replace towels every 3–4 days.  \n- Avoid touching the face with unwashed hands; keep nails trimmed.  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when spending extended time outdoors.\n\n---\n\n**6. When to consult a professional**  \n- If breakouts become more frequent, painful, or start to scar.  \n- If you notice sudden changes in skin texture or new symptoms (e.g., severe redness, swelling).  \n- If over‑the‑counter remedies and lifestyle tweaks do not improve clarity after 6–8 weeks.\n\n---\n\n*Disclaimer: This is AI‑generated wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_041",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.75,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.0,
+                "answer_correctness": 0.5,
+                "context_support": 0.9130434782608695
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin feels tight and flaky because you wash it five times a day with hot water. Frequent cleansing can strip natural oils, especially when harsh soaps are used. The good news is that simple, everyday changes can restore moisture and comfort.\n\n**2. Natural remedies**  \n- **Oatmeal mask** – Mix 1 Tbsp colloidal oatmeal with warm water, apply for 5 min, rinse.  \n- **Aloe vera gel** – Apply pure aloe gel after washing; it hydrates and calms irritation.  \n- **Coconut oil** – Use a small amount on damp skin after shower; it forms a protective barrier.\n\n**3. Lifestyle improvements**  \n- Reduce washing frequency to 2–3 times daily; wash only after sweating or heavy outdoor activity.  \n- Use lukewarm water and a gentle, fragrance‑free cleanser.  \n- Pat skin dry with a soft towel; avoid rubbing.  \n- Keep shower duration under 5 min to limit water exposure.\n\n**4. Diet and hydration**  \n- Include omega‑3 rich foods (flaxseed, walnuts, chia) to support the skin barrier.  \n- Add antioxidant‑rich fruits (berries, citrus) for cellular protection.  \n- Drink 8–10 cups of water daily; sip throughout the day, not just at meals.  \n- Limit caffeine and alcohol, which can dehydrate skin.\n\n**5. Preventive habits**  \n- Apply a light, fragrance‑free moisturizer immediately after drying.  \n- Wear breathable cotton clothing; change into clean clothes after sweating.  \n- Use a humidifier in dry indoor environments.  \n- Protect skin with broad‑spectrum SPF 30+ every day, even on cloudy days.\n\n**6. When to consult a professional**  \n- Persistent redness or itching lasting more than a week.  \n- Skin becomes cracked, painful, or shows signs of infection (pus, swelling).  \n- If dryness worsens despite consistent self‑care.\n\n**Disclaimer**  \nThis is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice."
+        },
+        {
+            "id": "skin_042",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.5,
+                "answer_correctness": 0.6470588235294118,
+                "context_support": 0.96
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re aiming to improve overall skin health. Your main factors are a low‑protein, low‑vegetable diet, occasional sunscreen use, and moderate sun exposure. These can affect skin’s resilience, hydration, and repair processes. The goal is to support skin from within and with simple, affordable habits.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to soothe and hydrate.  \n- **Honey face mask** – Mix 1 Tbsp honey with 1 Tbsp warm water; leave on 10 min, rinse. Antibacterial and moisturizing.  \n- **Oatmeal wash** – Add 2 Tbsp ground oats to lukewarm water; use as a gentle cleanser to calm irritation.\n\n**3. Lifestyle improvements**  \n- Keep a consistent sleep schedule (7–8 h) and dim screens 30 min before bed.  \n- Incorporate 20–30 min of moderate exercise (walking, yoga) 3–4 days/week.  \n- Practice 5‑minute breathing or meditation each morning to lower stress.  \n- Replace hot showers with lukewarm water; pat skin dry gently.\n\n**4. Diet and hydration**  \n- Add a protein source at each meal: beans, lentils, tofu, or a small portion of fish/eggs.  \n- Include at least 2 cups of mixed vegetables daily; leafy greens, bell peppers, carrots.  \n- Snack on nuts or seeds (almonds, chia) for omega‑3 and vitamin E.  \n- Drink 8–10 glasses of water; add cucumber or lemon slices for flavor.\n\n**5. Preventive habits**  \n- Apply broad‑spectrum SPF 30+ daily, even on cloudy days.  \n- Wear a wide‑brim hat and sunglasses when outdoors; seek shade during peak UV hours.  \n- Wash face twice a day with lukewarm water and a gentle cleanser; avoid harsh scrubs.  \n- Change pillowcases and wash towels weekly; keep hands clean before touching the face.\n\n**6. When to consult a professional**  \n- Persistent redness, swelling, or pain that lasts more than a few days.  \n- Signs of infection: pus, increasing warmth, or spreading rash.  \n- If skin changes worsen or new symptoms appear despite consistent care.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. For persistent or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_043",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.6,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.7142857142857143,
+                "context_support": 0.9130434782608695
+            },
+            "answer": "**1. Understanding the concern**  \nYour skin is showing irritation, likely from the many cosmetics you use daily and the twice‑daily washing routine. The irritation may be mild redness, itching, or a burning sensation that can be aggravated by hot water, harsh cleansers, or over‑exposure to the sun. The goal is to soothe the skin, reduce the number of potential irritants, and support natural barrier repair.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer to the irritated area after cleansing; it cools and calms inflammation.  \n- **Chamomile tea compress** – Steep a cup, let it cool, and press a damp cloth against the skin for 5–10 minutes to relieve itching.  \n- **Oatmeal bath** – Add ½ cup colloidal oatmeal to lukewarm bath water; soak 10–15 minutes to soothe and moisturize.\n\n**3. Lifestyle improvements**  \n- Use a gentle, fragrance‑free cleanser and avoid hot water; lukewarm water preserves the skin’s natural oils.  \n- Limit the number of cosmetic products to the essentials; consider a “minimalist” routine to reduce potential irritants.  \n- Pat the face dry with a soft towel instead of rubbing; this prevents friction‑induced irritation.  \n- Incorporate a short daily breathing exercise or 5‑minute meditation to lower moderate stress levels.\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water daily; add a slice of cucumber or lemon for flavor if desired.  \n- Include omega‑3 rich foods such as chia seeds, walnuts, or flaxseed to support skin barrier health.  \n- Consume vitamin‑C sources like oranges, strawberries, or bell peppers to aid collagen repair.  \n- Reduce intake of highly processed foods and sugary drinks, which can worsen inflammation.\n\n**5. Preventive habits**  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors; avoid prolonged direct sunlight.  \n- Replace pillowcases and wash towels every 3–4 days to keep them free of bacteria and oils.  \n- Keep your phone and other frequently touched items clean; wipe them with a gentle, alcohol‑free wipe before touching your face.  \n- Maintain a consistent sleep schedule of 7–8 hours; a relaxed bedtime routine helps regulate stress hormones that affect skin.\n\n**6. When to consult a professional**  \n- If the irritation becomes severe, painful, or starts to spread.  \n- If you notice signs of infection such as pus, swelling, or fever.  \n- If the redness or itching persists for more than 2 weeks despite home care.\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For personalized advice, please consult a qualified healthcare professional.*"
+        },
+        {
+            "id": "skin_044",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.8,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.6,
+                "answer_correctness": 0.7142857142857143,
+                "context_support": 0.8181818181818182
+            },
+            "answer": "**1. Understanding the concern**  \nYour profile shows acne and occasional hygiene lapses (washing once a day, frequent cosmetics use, and intermittent sunscreen). Acne can flare when pores are clogged, bacteria grow, or skin is irritated. The goal here is to support clearer skin with simple, natural habits that fit your routine.\n\n**2. Natural remedies**  \n- **Honey & cinnamon mask** – Mix 1 Tbsp raw honey with ½ tsp cinnamon powder. Apply to the face for 10 min, rinse with lukewarm water. Honey’s antibacterial properties help calm breakouts, while cinnamon adds gentle exfoliation.  \n- **Aloe vera gel** – Use pure aloe gel (no added fragrances) as a post‑wash soothing layer. It reduces redness and keeps the skin barrier hydrated.  \n- **Green tea compress** – Steep a green tea bag, cool it, and press onto blemishes for 5 min. The antioxidants help calm inflammation and can reduce excess oil.\n\n**3. Lifestyle improvements**  \n- **Wash twice daily** – Cleanse in the morning and after sweating or touching your face. Use lukewarm water and a gentle, fragrance‑free cleanser.  \n- **Hands off the face** – Keep your hands clean before touching your skin. Avoid resting your face on your hands or picking at spots.  \n- **Consistent sleep schedule** – Go to bed and wake up at the same times each day. A regular rhythm supports hormone balance that can influence acne.  \n- **Stress‑reduction routine** – Incorporate 10–15 min of breathing exercises or light stretching each evening to lower cortisol levels that may worsen breakouts.\n\n**4. Diet and hydration**  \n- **Increase omega‑3 intake** – Add chia seeds, walnuts, or flaxseed to meals. These fats help regulate oil production.  \n- **Limit refined sugars** – Cut back on sugary drinks and pastries; high glycemic foods can spike insulin and oil.  \n- **Boost antioxidant foods** – Eat berries, leafy greens, and bell peppers daily to support skin repair.  \n- **Stay hydrated** – Aim for 8–10 cups of water per day. Adequate fluid intake helps flush toxins and keeps the skin supple.\n\n**5. Preventive habits**  \n- **Clean pillowcases and phone screens nightly** – Wash pillowcases every 3–4 days and wipe your phone with a mild, alcohol‑free wipe each evening.  \n- **Use broad‑spectrum sunscreen daily** – Even on cloudy days, apply a lightweight, mineral‑based sunscreen before leaving the house.  \n- **Avoid heavy, pore‑clogging cosmetics** – Opt for non‑comedogenic, oil‑free formulations and remove makeup before bed.  \n- **Pat dry, don’t rub** – After washing, gently pat the face with a towel. Rubbing can irritate pores and worsen acne.\n\n**6. When to consult a professional**  \n- **Severe or painful lesions** that persist despite home care.  \n- **Rapidly worsening or spreading breakouts** that cover large areas.  \n- **Signs of infection** (excessive redness, warmth, pus, or fever).  \n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If your skin concerns become severe, persistent, or painful, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_045",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8333333333333334,
+                "answer_correctness": 0.5,
+                "context_support": 0.92
+            },
+            "answer": "**1. Understanding the concern**  \nYou report high stress, limited sleep, low water intake, a diet heavy in processed foods, infrequent sunscreen use, and frequent sun exposure. These factors can contribute to dull, uneven skin tone, increased sensitivity, and a higher risk of premature aging. The goal is to support skin health with simple, natural habits that fit into your daily routine.\n\n---\n\n**2. Natural remedies** *(max 3)*  \n- **Aloe vera gel** – apply a thin layer after cleansing to soothe irritation and provide light hydration.  \n- **Honey face mask** – mix one tablespoon of raw honey with a teaspoon of warm water, apply for 10 min, then rinse. Honey’s antibacterial and humectant properties help calm redness.  \n- **Oatmeal wash** – add a handful of finely ground oats to your lukewarm shower water. Gently rinse; oats help calm inflammation and gently exfoliate.\n\n---\n\n**3. Lifestyle improvements** *(max 4)*  \n- **Regular light exercise** – aim for 20–30 min of walking or gentle yoga most days to boost circulation and reduce stress.  \n- **Consistent sleep schedule** – go to bed and wake up at the same time, even on weekends, to give your skin a chance to repair.  \n- **Screen‑time reduction before bed** – turn off bright screens 30 min before sleep; use a dim night‑light instead.  \n- **Mind‑ful breathing** – practice 5‑minute deep‑breathing or meditation in the morning or before bed to lower cortisol levels.\n\n---\n\n**4. Diet and hydration** *(max 4)*  \n- **Increase water intake** – aim for 8 cups (≈2 L) daily; carry a reusable bottle to sip throughout the day.  \n- **Add antioxidant‑rich foods** – berries, leafy greens, and nuts help neutralize free radicals from sun and stress.  \n- **Limit processed foods** – replace sugary snacks with fresh fruit or raw veggies to reduce inflammation.  \n- **Include omega‑3 sources** – flaxseed, chia seeds, or walnuts support skin barrier health.\n\n---\n\n**5. Preventive habits** *(max 4)*  \n- **Daily sunscreen** – apply a broad‑spectrum SPF 30+ before leaving the house, even on cloudy days.  \n- **Seek shade during peak sun** – especially between 10 am–4 pm; use a wide‑brimmed hat or umbrella.  \n- **Gentle cleansing** – use lukewarm water, avoid hot showers, pat dry with a soft towel, and wash only when needed.  \n- **Clean pillowcases and phone screens** weekly to reduce bacterial transfer to the face.\n\n---\n\n**6. When to consult a professional** *(max 3)*  \n- Persistent redness, swelling, or pain that lasts more than a few days.  \n- Skin changes that worsen or spread despite home care.  \n- Any signs of infection (pus, severe itching, or fever).\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms persist or worsen, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_046",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.2,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.7857142857142857,
+                "context_support": 0.9090909090909091
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re experiencing painful, worsening acne despite a balanced diet, regular sunscreen use, and a consistent washing routine. The discomfort and progression suggest that everyday habits may be contributing, and a gentle, natural approach can help calm the skin while you monitor the situation.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer to inflamed spots after cleansing; its cooling effect reduces redness.  \n- **Honey mask** – Mix 1 tsp honey with 1 tsp warm water, apply for 10 min, then rinse; honey’s antibacterial properties soothe pimples.  \n- **Green‑tea compress** – Steep a tea bag, let it cool, press on acne for 5 min; antioxidants help calm inflammation.\n\n**3. Lifestyle improvements**  \n- Use lukewarm water and a mild, fragrance‑free cleanser; avoid hot water and vigorous scrubbing.  \n- Keep pillowcases, towels, and phone screens clean; change pillowcases weekly.  \n- Limit face touching; wash hands before touching the face.  \n- Maintain a consistent sleep schedule (7 h) and practice short relaxation breaks to keep stress moderate.\n\n**4. Diet and hydration**  \n- Drink 8–10 cups of water daily; hydration supports skin barrier function.  \n- Include omega‑3 rich foods (flaxseed, walnuts, fatty fish) to help reduce inflammation.  \n- Add probiotic‑rich foods (yogurt, kefir, sauerkraut) to support gut‑skin health.  \n- Reduce refined sugars and high‑glycemic foods that can trigger breakouts.\n\n**5. Preventive habits**  \n- Pat the face dry gently with a clean towel; avoid rubbing.  \n- Use a clean, soft washcloth or your hands only; no abrasive tools.  \n- Apply sunscreen every morning, even on cloudy days, to protect healing skin.  \n- Store makeup and skincare in a cool, dry place; discard expired items.\n\n**6. When to consult a professional**  \n- If pain or redness worsens or spreads beyond the face.  \n- If you notice signs of infection (pus, increasing warmth, swelling).  \n- If acne persists for more than 4–6 weeks despite these measures or starts leaving scars.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms are severe, persistent, or concerning, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_047",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.8,
+                "answer_correctness": 0.5,
+                "context_support": 0.9565217391304348
+            },
+            "answer": "**1. Understanding the concern**  \nYou spend a lot of time outdoors and rarely use sunscreen. Frequent tanning can accelerate skin aging, cause uneven pigmentation, and increase the risk of long‑term damage. Your routine of washing twice a day is good, but the lack of sun protection and high UV exposure are the main factors that need attention.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after sun exposure to soothe the skin and reduce redness.  \n- **Cucumber slices** – Place chilled slices on the face for 10–15 min to cool and hydrate the skin.  \n- **Green tea compress** – Steep a cup, cool it, and use a clean cloth to press on the skin; the antioxidants help calm irritation.\n\n**3. Lifestyle improvements**  \n- Wear a wide‑brimmed hat and UV‑blocking sunglasses whenever you’re outside.  \n- Schedule outdoor activities for early morning or late afternoon when UV intensity is lower.  \n- Use a lightweight, natural‑ingredient face wash that is gentle and free of harsh sulfates.  \n- Incorporate a short 5‑minute breathing or stretching routine after long sun exposure to help your body recover.\n\n**4. Diet and hydration**  \n- Drink at least 2 L of water daily; add a slice of lemon or cucumber for flavor.  \n- Include foods rich in vitamin C (oranges, strawberries) to support collagen repair.  \n- Add omega‑3 sources (flaxseed, walnuts) to help maintain skin barrier integrity.  \n- Consume antioxidant‑dense berries (blueberries, raspberries) to counteract free‑radical damage.\n\n**5. Preventive habits**  \n- Apply a broad‑spectrum natural sunscreen (SPF 30+) 15 min before going outdoors; reapply every 2 h if you’re active.  \n- Keep a reusable water bottle handy and sip regularly to stay hydrated.  \n- After sweating, cleanse gently with lukewarm water and pat dry; avoid hot showers that strip natural oils.  \n- Rotate pillowcases and wash towels weekly to reduce bacterial buildup that can irritate the skin.\n\n**6. When to consult a professional**  \n- If you notice persistent redness, swelling, or blistering after sun exposure.  \n- If new dark spots or uneven patches appear and do not fade with home care.  \n- If you experience pain, itching, or signs of infection such as pus or foul odor.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_048",
+            "retrieval": {
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.4,
+                "hit_rate_at_5": 1.0,
+                "mrr": 0.5
+            },
+            "generation": {
+                "answer_relevance": 0.4,
+                "answer_correctness": 0.8461538461538461,
+                "context_support": 1.0
+            },
+            "answer": "**1. Understanding the concern**  \nYou have dry, sensitive skin that feels tight and occasionally irritated. Your routine—gentle washing twice daily, daily sunscreen, balanced diet, adequate water, and good sleep—already covers many key factors. The goal is to reinforce moisture retention, reduce irritation, and support the skin’s natural barrier.\n\n---\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing; it soothes irritation and delivers light hydration without heaviness.  \n- **Oatmeal mask** – Mix colloidal oatmeal with warm water to create a paste; leave on for 10 min to calm redness and lock in moisture.  \n- **Coconut oil (cold‑pressed, unrefined)** – Use sparingly on dry patches at night; it forms a protective film that prevents water loss while being gentle enough for sensitive skin.\n\n---\n\n**3. Lifestyle improvements**  \n- **Use lukewarm water** for washing; avoid hot showers that strip natural oils.  \n- **Pat the face dry** with a soft towel instead of rubbing; this reduces friction that can trigger irritation.  \n- **Limit washing to twice a day**—your current schedule is fine, but avoid extra washes after mild activities unless sweat is heavy.  \n- **Keep pillowcases and towels clean** and change them weekly; bacteria and detergent residues can aggravate sensitivity.\n\n---\n\n**4. Diet and hydration**  \n- **Increase omega‑3 intake** with flaxseed, chia seeds, or walnuts; these fats help strengthen the skin barrier.  \n- **Add antioxidant‑rich foods** such as berries, leafy greens, and citrus; they protect against environmental stressors.  \n- **Drink 8–10 cups of water daily**; aim for consistent hydration rather than large spikes.  \n- **Limit caffeine and alcohol**—both can dehydrate the skin and worsen dryness over time.\n\n---\n\n**5. Preventive habits**  \n- **Apply sunscreen with a broad‑spectrum SPF 30+** every morning, even on cloudy days; reapply after swimming or sweating.  \n- **Use a humidifier** in dry indoor environments, especially during winter or air‑conditioned rooms.  \n- **Wear protective clothing** (long sleeves, wide‑brim hat) when outdoors; this reduces direct UV exposure that can trigger irritation.  \n- **Practice gentle skin‑care rituals**—avoid harsh scrubs, exfoliants, or fragranced products that can compromise sensitivity.\n\n---\n\n**6. When to consult a professional**  \n- If redness, itching, or burning **persist for more than a week** despite home care.  \n- If you notice **painful bumps, swelling, or signs of infection** such as pus or increasing warmth.  \n- If the skin becomes **severely dry, flaky, or starts to crack**, indicating a barrier breakdown that may need medical evaluation.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. For persistent or worsening symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_049",
+            "retrieval": {
+                "precision_at_5": 1.0,
+                "recall_at_5": 0.8571428571428571,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.7142857142857143,
+                "answer_correctness": 0.6842105263157895,
+                "context_support": 0.9166666666666666
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re aiming for overall skin wellness and prevention. Your routine—twice‑daily washing, daily sunscreen, balanced diet, adequate water, 8 h sleep, low stress, and moderate sun exposure—provides a solid foundation. The goal is to keep skin clean, hydrated, and protected while avoiding over‑cleansing or harsh habits that can disrupt the skin barrier.\n\n**2. Natural remedies**  \n- **Aloe vera gel** – Apply a thin layer after cleansing to soothe the skin and support barrier repair.  \n- **Honey mask** – Mix 1 tbsp honey with a few drops of water, apply for 10 min, then rinse. Honey’s natural enzymes help maintain moisture and provide gentle antibacterial support.  \n- **Cucumber slices** – Place chilled slices on the eyes or face for 5–10 min to reduce puffiness and refresh the skin.\n\n**3. Lifestyle improvements**  \n- Keep the washing water lukewarm; avoid hot water that strips natural oils.  \n- Pat the face dry with a clean towel; do not rub vigorously.  \n- Wash hands before touching the face to prevent bacterial transfer.  \n- Replace pillowcases and towels every 2–3 days to reduce buildup of oils and bacteria.\n\n**4. Diet and hydration**  \n- Consume a variety of colorful fruits and vegetables to supply antioxidants.  \n- Include omega‑3 sources such as walnuts, chia seeds, or flaxseed to support skin elasticity.  \n- Drink 8–10 cups of water daily; add a slice of lemon or cucumber for flavor if desired.  \n- Limit sugary drinks and processed snacks that can increase inflammation.\n\n**5. Preventive habits**  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors for extended periods.  \n- Reapply sunscreen every 2 hours, especially after swimming or sweating.  \n- Maintain a consistent sleep schedule; keep the bedroom cool and dark.  \n- Practice a brief 5‑minute breathing exercise before bed to reinforce relaxation.\n\n**6. When to consult a professional**  \n- Persistent redness, swelling, or pain that lasts more than a few days.  \n- Noticeable breakouts or new skin lesions that do not improve with routine care.  \n- Signs of infection such as pus, increasing warmth, or spreading redness.\n\n---\n\n*Disclaimer: This is AI‑based wellness guidance and not a medical diagnosis. If you experience severe, persistent, or concerning symptoms, please seek professional medical advice.*"
+        },
+        {
+            "id": "skin_050",
+            "retrieval": {
+                "precision_at_5": 0.8,
+                "recall_at_5": 0.75,
+                "hit_rate_at_5": 1.0,
+                "mrr": 1.0
+            },
+            "generation": {
+                "answer_relevance": 0.75,
+                "answer_correctness": 0.5714285714285714,
+                "context_support": 0.9629629629629629
+            },
+            "answer": "**1. Understanding the concern**  \nYou’re dealing with acne, dryness, and uneven tone while washing your face three times a day, eating a lot of processed foods, drinking little water, and spending a lot of time in the sun. Stress and limited sleep add to the challenge. The goal is to balance cleansing, hydration, and protection while easing stress and improving diet.\n\n**2. Natural remedies**  \n- **Honey‑tea compress** – Warm a teaspoon of raw honey in a cup of tea, let it cool, and apply to the face for 10 min. Honey’s antibacterial and humectant properties help calm acne and moisturize dry skin.  \n- **Aloe vera gel** – Use pure aloe gel on blemishes and dry patches. It soothes inflammation and supplies light hydration.  \n- **Cucumber slices** – Place chilled cucumber slices on the eyes and cheeks for 5–7 min. The coolness reduces puffiness and the natural antioxidants support even tone.\n\n**3. Lifestyle improvements**  \n- Wash the face only when you sweat or feel visibly dirty; avoid hot water and vigorous scrubbing.  \n- Replace one of the three daily washes with a gentle, lukewarm rinse and pat dry.  \n- Use a soft washcloth or your hands; skip abrasive sponges.  \n- Keep pillowcases and towels clean; change them at least twice a week.\n\n**4. Diet and hydration**  \n- Aim for 8 cups (≈2 L) of water daily; sip water throughout the day, not just when thirsty.  \n- Replace one processed snack with a piece of fruit or a handful of nuts.  \n- Include omega‑3 rich foods (e.g., walnuts, chia seeds) to support skin barrier function.  \n- Add leafy greens and colorful vegetables to boost antioxidants that help even skin tone.\n\n**5. Preventive habits**  \n- Wear a wide‑brimmed hat or use a UV‑blocking umbrella when outdoors for more than 30 min.  \n- Apply a broad‑spectrum sunscreen (SPF 30+) every morning, even on cloudy days.  \n- Practice a 5‑minute breathing exercise or short walk each evening to lower stress.  \n- Keep your phone, glasses, and makeup brushes clean to reduce bacterial transfer.\n\n**6. When to consult a professional**  \n- If acne becomes painful, swollen, or starts to scar.  \n- If dryness turns into persistent redness or itching that doesn’t improve with home care.  \n- If uneven tone changes rapidly or new dark spots appear.\n\n---\n\n*This is AI‑based wellness guidance and not a medical diagnosis. If symptoms worsen or persist, please seek professional medical advice.*"
+        }
+    ]
+}
