@@ -13,3 +13,4 @@ Pillow
 pydantic
 langchain-huggingface
 langchain-text-splitters
+gunicorn
